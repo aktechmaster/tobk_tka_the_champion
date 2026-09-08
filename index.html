@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>TO TKA — Fizmath Brain</title>
+  
+  <!-- ✅ PERBAIKAN FAVICON: TAJAM, TIDAK BURAM -->
+  <link rel="icon" type="image/png" href="fizmathfav.png" sizes="16x16">
+
+  <style>
+    link[rel="icon"] {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
+  </style>
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root{
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      --accent: #0088CC; /* Warna biru utama dari gambar */
+      --secondary: #FFCC00; /* Warna kuning dari gambar */
+      --danger: #b91c1c;
+      --muted: #51657a;
+      --card-bg: #fff;
+    }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f0f8ff,#e0f0ff);color:#0b2540}
+    body{display:flex;align-items:center;justify-content:center;padding:16px}
+    .card{width:780px;max-width:100%;background:var(--card-bg);border-radius:14px;box-shadow:0 8px 30px rgba(11,37,64,0.12);padding:22px;position:relative;box-sizing:border-box;max-height:calc(100vh - 36px);overflow:auto;}
+    
+    /* ✅ PERBAIKAN LOGO: DIPERBESAR & TAJAM */
+    .logo-header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .logo-header img {
+      height: 85px !important; /* Ukuran pas, tidak kekecil lagi */
+      width: auto !important;
+      object-fit: contain !important;
+      image-rendering: -webkit-optimize-contrast !important;
+      image-rendering: crisp-edges !important;
+      display: inline-block;
+    }
+
+    h1{font-size:22px;margin:0 0 8px;text-align:center; color: var(--accent); font-weight: 900;}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:12px;text-align:center}
+    .input-group{display:flex;flex-direction:column;margin-bottom:12px}
+    label{font-weight:700;margin-bottom:6px;font-size:14px}
+    input, select, button {padding:12px;border-radius:10px;border:1px solid #d5e0ec;font-size:16px;box-sizing:border-box;}
+    input[type="text"], select{background:#fbfeff;}
+    .start-btn{margin-top:12px;width:100%;padding:14px;background: linear-gradient(135deg, var(--accent), #0066aa);color:#fff;border:0;border-radius:10px;font-weight:900;cursor:pointer;font-size:17px; transition: 0.3s;}
+    .start-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,136,204,0.2); }
+    .qno{font-weight:800;margin-bottom:8px;font-size:14px; display:flex; justify-content:space-between; align-items:center;}
+    .badge-type { background: #eef6ff; color: var(--accent); padding: 4px 8px; border-radius: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(31,141,214,0.2); }
+    .question{font-size:18px;margin-bottom:12px;line-height:1.35}
+    .choices{display:flex;flex-direction:column;gap:10px}
+    
+/* --- NAVIGASI KOTAK PRESISI (VERSI DIPERKECIL) --- */
+.question-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 6px; 
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    max-width: 250px; 
+    margin: 10px auto;
+}
+
+.nav-item {
+    aspect-ratio: 1 / 1; 
+    width: 100%; 
+    max-width: 35px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 8px; 
+    cursor: pointer;
+    border-radius: 6px; 
+    background-color: var(--secondary);
+    color: #333;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+@media (min-width: 600px) {
+    .question-nav {
+        grid-template-columns: repeat(10, 1fr);
+        max-width: 420px; 
+    }
+}
+
+    /* Style Pilihan */
+    label.choice{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid #e6eef8;cursor:pointer;font-size:16px;user-select:none;background:#fbfeff; transition: all 0.2s;}
+    label.choice:hover { background: #f0f7ff; border-color: var(--accent); }
+    label.choice.selected { background: #e6f2ff; border-color: var(--accent); font-weight: 600; }
+
+    /* Style Tabel Benar/Salah */
+    .bs-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #e6eef8; border-radius: 10px; overflow: hidden; margin-top: 10px; }
+    .bs-table th, .bs-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e6eef8; }
+    .bs-table th { background: #f0f7ff; font-weight: 700; color: #0b4f7a; font-size: 14px; }
+    .bs-table td:first-child { width: 60%; font-size: 15px; }
+    .bs-table td.opt { text-align: center; width: 20%; background: #fafcff; cursor: pointer; }
+    .bs-table tr:last-child td { border-bottom: none; }
+    .bs-radio { transform: scale(1.2); accent-color: var(--accent); cursor: pointer; }
+
+    input[type="radio"], input[type="checkbox"] {accent-color:var(--accent);width:20px;height:20px; cursor: pointer;}
+    
+    /* Style Kotak Hasil (Result Box) */
+    .result-box { background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%); border: 2px solid #e6eef8; border-radius: 16px; padding: 24px; margin: 20px 0; text-align: center; box-shadow: 0 10px 30px rgba(31,141,214,0.15); }
+    .result-score-label { font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .result-score-value { font-size: 48px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 16px; }
+    .result-details { display: flex; justify-content: center; gap: 20px; border-top: 1px solid #dae7f5; padding-top: 16px; }
+    .result-item { font-size: 15px; font-weight: 700; display: flex; flex-direction: column; align-items: center; }
+    .result-item.correct { color: #10b981; } 
+    .result-item.wrong { color: #ef4444; }   
+    .result-val { font-size: 20px; font-weight: 900; }
+
+    .controls{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:12px}
+    .big-btn {background:var(--accent);color:#fff;border:0;padding:12px 16px;border-radius:10px;cursor:pointer;font-weight:800;font-size:16px;min-width:120px;}
+    .big-btn.secondary{background:#eef6ff;color:var(--accent);border:1px solid rgba(31,141,214,0.14)}
+    .page-indicator{font-size:14px;color:var(--muted);font-weight:700}
+    
+    .finish-screen{text-align:center;padding:18px}
+    .finish-blue { color:#007bff;font-weight:900;font-size:20px }
+    .finish-warning { color:var(--danger);font-weight:900;font-size:20px }
+    
+    .top-badge {position:fixed;z-index:9999;font-weight:700;display:flex;gap:8px;align-items:center;font-size:13px;padding:8px 12px;border-radius:10px;box-shadow:0 6px 20px rgba(11,37,64,0.12);background:linear-gradient(180deg,#ffffff,#f1f8ff);}
+    .badge-violation{left:12px;top:12px;border:2px solid rgba(255,86,86,0.12)}
+    .badge-timer{right:12px;top:12px;border:2px solid rgba(31,141,214,0.10)}
+    .violation-count{color:var(--danger)}
+    .timer-text{color:#0b4f7a}
+    
+    .overlay{position:fixed;inset:0;background:rgba(11,37,64,0.45);display:flex;align-items:center;justify-content:center;z-index:10000;padding:20px}
+    .warning-modal{width:720px;max-width:98%;background:#fff;border-radius:12px;padding:20px;text-align:center;box-shadow:0 12px 40px rgba(11,37,64,0.25);border-left:8px solid #f59e0b}
+    .muted{font-weight:700;color:var(--muted);font-size:13px;text-align:center;margin-top:8px}
+    .hidden{display:none!important}
+    
+    @media (max-width:640px){body{padding:10px}.card{padding:16px;border-radius:12px}h1{font-size:18px}input, select, label.choice, .question{font-size:16px}.start-btn{padding:14px;font-size:18px;border-radius:12px}.big-btn{min-width:100px;padding:12px;border-radius:12px;font-size:16px}.warning-modal{padding:18px}}
+
+    /* --- INI GAYA UNTUK KOTAK NILAI --- */
+.result-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border: 2px solid #e6eef8;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(31,141,214,0.15);
+}
+.result-score-label { font-size: 14px; font-weight: 700; color: #51657a; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.result-score-value { font-size: 48px; font-weight: 900; color: #1f8dd6; line-height: 1; margin-bottom: 16px; }
+.result-details { display: flex; justify-content: center; gap: 20px; border-top: 1px solid #dae7f5; padding-top: 16px; }
+.result-item { font-size: 15px; font-weight: 700; display: flex; flex-direction: column; align-items: center; }
+.result-item.correct { color: #10b981; } 
+.result-item.wrong { color: #ef4444; }   
+.result-val { font-size: 20px; font-weight: 900; }
+
+/* --- CSS LAYAR HUKUMAN (BLACK SCREEN) --- */
+#layar-penalti {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.98);
+  z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+  color: white; text-align: center; font-family: sans-serif;
+}
+.hukuman-box h1 { font-size: 40px; color: #ff4444; margin-bottom: 10px; }
+.hukuman-box p { font-size: 18px; }
+#timer-penalti { font-size: 80px; font-weight: 900; color: #ff4444; margin: 20px 0; }
+
+/* Container Navigasi Nomor Soal */
+.question-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.nav-item {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px; border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+/* Warna Kuning: Belum Dijawab */
+.nav-item.unanswered {
+    background-color: var(--secondary);
+    color: #000;
+    border-color: #fbc02d;
+}
+
+/* Warna Biru: Sudah Dijawab */
+.nav-item.answered {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: #0066aa;
+}
+
+/* Warna Putih/Border Biru: Soal yang Sedang Dibuka */
+.nav-item.active {
+    outline: 3px solid #ff5722;
+    transform: scale(1.05);
+}
+
+  </style>
+  
+  <!-- ✅ PERBAIKAN LINK MATJAX AGAR TIDAK ERROR -->
+  <script src="https://cdn.jsdelivr.net/npm/polyfill-library@3.111.0/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+</head>
+<body>
+
+  <div class="top-badge badge-violation hidden" id="violationBadge">
+    <div>PELANGGARAN:</div>
+    <div class="violation-count" id="violationCount">0</div>
+    <div style="margin-left:8px;color:var(--muted);font-weight:700"></div>
+  </div>
+
+  <div class="top-badge badge-timer hidden" id="timerBadge">
+    <div>WAKTU:</div>
+    <div class="timer-text" id="timerText">60:00</div>
+  </div>
+
+  <div class="card" id="app">
+    <div id="start-screen">
+  <!-- ✅ BAGIAN LOGO SUDAH DIPERBAIKI DI SINI -->
+  <div class="logo-header">
+    <img src="fizmath.png" alt="Fizmath Brain">
+  </div>
+  
+      <h1>TRY OUT TKA - FIZMATH BRAIN</h1>
+      <p class="meta">Silakan isi data diri sebelum mulai ujian</p>
+
+      <div class="input-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" autocomplete="name" oninput="this.value = this.value.toUpperCase()"/>
+      </div>
+
+      <div class="input-group">
+        <label for="kelas">Kelas</label>
+        <select id="kelas">
+          <option value="">- Pilih Kelas -</option>
+          <option value="4">Kelas 4</option>
+          <option value="5">Kelas 5</option>
+          <option value="6">Kelas 6</option>
+          <option value="7">Kelas 7</option>
+          <option value="8">Kelas 8</option>
+          <option value="9">Kelas 9</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+  <label>Mata Pelajaran</label>
+  <input type="text" value="TKA Numerasi & Literasi" readonly style="background:#eef6ff; color:#0b4f7a; font-weight:bold; border-color:#1f8dd6;">
+  <!-- Input di atas hanya tampilan, tidak bisa diubah -->
+  <input type="hidden" id="mapel" value="TKA Gabungan">
+  <!-- ^ Ini yang dibaca sistem, nilainya tetap "TKA Gabungan" -->
+</div>
+
+      <div class="input-group">
+        <label for="asal">Asal Sekolah / Instansi</label>
+        <input type="text" id="asal" oninput="this.value = this.value.toUpperCase()"/>
+      </div>
+
+      <div class="input-group">
+        <label for="nomor">Nomor Ujian / Peserta</label>
+        <input type="text" id="nomor" inputmode="numeric" pattern="[0-9]*" placeholder="Hanya angka" />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password Akses</label>
+        <input type="text" id="password" placeholder="Masukkan password ujian" />
+      </div>
+
+      <button class="start-btn" id="startBtn">MULAI UJIAN</button>
+      <p class="muted"><b>Catatan</b>: Pindah tab / keluar aplikasi akan dihitung sebagai pelanggaran dan dicatat oleh sistem</p>
+      <div style="text-align: center; margin-top: 50px; font-size: 11px; opacity: 0.7; color: rgb(0, 0, 0);">
+    &copy; 2026 Fizmath Brain | Bimbingan Belajar SD-SMP-SMA<br>
+    <span style="font-size: 9px; font-style: italic;">Designed by aktechmaster</span>
+</div>
+    </div>
+
+    <div id="quiz-area" style="display:none"></div>
+
+    <div class="controls" id="controls" style="display:none">
+      <div class="left">
+        <button class="big-btn secondary" id="prevBtn">Sebelumnya</button>
+      </div>
+      <div class="right">
+        <div class="page-indicator" id="pageIndicator"></div>
+        <button class="big-btn" id="nextBtn">Selanjutnya</button>
+      </div>
+    </div>
+  <div id="questionNav" class="question-nav"></div>
+
+
+
+  <div id="overlay" class="overlay hidden" aria-hidden="true">
+    <div class="warning-modal" role="dialog">
+      <h2>⚠️ PERINGATAN!</h2>
+      <p id="warningDesc">ANDA MELAKUKAN PELANGGARAN</p>
+      <div id="warningExtra" style="margin-bottom:12px;font-weight:800;color:#0b2540"></div>
+      <button id="warningOk">TUTUP</button>
+    </div>
+  </div>
+
+
+    <!-- ============================================== -->
+<!-- ✅ SCRIPT UJIAN UTUH (GABUNGAN B1 + B2 + SPREADSHEET) ✅ -->
+<!-- ============================================== -->
+<script>
+    // ==================================================
+    // 🔑 1. KONFIGURASI URL GOOGLE APPS SCRIPT & PASSWORD
+    // ==================================================
+    // Ganti URL di bawah dengan URL Web App Apps Script kamu!
+    const URL_GAS = "https://script.google.com/macros/s/AKfycbyJuWx09Ow8e1P95SZd9-9Db53wz2kBOAB9FzYJJHbbFwnTqmwGU4IL2878r6VUqv86/exec";
+
+    const daftarPassword = {
+        '4': 'tka4sd001',
+        '5': 'tka5sd001',
+        '6': 'tka6sd001',
+        '7': 'tka7smp001',
+        '8': 'tka8smp001',
+        '9': 'tka9smp001'
+    };
+
+    // Variable Global State
+    let currentIndex = 0;
+    let jawabanSiswa = {};
+    let skorTotal = 0;
+    let timerInterval = null; 
+
+    // Elemen HTML
+    const startScreen = document.getElementById('start-screen');
+    const quizArea = document.getElementById('quiz-area');
+    const controls = document.getElementById('controls');
+    const questionNav = document.getElementById('questionNav');
+    const startBtn = document.getElementById('startBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageIndicator = document.getElementById('pageIndicator');
+
+    // ==================================================
+    // ⚙️ 2. FUNGSI PENYIMPANAN & RECOVERY LOCALSTORAGE
+    // ==================================================
+
+    function bersihkanDataUjian() {
+        localStorage.removeItem('dataUjianTKA');
+        sessionStorage.removeItem('ujianSelesai');
+        if (timerInterval) clearInterval(timerInterval);
+    }
+
+    function ambilDataDariStorage() {
+        const data = localStorage.getItem('dataUjianTKA');
+        if (!data) return null;
+        const parsed = JSON.parse(data);
+        return (parsed.statusUjian === "sedang-berjalan" && parsed.terverifikasi === true) ? parsed : null;
+    }
+
+    function simpanDataKeStorage(inisialisasi = false) {
+        const kelas = document.getElementById('kelas')?.value;
+        const mapel = document.getElementById('mapel')?.value;
+
+        if (!inisialisasi) {
+            const dataLama = ambilDataDariStorage();
+            if (!dataLama || dataLama.terverifikasi !== true) return;
+        }
+
+        const dataUjian = {
+            statusUjian: "sedang-berjalan",
+            terverifikasi: true,
+            kelas: kelas || (ambilDataDariStorage()?.kelas),
+            mapel: mapel || (ambilDataDariStorage()?.mapel),
+            nama: document.getElementById('nama')?.value,
+            asal: document.getElementById('asal')?.value,
+            nomor: document.getElementById('nomor')?.value,
+            jawaban: jawabanSiswa,
+            halamanAktif: currentIndex,
+            jumlahPelanggaran: window.violationCount || 0,
+            sisaWaktuHukuman: window.sisaWaktuHukuman || 0,
+            waktuHukumanMulai: window.waktuHukumanMulai || 0,
+            waktuMulaiUjian: window.waktuMulaiUjian || Date.now(),
+            durasiTotal: window.durasiTotal || 3600
+        };
+        localStorage.setItem('dataUjianTKA', JSON.stringify(dataUjian));
+    }
+
+    // ==================================================
+    // ⏱️ 3. LOGIKA TIMER & PEMANTAUAN UJIAN
+    // ==================================================
+
+    function jalankanTimerUjian() {
+        if (timerInterval) clearInterval(timerInterval);
+        
+        timerInterval = setInterval(() => {
+            const detikTerlewat = Math.floor((Date.now() - window.waktuMulaiUjian) / 1000);
+            let sisaWaktu = window.durasiTotal - detikTerlewat;
+
+            if (sisaWaktu <= 0) {
+                clearInterval(timerInterval);
+                sisaWaktu = 0;
+                tampilkanHasil();
+                alert('Waktu ujian telah habis!');
+                return;
+            }
+
+            const menit = Math.floor(sisaWaktu / 60);
+            const detik = sisaWaktu % 60;
+            document.getElementById('timerText').textContent = 
+                `${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
+        }, 1000);
+    }
+
+    function mulaiUjian() {
+        startScreen.style.display = 'none';
+        quizArea.style.display = 'block';
+        controls.style.display = 'flex';
+        questionNav.style.display = 'grid';
+        document.getElementById('timerBadge').classList.remove('hidden');
+        document.getElementById('violationBadge').classList.remove('hidden');
+        jalankanTimerUjian();
+    }
+
+    startBtn.addEventListener('click', () => {
+        const kelas = document.getElementById('kelas').value;
+        const mapel = document.getElementById('mapel').value;
+        const passwordInput = document.getElementById('password').value;
+
+        if(!kelas || !mapel || !passwordInput) {
+            alert('Harap lengkapi Kelas, Mata Pelajaran, dan Password!');
+            return;
+        }
+
+        if(passwordInput !== daftarPassword[kelas]) {
+            alert(`Password salah untuk Kelas ${kelas}!`);
+            bersihkanDataUjian();
+            return; 
+        }
+
+        let namaFileSoal = `soal_tka_gabungan_${kelas}.js`;
+        const scriptSoal = document.createElement('script');
+        scriptSoal.src = namaFileSoal; 
+        
+        scriptSoal.onload = () => {
+            setTimeout(() => {
+                if (window.daftarSoal && Array.isArray(window.daftarSoal) && window.daftarSoal.length > 0) {
+                    window.waktuMulaiUjian = Date.now();
+                    window.durasiTotal = 10800; // 180 Menit
+                    window.violationCount = 0;
+
+                    mulaiUjian();
+                    simpanDataKeStorage(true);
+                    buatNavigasiSoal();   
+                    tampilkanSoal(0);
+                } else {
+                    alert('File soal dimuat tetapi datanya kosong! Periksa isi file ' + namaFileSoal);
+                }
+            }, 100);
+        };
+        
+        scriptSoal.onerror = () => {
+            alert(`Gagal memuat file soal: ${namaFileSoal}.\nPastikan file ada di folder yang sama.`);
+            bersihkanDataUjian();
+        };
+        
+        document.body.appendChild(scriptSoal);
+    });
+
+    // Event saat halaman di-refresh
+    window.onload = () => {
+        if (sessionStorage.getItem('ujianSelesai') === 'true' || !ambilDataDariStorage()) {
+            bersihkanDataUjian();
+            startScreen.style.display = 'block';
+            quizArea.style.display = 'none';
+            controls.style.display = 'none';
+            questionNav.style.display = 'none';
+            return;
+        }
+        
+        const dataTersimpan = ambilDataDariStorage();
+        if (dataTersimpan) {
+            const kelas = dataTersimpan.kelas;
+            document.getElementById('kelas').value = dataTersimpan.kelas;
+            document.getElementById('mapel').value = dataTersimpan.mapel;
+            document.getElementById('nama').value = dataTersimpan.nama;
+            document.getElementById('asal').value = dataTersimpan.asal;
+            document.getElementById('nomor').value = dataTersimpan.nomor;
+            jawabanSiswa = dataTersimpan.jawaban || {};
+            currentIndex = dataTersimpan.halamanAktif || 0;
+            
+            window.violationCount = dataTersimpan.jumlahPelanggaran || 0;
+            document.getElementById('violationCount').textContent = window.violationCount;
+            window.waktuMulaiUjian = dataTersimpan.waktuMulaiUjian;
+            window.durasiTotal = dataTersimpan.durasiTotal;
+
+            // Kunci Formulir Input
+            document.getElementById('kelas').disabled = true;
+            document.getElementById('nama').disabled = true;
+            document.getElementById('asal').disabled = true;
+            document.getElementById('nomor').disabled = true;
+            document.getElementById('password').disabled = true;
+            startBtn.disabled = true;
+
+            // Pemulihan Penalti Hukuman Jika Ada
+            if (dataTersimpan.sisaWaktuHukuman > 0 && dataTersimpan.waktuHukumanMulai > 0) {
+                const berlalunyaWaktu = Math.floor((Date.now() - dataTersimpan.waktuHukumanMulai) / 1000);
+                const sisa = dataTersimpan.sisaWaktuHukuman - berlalunyaWaktu;
+                
+                if (sisa > 0) {
+                    window.sisaWaktuHukuman = sisa;
+                    document.getElementById('layar-penalti').classList.remove('hidden');
+                    document.getElementById('timer-penalti').textContent = sisa;
+                    
+                    window.hukumanInterval = setInterval(() => {
+                        window.sisaWaktuHukuman--;
+                        document.getElementById('timer-penalti').textContent = window.sisaWaktuHukuman;
+                        if (window.sisaWaktuHukuman <= 0) {
+                            clearInterval(window.hukumanInterval);
+                            document.getElementById('layar-penalti').classList.add('hidden');
+                        }
+                        simpanDataKeStorage();
+                    }, 1000);
+                }
+            }
+
+            // Load Soal
+            let namaFileSoal = `soal_tka_gabungan_${kelas}.js`;
+            const scriptSoal = document.createElement('script');
+            scriptSoal.src = namaFileSoal; 
+
+            scriptSoal.onload = () => {
+                setTimeout(() => {
+                    if (window.daftarSoal && Array.isArray(window.daftarSoal) && window.daftarSoal.length > 0) {
+                        mulaiUjian();
+                        buatNavigasiSoal();
+                        tampilkanSoal(currentIndex);
+                    }
+                }, 100);
+            };
+            document.body.appendChild(scriptSoal);
+        }
+    };
+
+    // ==================================================
+    // 📝 4. RENDER SOAL & NAVIGASI
+    // ==================================================
+
+    function buatNavigasiSoal() {
+        questionNav.innerHTML = '';
+        window.daftarSoal.forEach((soal) => {
+            if (soal.tipe === 'INFO' || soal.id === 99) return;
+
+            const navItem = document.createElement('div');
+            navItem.className = 'nav-item unanswered';
+            navItem.textContent = soal.id;
+            navItem.onclick = () => {
+                const posisi = window.daftarSoal.findIndex(s => s.id === soal.id);
+                if(posisi !== -1) tampilkanSoal(posisi);
+            };
+            questionNav.appendChild(navItem);
+        });
+    }
+
+    window.konfirmasiSelesai = function() {
+        window.isConfirming = true; // Matikan detektor kecurangan saat dialog konfirmasi aktif
+        const yakin = confirm("⚠️ APAKAH KAMU YAKIN INGIN MENGAKHIRI UJIAN?\n\nPastikan semua soal telah dijawab dengan teliti.\nSetelah menekan 'OK', jawaban akan dikirim dan tidak bisa diubah lagi.");
+        window.isConfirming = false;
+        
+        if (yakin) {
+            tampilkanHasil(); 
+        }
+    };
+
+    function tampilkanSoal(idx) {
+        currentIndex = idx;
+        const soal = window.daftarSoal[idx];
+
+        if (soal.tipe === 'INFO') {
+            pageIndicator.textContent = `INFORMASI`;
+        } else {
+            const totalSoal = window.daftarSoal.filter(s => s.tipe !== 'INFO' && s.id !== 99).length;
+            pageIndicator.textContent = `Soal ${soal.id} dari ${totalSoal}`;
+        }
+
+        let htmlSoal = '';
+
+        if (soal.tipe === 'INFO') {
+            htmlSoal = `
+                <div class="qno" style="margin-top: 70px;">
+                    <span>INFORMASI</span>
+                </div>
+                <div class="question">${soal.soal}</div>
+                <div style="height: 50px;"></div>
+            `;
+        } else {
+            htmlSoal = `
+                <div class="qno" style="margin-top: 70px;">
+                    <span>Soal Nomor ${soal.id}</span>
+                </div>
+                <div class="question">${soal.soal}</div>
+            `;
+
+            if(soal.gambar) {
+                htmlSoal += `<img src="${soal.gambar}" alt="Gambar Soal" style="max-width:100%; border-radius:8px; margin: 8px 0;">`;
+            }
+
+            if(soal.tipe === 'PG') {
+                htmlSoal += `<div class="choices">`;
+                soal.pilihan.forEach((pil, noPil) => {
+                    const huruf = String.fromCharCode(65 + noPil);
+                    const terpilih = jawabanSiswa[idx] === huruf ? 'selected' : '';
+                    htmlSoal += `
+                        <label class="choice ${terpilih}">
+                            <input type="radio" name="jawaban${idx}" value="${huruf}" 
+                                ${jawabanSiswa[idx] === huruf ? 'checked' : ''} 
+                                onchange="simpanJawaban(${idx}, '${huruf}')">
+                            ${pil}
+                        </label>
+                    `;
+                });
+                htmlSoal += `</div>`;
+            } 
+            else if(soal.tipe === 'PGK') {
+                htmlSoal += `<div class="choices">`;
+                soal.pilihan.forEach((pil, noPil) => {
+                    const terpilih = jawabanSiswa[idx]?.includes(noPil) ? 'selected' : '';
+                    htmlSoal += `
+                        <label class="choice ${terpilih}">
+                            <input type="checkbox" name="jawaban${idx}" value="${noPil}" 
+                                ${jawabanSiswa[idx]?.includes(noPil) ? 'checked' : ''} 
+                                onchange="tambahJawabanPGK(${idx}, ${noPil}, this.checked)">
+                            ${pil}
+                        </label>
+                    `;
+                });
+                htmlSoal += `</div>`;
+            }
+            else if(soal.tipe === 'BS') {
+                htmlSoal += `
+                <div style="overflow-x: auto; margin-top: 15px;">
+                    <table class="bs-table" style="width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;">
+                        <thead style="background-color: #f0f4f8; border-bottom: 1px solid #e2e8f0;">
+                            <tr>
+                                <th style="padding: 15px; text-align: left; color: #0056b3; font-weight: bold;">Pernyataan</th>
+                                <th style="padding: 15px; text-align: center; color: #0056b3; font-weight: bold; width: 100px;">BENAR</th>
+                                <th style="padding: 15px; text-align: center; color: #0056b3; font-weight: bold; width: 100px;">SALAH</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+                
+                soal.pilihan.forEach((p, noPernyataan) => {
+                    const jawabanSaatIni = (jawabanSiswa[idx] && jawabanSiswa[idx][noPernyataan]) ? jawabanSiswa[idx][noPernyataan] : null;
+                    
+                    htmlSoal += `
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 15px; color: #334155; vertical-align: middle;">${p}</td>
+                            <td style="padding: 15px; text-align: center; vertical-align: middle;">
+                                <input type="radio" name="jawaban_${idx}_${noPernyataan}" value="B" 
+                                    ${jawabanSaatIni === 'B' ? 'checked' : ''} 
+                                    style="transform: scale(1.5); cursor: pointer;"
+                                    onchange="simpanJawabanBS(${idx}, ${noPernyataan}, 'B')">
+                            </td>
+                            <td style="padding: 15px; text-align: center; vertical-align: middle;">
+                                <input type="radio" name="jawaban_${idx}_${noPernyataan}" value="S" 
+                                    ${jawabanSaatIni === 'S' ? 'checked' : ''} 
+                                    style="transform: scale(1.5); cursor: pointer;"
+                                    onchange="simpanJawabanBS(${idx}, ${noPernyataan}, 'S')">
+                            </td>
+                        </tr>
+                    `;
+                });
+                
+                htmlSoal += `</tbody></table></div>`;
+            }
+        }
+
+        quizArea.innerHTML = htmlSoal;
+
+        // Update indikator warna kotak navigasi
+        document.querySelectorAll('.nav-item').forEach(el => {
+            const nomorDiKotak = parseInt(el.textContent);
+            el.classList.remove('active', 'answered', 'unanswered');
+            el.classList.add('unanswered'); 
+
+            const posisiAsli = window.daftarSoal.findIndex(s => s.id === nomorDiKotak);
+
+            if (posisiAsli === idx) {
+                el.classList.add('active');
+            }
+            if (posisiAsli !== -1 && jawabanSiswa[posisiAsli] !== undefined && jawabanSiswa[posisiAsli] !== '') {
+                if (Array.isArray(jawabanSiswa[posisiAsli]) && jawabanSiswa[posisiAsli].length === 0) return;
+                el.classList.remove('unanswered');
+                el.classList.add('answered');
+            }
+        });
+
+        if (window.MathJax) {
+            MathJax.typesetPromise && MathJax.typesetPromise([quizArea]);
+        }
+
+        prevBtn.disabled = idx === 0;
+        
+        if(idx === window.daftarSoal.length - 1) {
+            nextBtn.textContent = 'SELESAI & NILAI';
+            nextBtn.onclick = konfirmasiSelesai; 
+        } else {
+            nextBtn.textContent = 'Selanjutnya';
+            nextBtn.onclick = () => tampilkanSoal(idx + 1);
+        }
+
+        simpanDataKeStorage();
+    }
+
+    function simpanJawaban(idx, jawaban) {
+        jawabanSiswa[idx] = jawaban;
+        tampilkanSoal(currentIndex); 
+    }
+
+    function tambahJawabanPGK(idx, nilai, dicek) {
+        if(!jawabanSiswa[idx]) jawabanSiswa[idx] = [];
+        if(dicek) {
+            if(!jawabanSiswa[idx].includes(nilai)) jawabanSiswa[idx].push(nilai);
+        } else {
+            jawabanSiswa[idx] = jawabanSiswa[idx].filter(n => n !== nilai);
+        }
+        tampilkanSoal(currentIndex);
+    }
+
+    function simpanJawabanBS(idx, noPernyataan, jawaban) {
+        if (!jawabanSiswa[idx] || !Array.isArray(jawabanSiswa[idx])) {
+            jawabanSiswa[idx] = [];
+        }
+        jawabanSiswa[idx][noPernyataan] = jawaban;
+        tampilkanSoal(currentIndex);
+    }
+
+    // ==================================================
+// 📊 5. HITUNG SKOR & HASIL AKHIR (3 SUBTES)
+// ==================================================
+
+function hitungSkor() {
+    let hasil = {
+        totalBenar: 0, totalNilai: 0, maksNilai: 0, totalSoalValid: 0,
+        indoBenar: 0, indoSkor: 0, indoMaks: 0, indoTotalSoal: 0,
+        mtkBenar: 0, mtkSkor: 0, mtkMaks: 0, mtkTotalSoal: 0,
+        ipaBenar: 0, ipaSkor: 0, ipaMaks: 0, ipaTotalSoal: 0
+    };
+
+    window.daftarSoal.forEach((soal, idx) => {
+        if (soal.tipe === 'INFO' || soal.id === 99) return; 
+        hasil.totalSoalValid++;
+        
+        let nilaiSoal = 0;
+        if (soal.rentangNilai && typeof soal.rentangNilai === 'string') {
+            const pecah = soal.rentangNilai.split(/[-–]/); 
+            nilaiSoal = parseInt(pecah[1]) || 0;
+        }
+        hasil.maksNilai += nilaiSoal;
+
+        const kategori = (soal.kategori || '').toUpperCase().trim();
+        const isIndo = ['BAHASA INDONESIA', 'BAHASA_INDONESIA', 'LITERASI', 'B. INDONESIA', 'B.INDONESIA'].includes(kategori);
+        const isMtk = ['MATEMATIKA', 'NUMERASI', 'MTK'].includes(kategori);
+        const isIpa = ['IPA', 'ILMU PENGETAHUAN ALAM'].includes(kategori);
+
+        if (isIndo) {
+            hasil.indoTotalSoal++;
+            hasil.indoMaks += nilaiSoal;
+        } else if (isMtk) {
+            hasil.mtkTotalSoal++;
+            hasil.mtkMaks += nilaiSoal;
+        } else if (isIpa) {
+            hasil.ipaTotalSoal++;
+            hasil.ipaMaks += nilaiSoal;
+        }
+
+        let skorItem = 0;
+        let isBenarPenuh = false;
+        
+        if (soal.tipe === 'PG') {
+            if (jawabanSiswa[idx] === soal.kunciJawaban) {
+                skorItem = nilaiSoal;
+                isBenarPenuh = true;
+            }
+        } 
+        else if (soal.tipe === 'PGK') {
+            const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
+            const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
+            const totalPilihan = soal.pilihan ? soal.pilihan.length : 0;
+            
+            if (totalPilihan > 0) {
+                let aksiBenar = 0;
+                for (let i = 0; i < totalPilihan; i++) {
+                    const userCentang = jawabanUser.includes(i);
+                    const kunciCentang = kunci.includes(i);
+                    if (userCentang === kunciCentang) aksiBenar++;
+                }
+                skorItem = (aksiBenar / totalPilihan) * nilaiSoal;
+                if (aksiBenar === totalPilihan) isBenarPenuh = true;
+            }
+        } 
+        else if (soal.tipe === 'BS') {
+            const jawabanUser = Array.isArray(jawabanSiswa[idx]) ? jawabanSiswa[idx] : [];
+            const kunci = Array.isArray(soal.kunciJawaban) ? soal.kunciJawaban : [];
+            const totalPernyataan = kunci.length;
+            
+            if (totalPernyataan > 0) {
+                let tebakanBenar = 0;
+                for (let i = 0; i < totalPernyataan; i++) {
+                    if (jawabanUser[i] === kunci[i]) tebakanBenar++;
+                }
+                skorItem = (tebakanBenar / totalPernyataan) * nilaiSoal;
+                if (tebakanBenar === totalPernyataan) isBenarPenuh = true;
+            }
+        }
+
+        if (skorItem > 0) {
+            skorItem = Math.round(skorItem * 100) / 100;
+            hasil.totalNilai += skorItem;
+            
+            if (isBenarPenuh) hasil.totalBenar++;
+            
+            if (isIndo) {
+                if (isBenarPenuh) hasil.indoBenar++;
+                hasil.indoSkor += skorItem;
+            } else if (isMtk) {
+                if (isBenarPenuh) hasil.mtkBenar++;
+                hasil.mtkSkor += skorItem;
+            } else if (isIpa) {
+                if (isBenarPenuh) hasil.ipaBenar++;
+                hasil.ipaSkor += skorItem;
+            }
+        }
+    });
+    
+    let indoMaksAsli = hasil.indoMaks;
+    let mtkMaksAsli = hasil.mtkMaks;
+    let ipaMaksAsli = hasil.ipaMaks;
+
+    // Rumus Skala Minimal 20 dan Maksimal 100
+    hasil.indoSkor = indoMaksAsli > 0 ? Math.round(20 + ((hasil.indoSkor / indoMaksAsli) * 80)) : 20;
+    hasil.mtkSkor = mtkMaksAsli > 0 ? Math.round(20 + ((hasil.mtkSkor / mtkMaksAsli) * 80)) : 20;
+    hasil.ipaSkor = ipaMaksAsli > 0 ? Math.round(20 + ((hasil.ipaSkor / ipaMaksAsli) * 80)) : 20;
+
+    hasil.indoMaks = 100;
+    hasil.mtkMaks = 100;
+    hasil.ipaMaks = 100;
+    
+    return hasil;
+}
+
+// ==================================================
+// 🚀 6. FUNGSI KIRIM DATA SPREADSHEET (3 SUBTES)
+// ==================================================
+
+async function kirimKeSpreadsheet(h) {
+    const statusBox = document.getElementById('statusPengiriman');
+    
+    const detikTerlewat = Math.floor((Date.now() - (window.waktuMulaiUjian || Date.now())) / 1000);
+    const jam = Math.floor(detikTerlewat / 3600);
+    const menit = Math.floor((detikTerlewat % 3600) / 60);
+    const detik = detikTerlewat % 60;
+    const durasiFormatted = `${jam.toString().padStart(2, '0')}:${menit.toString().padStart(2, '0')}:${detik.toString().padStart(2, '0')}`;
+
+    const jawabanRapi = {};
+    if (window.daftarSoal && Array.isArray(window.daftarSoal)) {
+        window.daftarSoal.forEach((soal, idx) => {
+            if (soal.tipe === 'INFO' || soal.id === 99) return;
+
+            const nomorSoal = soal.id;
+            const rawJwb = jawabanSiswa[idx];
+
+            if (rawJwb === undefined || rawJwb === null || rawJwb === '') {
+                jawabanRapi[nomorSoal] = "";
+                return;
+            }
+
+            if (soal.tipe === 'PG') {
+                jawabanRapi[nomorSoal] = rawJwb;
+            } else if (soal.tipe === 'PGK') {
+                if (Array.isArray(rawJwb)) {
+                    const huruf = rawJwb
+                        .sort((a, b) => a - b)
+                        .map(num => String.fromCharCode(65 + num)); 
+                    jawabanRapi[nomorSoal] = huruf.join(", ");
+                } else {
+                    jawabanRapi[nomorSoal] = "";
+                }
+            } else if (soal.tipe === 'BS') {
+                if (Array.isArray(rawJwb)) {
+                    const bsText = rawJwb.map(val => val || "-");
+                    jawabanRapi[nomorSoal] = bsText.join(", ");
+                } else {
+                    jawabanRapi[nomorSoal] = "";
+                }
+            }
+        });
+    }
+
+    // Perhitungan rata-rata skor dinamis berdasarkan subtes yang aktif
+    let jumlahSubtes = 0;
+    let akumulasiSkor = 0;
+
+    if (h.indoTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.indoSkor; }
+    if (h.mtkTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.mtkSkor; }
+    if (h.ipaTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.ipaSkor; }
+
+    const totalSkorRata = jumlahSubtes > 0 ? Math.round(akumulasiSkor / jumlahSubtes) : 0;
+
+    const payload = {
+        namaSheet: "Rekap_TKA_6_SD",
+        nama: document.getElementById('nama')?.value || (ambilDataDariStorage()?.nama) || "",
+        kelas: document.getElementById('kelas')?.value || (ambilDataDariStorage()?.kelas) || "",
+        asal: document.getElementById('asal')?.value || (ambilDataDariStorage()?.asal) || "",
+        nomor: document.getElementById('nomor')?.value || (ambilDataDariStorage()?.nomor) || "",
+        mapel: document.getElementById('mapel')?.value || (ambilDataDariStorage()?.mapel) || "",
+        skorIndo: h.indoSkor,
+        skorMtk: h.mtkSkor,
+        skorIpa: h.ipaSkor,
+        totalSkor: totalSkorRata,
+        pelanggaran: window.violationCount || 0,
+        durasi: durasiFormatted,
+        jawaban: jawabanRapi
+    };
+
+    try {
+        if (statusBox) {
+            statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menyimpan hasil ujian ke server...</span>`;
+        }
+
+        const response = await fetch(URL_GAS, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
+
+        const resData = await response.json();
+
+        if (resData.status === "ok") {
+            if (statusBox) {
+                statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
+            }
+        } else if (resData.status === "sudah_terkirim") {
+            if (statusBox) {
+                statusBox.innerHTML = `<span style="color: #d97706; font-weight: bold;">⚠️ Data ujian Anda sudah pernah terkirim sebelumnya.</span>`;
+            }
+        } else {
+            throw new Error(resData.pesan || "Gagal menyimpan data.");
+        }
+
+    } catch (err) {
+        console.error("Error kirim data:", err);
+        if (statusBox) {
+            statusBox.innerHTML = `
+                <div style="color: #cc0000; font-weight: bold; margin-bottom: 8px;">
+                    ❌ Gagal terhubung ke server.
+                </div>
+                <button onclick="kirimKeSpreadsheet(hitungSkor())" style="padding: 6px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                    🔄 Coba Kirim Ulang Data
+                </button>
+            `;
+        }
+    }
+}
+
+function tampilkanHasil() {
+    if (timerInterval) clearInterval(timerInterval);
+
+    const h = hitungSkor();
+    const adaIPA = h.ipaTotalSoal > 0;
+    
+    quizArea.innerHTML = `
+        <div class="result-box">
+            <div id="statusPengiriman" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-size: 14px;">
+                ⏳ Mempersiapkan pengiriman data...
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center; flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1; min-width: 120px; border-right: 1px solid #e2e8f0; padding: 0 5px;">
+                    <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">B. Indonesia</div>
+                    <div style="font-size: 26px; font-weight: 900; color: #0056b3; margin: 5px 0;">
+                        ${h.indoSkor} <span style="font-size: 12px; color: #94a3b8;">/ ${h.indoMaks}</span>
+                    </div>
+                    <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
+                        ✅ ${h.indoBenar}/${h.indoTotalSoal} Soal
+                    </div>
+                </div>
+                
+                <div style="flex: 1; min-width: 120px; border-right: ${adaIPA ? '1px solid #e2e8f0' : 'none'}; padding: 0 5px;">
+                    <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">Matematika</div>
+                    <div style="font-size: 26px; font-weight: 900; color: #d97706; margin: 5px 0;">
+                        ${h.mtkSkor} <span style="font-size: 12px; color: #94a3b8;">/ ${h.mtkMaks}</span>
+                    </div>
+                    <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
+                        ✅ ${h.mtkBenar}/${h.mtkTotalSoal} Soal
+                    </div>
+                </div>
+
+                ${adaIPA ? `
+                <div style="flex: 1; min-width: 120px; padding: 0 5px;">
+                    <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">IPA</div>
+                    <div style="font-size: 26px; font-weight: 900; color: #059669; margin: 5px 0;">
+                        ${h.ipaSkor} <span style="font-size: 12px; color: #94a3b8;">/ ${h.ipaMaks}</span>
+                    </div>
+                    <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
+                        ✅ ${h.ipaBenar}/${h.ipaTotalSoal} Soal
+                    </div>
+                </div>
+                ` : ''}
+            </div>
+
+            <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
+
+            <div class="result-details">
+                <div class="result-item correct">
+                    <span class="result-val">${h.totalBenar}</span>
+                    <span>Total Benar Keseluruhan</span>
+                </div>
+                <div class="result-item wrong">
+                    <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
+                    <span>Total Salah Keseluruhan</span>
+                </div>
+            </div>
+            
+            <button onclick="kembaliKeAwal()" style="margin-top: 25px; padding: 12px 20px; background: #0056b3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s;">
+                🏠 Kembali ke Halaman Awal
+            </button>
+        </div>
+    `;
+    
+    controls.style.display = 'none';
+    questionNav.style.display = 'none';
+    
+    const timerBadge = document.getElementById('timerBadge');
+    if (timerBadge) {
+        timerBadge.classList.add('hidden');
+    }
+    
+    sessionStorage.setItem('ujianSelesai', 'true');
+    bersihkanDataUjian(); 
+
+    kirimKeSpreadsheet(h);
+}
+
+window.kembaliKeAwal = function() {
+    bersihkanDataUjian();
+    sessionStorage.removeItem('ujianSelesai'); 
+    window.location.reload(); 
+};
+
+prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
+
+// ==================================================
+// 🚨 7. SISTEM DETEKSI PELANGGARAN & SHOCK ALERT
+// ==================================================
+
+const styleAlert = document.createElement('style');
+styleAlert.innerHTML = `
+    .peringatan-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        backdrop-filter: blur(5px);
+    }
+    .peringatan-box {
+        background: #FFD700;
+        border: 6px solid #CC0000;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 450px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(204, 0, 0, 0.9);
+        animation: shakeAlert 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    }
+    .peringatan-icon { font-size: 60px; margin-bottom: 10px; line-height: 1; }
+    .peringatan-title {
+        color: #CC0000; font-size: 26px; font-weight: 900;
+        text-transform: uppercase; margin-bottom: 15px;
+        font-family: 'Arial Black', Impact, sans-serif;
+        text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+    .peringatan-text { color: #000; font-size: 16px; font-weight: 700; margin-bottom: 25px; line-height: 1.5; }
+    .peringatan-angka { color: #CC0000; font-size: 24px; font-weight: 900; background: #000; padding: 2px 8px; border-radius: 5px; }
+    .peringatan-btn {
+        background: #000; color: #FFD700; border: 2px solid #000;
+        padding: 12px 20px; font-size: 14px; font-weight: bold;
+        border-radius: 8px; cursor: pointer; transition: 0.2s;
+        text-transform: uppercase; width: 100%;
+    }
+    .peringatan-btn:hover { background: #CC0000; color: #FFF; border-color: #CC0000; }
+    @keyframes shakeAlert {
+        10%, 90% { transform: translate3d(-2px, 0, 0); }
+        20%, 80% { transform: translate3d(4px, 0, 0); }
+        30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
+        40%, 60% { transform: translate3d(8px, 0, 0); }
+    }
+`;
+document.head.appendChild(styleAlert);
+
+const alertOverlay = document.createElement('div');
+alertOverlay.className = 'peringatan-overlay';
+alertOverlay.id = 'customPeringatan';
+alertOverlay.innerHTML = `
+    <div class="peringatan-box">
+        <div class="peringatan-icon">🚨</div>
+        <div class="peringatan-title">PERINGATAN KERAS!</div>
+        <div class="peringatan-text" id="peringatanText"></div>
+        <button class="peringatan-btn" onclick="tutupPeringatan()">Saya Mengerti & Tidak Akan Mengulangi</button>
+    </div>
+`;
+document.body.appendChild(alertOverlay);
+
+window.tutupPeringatan = function() {
+    document.getElementById('customPeringatan').style.display = 'none';
+};
+
+function catatPelanggaran() {
+    if (sessionStorage.getItem('ujianSelesai') === 'true') return;
+    if (window.isConfirming) return;
+
+    if (quizArea && quizArea.style.display === 'block') {
+        window.violationCount = (window.violationCount || 0) + 1;
+        
+        const elemenPelanggaran = document.getElementById('violationCount');
+        if (elemenPelanggaran) {
+            elemenPelanggaran.textContent = window.violationCount;
+        }
+        
+        simpanDataKeStorage();
+
+        const textEl = document.getElementById('peringatanText');
+        textEl.innerHTML = `Kamu terdeteksi meninggalkan layar ujian sebanyak <span class="peringatan-angka">${window.violationCount} KALI</span>.<br><br>Aktivitas ini terus dicatat oleh sistem. Harap segera kembali fokus pada halaman ujian!`;
+        
+        const modalPeringatan = document.getElementById('customPeringatan');
+        modalPeringatan.style.display = 'flex';
+        
+        const box = modalPeringatan.querySelector('.peringatan-box');
+        box.style.animation = 'none';
+        setTimeout(() => box.style.animation = '', 10);
+    }
+}
+
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        catatPelanggaran();
+    }
+});
+
+window.addEventListener('blur', () => {
+    setTimeout(() => {
+        if (document.activeElement !== document.body) {
+            const customAlert = document.getElementById('customPeringatan');
+            if (customAlert && !customAlert.contains(document.activeElement)) {
+                catatPelanggaran();
+            }
+        }
+    }, 150);
+});
+</script>
+
+</body>
+</html>
