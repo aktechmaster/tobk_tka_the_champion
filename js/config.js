@@ -2,7 +2,7 @@
 // 🚀 KONFIGURASI & VARIABEL GLOBAL
 // ==================================================
 
-const URL_GAS = "https://script.google.com/macros/s/AKfycbz_XXXXXXXXXXXXXX_REPLACE_WITH_YOUR_ID/exec";
+const URL_GAS = "https://script.google.com/macros/s/AKfycbyNOvK475pqBlFmUTj4GiYiqeJvesUhVtq1aLZ8PVROlH7rIMcfhC1kpRKyPxwQddefEg/exec";
 
 const passwords = {
     '12_SMA': 'TKASMA2026',
