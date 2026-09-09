@@ -1,4 +1,4 @@
-window.daftarSoal = [
+const soalTKA = [
     // ========================================
     // SOAL NOMOR 1 (PG) - Tingkat Kesulitan: Sedang
     // ========================================
