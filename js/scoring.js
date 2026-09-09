@@ -10,37 +10,41 @@ function hitungSkor() {
         totalPoin: 0, totalSoalValid: 0, totalBenar: 0
     };
 
-    if (!window.daftarSoal || !window.jawabanSiswa) return result;
+    // Ambil daftar soal & jawaban secara aman dari scope global mana pun
+    const listSoal = window.daftarSoal || (typeof daftarSoal !== 'undefined' ? daftarSoal : []);
+    const listJwb = window.jawabanSiswa || (typeof jawabanSiswa !== 'undefined' ? jawabanSiswa : []);
+
+    if (!listSoal || listSoal.length === 0) return result;
 
     const mapHurufKeAngka = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4 };
     const mapAngkaKeHuruf = ['A', 'B', 'C', 'D', 'E'];
 
-    // Helper untuk normalisasi nilai Benar/Salah (True/False/Benar/Salah/1/0)
+    // Normalisasi logika Benar/Salah (Mendukung B, S, True, False, Benar, Salah, 1, 0)
     const isTrueValue = (val) => {
         if (typeof val === 'boolean') return val;
         if (typeof val === 'number') return val === 1;
         if (typeof val === 'string') {
             const clean = val.toUpperCase().trim();
-            return ['TRUE', 'BENAR', 'TEPAT', '1', 'YES', 'T'].includes(clean);
+            return ['TRUE', 'BENAR', 'TEPAT', '1', 'YES', 'T', 'B'].includes(clean);
         }
         return false;
     };
 
-    window.daftarSoal.forEach((soal, idx) => {
+    listSoal.forEach((soal, idx) => {
         if (soal.tipe === 'INFO' || soal.id === 99) return;
 
         const sub = (soal.kategori || soal.subtes || '').toLowerCase();
 
-        // Ambil jawaban siswa (dukung akses via ID Soal maupun Indeks Array)
+        // Ambil jawaban siswa (dukung ID Soal & Indeks Array)
         let jwb = undefined;
-        if (window.jawabanSiswa[soal.id] !== undefined) {
-            jwb = window.jawabanSiswa[soal.id];
-        } else if (window.jawabanSiswa[idx] !== undefined) {
-            jwb = window.jawabanSiswa[idx];
+        if (listJwb[soal.id] !== undefined) {
+            jwb = listJwb[soal.id];
+        } else if (listJwb[idx] !== undefined) {
+            jwb = listJwb[idx];
         }
 
         const kunci = soal.kunciJawaban !== undefined ? soal.kunciJawaban : soal.kunci;
-        let poinSoal = 0; // Rentang poin per soal: 0.0 - 1.0
+        let poinSoal = 0; 
 
         if (jwb !== undefined && jwb !== null && jwb !== "") {
             
@@ -49,7 +53,6 @@ function hitungSkor() {
                 let jwbNorm = jwb;
                 let kunciNorm = kunci;
 
-                // Konversi huruf ke indeks angka atau sebaliknya
                 if (typeof kunci === 'string' && isNaN(kunci)) {
                     kunciNorm = kunci.toUpperCase().trim();
                     if (typeof jwb === 'number') jwbNorm = mapAngkaKeHuruf[jwb] || jwb;
@@ -74,7 +77,7 @@ function hitungSkor() {
                 }
             } 
             
-            // 2. PENSKORAN PGK (Pilihan Ganda Kompleks - Proporsional)
+            // 2. PENSKORAN PGK (Pilihan Ganda Kompleks)
             else if (soal.tipe === 'PGK') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
                     const kunciSet = kunci.map(k => (typeof k === 'string' && mapHurufKeAngka[k.toUpperCase().trim()] !== undefined) ? mapHurufKeAngka[k.toUpperCase().trim()] : parseInt(k, 10));
@@ -88,7 +91,7 @@ function hitungSkor() {
                 }
             } 
             
-            // 3. PENSKORAN BS (Benar / Salah / True / False - Proporsional)
+            // 3. PENSKORAN BS (Benar / Salah)
             else if (soal.tipe === 'BS') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
                     let barisBenar = 0;
@@ -110,6 +113,7 @@ function hitungSkor() {
 
         result.totalPoin += poinSoal;
         result.totalSoalValid++;
+
         if (poinSoal === 1) result.totalBenar++;
 
         // Pengelompokan Subtes
@@ -130,7 +134,7 @@ function hitungSkor() {
     result.ingBenar  = Math.round(result.ingPoin * 10) / 10;
     result.mtkBenar  = Math.round(result.mtkPoin * 10) / 10;
 
-    // Konversi Skor Skala 20-100
+    // Konversi Skor Skala 20-100 (Skor minimal 20 jika ada soal)
     if (result.indoTotalSoal > 0) result.indoSkor = Math.round(20 + (result.indoPoin / result.indoTotalSoal) * 80);
     if (result.ingTotalSoal > 0)  result.ingSkor  = Math.round(20 + (result.ingPoin / result.ingTotalSoal) * 80);
     if (result.mtkTotalSoal > 0)  result.mtkSkor  = Math.round(20 + (result.mtkPoin / result.mtkTotalSoal) * 80);
