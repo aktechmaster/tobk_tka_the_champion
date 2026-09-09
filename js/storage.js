@@ -3,14 +3,17 @@
 // ==================================================
 
 function simpanDataKeStorage() {
+    // Jangan simpan data jika ujian sudah dinyatakan selesai
+    if (sessionStorage.getItem('ujianSelesai') === 'true') return;
+
     const dataUjian = {
         nama: document.getElementById('nama')?.value || '',
         kelas: document.getElementById('kelas')?.value || '',
         asal: document.getElementById('asal')?.value || '',
         nomor: document.getElementById('nomor')?.value || '',
         mapel: document.getElementById('mapel')?.value || '',
-        jawabanSiswa: jawabanSiswa,
-        raguRagu: raguRagu,
+        jawabanSiswa: typeof jawabanSiswa !== 'undefined' ? jawabanSiswa : [],
+        raguRagu: typeof raguRagu !== 'undefined' ? raguRagu : [],
         waktuMulaiUjian: window.waktuMulaiUjian || Date.now(),
         violationCount: window.violationCount || 0
     };
@@ -24,4 +27,5 @@ function ambilDataDariStorage() {
 
 function bersihkanDataUjian() {
     localStorage.removeItem('cbt_tka_sd_data');
+    localStorage.clear();
 }
