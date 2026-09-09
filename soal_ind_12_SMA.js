@@ -1,5 +1,4 @@
 window.soalIND = [
-    const soalList = [
   {
     id: 1,
     kategori: "BAHASA INDONESIA",
