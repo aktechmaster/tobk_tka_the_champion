@@ -5,6 +5,7 @@
 const URL_GAS = "https://script.google.com/macros/s/AKfycbz_XXXXXXXXXXXXXX_REPLACE_WITH_YOUR_ID/exec";
 
 const passwords = {
+    '12_SMA': 'TKASMA2026',
     '6_SD': 'TKA6SD2026',
     '5_SD': 'TKA5SD2026'
 };
