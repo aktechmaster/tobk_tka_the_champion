@@ -20,11 +20,16 @@ function tampilkanSoal(index) {
     currentIndex = index;
     const soal = window.daftarSoal[index];
     
+    // Fallback pencocokan properti dari file soal
+    const daftarOpsi = soal.opsi || soal.pilihan || [];
+    const teksPertanyaan = soal.pertanyaan || soal.soal || soal.teks || '';
+    const namaSubtes = soal.subtes || soal.kategori || 'Umum';
+
     let htmlOpsi = '';
 
     if (soal.tipe === 'PG') {
         htmlOpsi = '<div class="opsi-container">';
-        soal.opsi.forEach((opsi, idx) => {
+        daftarOpsi.forEach((opsi, idx) => {
             const hurufOpsi = String.fromCharCode(65 + idx);
             const isChecked = jawabanSiswa[currentIndex] === hurufOpsi ? 'checked' : '';
             htmlOpsi += `
@@ -38,7 +43,7 @@ function tampilkanSoal(index) {
     } else if (soal.tipe === 'PGK') {
         const currentAnswers = Array.isArray(jawabanSiswa[currentIndex]) ? jawabanSiswa[currentIndex] : [];
         htmlOpsi = '<div class="opsi-container"><p><i>* Pilihan Jawaban Kompleks (Bisa pilih lebih dari satu):</i></p>';
-        soal.opsi.forEach((opsi, idx) => {
+        daftarOpsi.forEach((opsi, idx) => {
             const isChecked = currentAnswers.includes(idx) ? 'checked' : '';
             htmlOpsi += `
                 <label class="opsi-item">
@@ -50,6 +55,7 @@ function tampilkanSoal(index) {
         htmlOpsi += '</div>';
     } else if (soal.tipe === 'BS') {
         const currentAnswers = Array.isArray(jawabanSiswa[currentIndex]) ? jawabanSiswa[currentIndex] : [];
+        const daftarPernyataan = soal.pernyataan || [];
         htmlOpsi = `
             <table class="tabel-bs">
                 <thead>
@@ -61,7 +67,7 @@ function tampilkanSoal(index) {
                 </thead>
                 <tbody>
         `;
-        soal.pernyataan.forEach((p, idx) => {
+        daftarPernyataan.forEach((p, idx) => {
             const val = currentAnswers[idx] || '';
             htmlOpsi += `
                 <tr>
@@ -71,15 +77,15 @@ function tampilkanSoal(index) {
                 </tr>
             `;
         });
-        htmlOpsi += 'tbody></table>';
+        htmlOpsi += '</tbody></table>';
     } else if (soal.tipe === 'INFO') {
-        htmlOpsi = `<div style="background:#e0f2fe; padding:15px; border-radius:8px;">📌 <b>INFORMASI SUBTES:</b> ${soal.teks}</div>`;
+        htmlOpsi = `<div style="background:#e0f2fe; padding:15px; border-radius:8px;">📌 <b>INFORMASI SUBTES:</b> ${teksPertanyaan}</div>`;
     }
 
     soalContainer.innerHTML = `
         <div class="soal-box">
-            <h4>Soal No. ${soal.id} <span style="font-size:12px; font-weight:normal; color:#64748b;">[${soal.subtes || 'Umum'}]</span></h4>
-            <p style="margin: 15px 0;">${soal.pertanyaan || soal.teks || ''}</p>
+            <h4>Soal No. ${soal.id} <span style="font-size:12px; font-weight:normal; color:#64748b;">[${namaSubtes}]</span></h4>
+            <p style="margin: 15px 0;">${teksPertanyaan}</p>
             ${htmlOpsi}
         </div>
     `;
