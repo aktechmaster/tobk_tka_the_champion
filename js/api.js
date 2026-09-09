@@ -57,7 +57,7 @@ async function kirimKeSpreadsheet(h) {
     const totalSkorRata = jumlahSubtes > 0 ? Math.round(akumulasiSkor / jumlahSubtes) : 0;
 
     const payload = {
-        namaSheet: "Rekap_TKA_6_SD",
+        namaSheet: "Rekap_TKA_12_SMA",
         nama: document.getElementById('nama')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.nama : "") || "",
         kelas: document.getElementById('kelas')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.kelas : "") || "",
         asal: document.getElementById('asalSekolah')?.value || document.getElementById('asal')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.asal : "") || "",
