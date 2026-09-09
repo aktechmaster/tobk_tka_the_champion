@@ -1,45 +1,32 @@
-// ==================================================
-// 🎮 MAIN CONTROLLER & INITIALIZATION
-// ==================================================
-
-// Event Navigation Click Listener
-prevBtn.onclick = () => tampilkanSoal(currentIndex - 1);
-nextBtn.onclick = () => tampilkanSoal(currentIndex + 1);
-
-function konfirmasiSelesai() {
-    window.isConfirming = true;
-    if (confirm("Apakah Anda yakin ingin menyelesaikan ujian ini? Jawaban tidak dapat diubah setelah dikirim.")) {
-        tampilkanHasil();
-    }
-    window.isConfirming = false;
-}
-
-function mulaiUjian(e) {
-    e.preventDefault();
-
-    const kelas = document.getElementById('kelas').value;
-    const passwordInput = document.getElementById('password').value.trim();
-
-    if (passwords[kelas] && passwordInput !== passwords[kelas]) {
-        alert("⚠️ Password / Token Ujian Salah!");
-        return;
-    }
-
-    window.waktuMulaiUjian = Date.now();
-    window.violationCount = 0;
-    
-    simpanDataKeStorage();
-    muatSoalDanMulai(kelas, false);
-}
-
 function muatSoalDanMulai(kelas, isRestored) {
-    const scriptSoal = document.createElement('script');
-    scriptSoal.src = `soal_tka_gabungan_${kelas}.js`;
-    
-    scriptSoal.onload = () => {
-        if (typeof soalTKA !== 'undefined') {
-            window.daftarSoal = soalTKA;
-            
+    window.soalIND = [];
+    window.soalING = [];
+    window.soalMTK = [];
+
+    const loadScript = (src) => {
+        return new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = src;
+            s.onload = resolve;
+            s.onerror = () => reject(src);
+            document.head.appendChild(s);
+        });
+    };
+
+    // Memuat 3 file soal secara berurutan: IND -> ING -> MTK
+    Promise.all([
+        loadScript(`soal_ind_${kelas}.js`),
+        loadScript(`soal_ing_${kelas}.js`),
+        loadScript(`soal_mtk_${kelas}.js`)
+    ]).then(() => {
+        // Penggabungan otomatis (Total 85 Soal)
+        window.daftarSoal = [
+            ...(window.soalIND || []),
+            ...(window.soalING || []),
+            ...(window.soalMTK || [])
+        ];
+
+        if (window.daftarSoal.length > 0) {
             if (!isRestored) {
                 jawabanSiswa = new Array(window.daftarSoal.length).fill("");
                 raguRagu = new Array(window.daftarSoal.length).fill(false);
@@ -57,42 +44,43 @@ function muatSoalDanMulai(kelas, isRestored) {
             tampilkanSoal(0);
             mulaiTimer();
         } else {
-            alert("❌ File soal tidak ditemukan atau format salah.");
+            alert("❌ File soal kosong atau format salah.");
         }
-    };
-
-    scriptSoal.onerror = () => {
-        alert(`❌ Gagal memuat file soal: soal_tka_gabungan_${kelas}.js`);
-    };
-
-    document.head.appendChild(scriptSoal);
+    }).catch((errFile) => {
+        alert(`❌ Gagal memuat file soal: ${errFile}`);
+    });
 }
 
-window.kembaliKeAwal = function() {
-    bersihkanDataUjian();
-    sessionStorage.removeItem('ujianSelesai'); 
-    window.location.reload(); 
-};
+function hitungSkor() {
+    let indoBenar = 0, indoTotal = 0;
+    let ingBenar = 0, ingTotal = 0;
+    let mtkBenar = 0, mtkTotal = 0;
 
-// Auto-Restore saat Halaman di-load
-window.addEventListener('DOMContentLoaded', () => {
-    if (sessionStorage.getItem('ujianSelesai') === 'true') {
-        tampilkanHasil();
-        return;
-    }
+    window.daftarSoal.forEach((soal, idx) => {
+        const kat = (soal.kategori || soal.subtes || '').toUpperCase();
+        const jwb = jawabanSiswa[idx];
+        const kunci = soal.kunciJawaban || soal.kunci;
+        const isCorrect = jwb === kunci;
 
-    const savedData = ambilDataDariStorage();
-    if (savedData && savedData.nama && savedData.kelas) {
-        document.getElementById('nama').value = savedData.nama;
-        document.getElementById('kelas').value = savedData.kelas;
-        document.getElementById('asal').value = savedData.asal;
-        document.getElementById('nomor').value = savedData.nomor;
-        
-        jawabanSiswa = savedData.jawabanSiswa || [];
-        raguRagu = savedData.raguRagu || [];
-        window.waktuMulaiUjian = savedData.waktuMulaiUjian || Date.now();
-        window.violationCount = savedData.violationCount || 0;
+        if (kat.includes('INDONESIA') || kat.includes('IND')) {
+            indoTotal++;
+            if (isCorrect) indoBenar++;
+        } else if (kat.includes('INGGRIS') || kat.includes('ING')) {
+            ingTotal++;
+            if (isCorrect) ingBenar++;
+        } else if (kat.includes('MATEMATIKA') || kat.includes('MTK')) {
+            mtkTotal++;
+            if (isCorrect) mtkBenar++;
+        }
+    });
 
-        muatSoalDanMulai(savedData.kelas, true);
-    }
-});
+    const totalBenar = indoBenar + ingBenar + mtkBenar;
+    const totalSoalValid = window.daftarSoal.length;
+
+    return {
+        indoBenar, indoTotalSoal: indoTotal, indoSkor: indoBenar * 10, indoMaks: indoTotal * 10,
+        ingBenar, ingTotalSoal: ingTotal, ingSkor: ingBenar * 10, ingMaks: ingTotal * 10,
+        mtkBenar, mtkTotalSoal: mtkTotal, mtkSkor: mtkBenar * 10, mtkMaks: mtkTotal * 10,
+        totalBenar, totalSoalValid
+    };
+}
