@@ -143,43 +143,41 @@ window.soalIND = [
     kunciJawaban: ["B", "S", "B", "S", "S"]
   },
 
-        // ========================================
-    // SOAL NOMOR 9 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 9,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah cerita berikut dengan saksama!<br><br><b>Danau untuk Semua</b><br><br>Di hutan ada sebuah danau tempat semua binatang minum. Suatu pagi, air danau menjadi kotor karena Rino tidak berhati-hati di kamarnya. Binatang-binatang lain jadi tidak bisa minum. Hutan menjadi kering dan berdebu. Mereka merasa sangat bersalah. Rino merasa bersalah karena juga ikut berperan.<br><br>Ekorinya, Rino masih berendam. Binatang-binatang makin kecewa. \"Bagaimana ini! air jadi kotor. Hewan lain mulai gelisah. Binatang-binatang pun berkumpul dan berbisik. Hari si harimau mengusulkan agar meminta bantuan Ucil si kancil.\"Setuju!\" semua binatang berteriak antusias.<br><br>Ucil menemui Rino. \"Selamat siang. Maaf mengganggu Tuan. Ada kabar penting,\" kata Ucil dengan lembut. Rino segera bangun. Ia merasa tersanjung dengan ucapan Ucil.<br><br>\"Kabar penting? Cepat bicara!\" kata Rino. \"Hampir semua binatang berkumpul di danau. Tidak kering, Tuan. Oh ya, air danau makin menipis dan air saja tidak menampung. Sayang, makhluk hidup tidak kehabisan air mata, dia makin gersang... lanjut Ucil.<br><br>\"Rencananya, Tuan,\" kata Ucil. Rino segera berjalan menghampiri mereka. Ia pun mengajak pulau danau serta setengah hari. Sementara itu, binatang-binatang danau datang untuk meminta air.<br><br>Rino segera mengawasi pohonnya. Ia kembali menuju danau. Sementara itu, binatang taimya sudah menyingkirkan air. Mereka sudah tidak haus lagi.<br><br><b>Tokoh yang paling berperan penting dalam memecahkan masalah para binatang di hutan adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "Rino, karena ia telah menjadi contoh sikap yang angkuh dan sombong",
-            "Bani, karena ia hanya diam seribu bahasa dan tidak memberikan kontribusi apa pun",
-            "Ucil, karena ia menyarankan untuk mencari jalan keluar dan meminta bantuan hewan yang cerdik",
-            "Hari, karena ia memiliki tugas yang paling berat, yaitu mengumpulkan semua binatang"
-        ],
-        kunciJawaban: "C"
-    },
-
-    // ========================================
-    // SOAL NOMOR 10 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 10,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<b>Setelah dinasihati oleh Ucil, perubahan sikap yang ditunjukkan oleh Rino adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "dari karakter yang tidak peduli menjadi karakter yang berani",
-            "dari yang suka menyombongkan diri menjadi rendah hati dan mau mendengarkan saran teman",
-            "dari yang takut berenang menjadi sangat senang bermain di air",
-            "dari yang tadinya tidak mau bicara menjadi suka bercerita tentang kebunnya"
-        ],
-        kunciJawaban: "B"
-    },
+        {
+    id: 9,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 5: Ancaman Kepunahan Bahasa Daerah dan Upaya Revitalisasi</b><br><br>Bahasa-bahasa daerah di Indonesia menghadapi ancaman kepunahan yang semakin nyata. Lembaga bahasa mencatat bahwa puluhan bahasa daerah, terutama di wilayah Indonesia timur, berada dalam status terancam atau bahkan telah punah. Faktor utama yang melatarbelakangi fenomena ini adalah berkurangnya jumlah penutur aktif akibat pergeseran penggunaan bahasa harian di lingkungan keluarga. Banyak orang tua tidak lagi mengajarkan bahasa ibu kepada anak-anak mereka dan lebih memilih menggunakan bahasa Indonesia atau bahasa asing demi alasan kepraktisan dan mobilitas sosial.<br><br>Selain itu, arus globalisasi dan dominasi media digital berbahasa nasional/internasional turut mengikis ruang hidup bahasa daerah di kalangan generasi muda. Jika tidak ada tindakan revitalisasi yang terstruktur—seperti muatan lokal di sekolah, digitalisasi kamus dan cerita rakyat, serta pemanfaatan media sosial untuk konten berbahasa daerah—maka kekayaan kebahasaan dan warisan budaya bangsa ini dipastikan akan lenyap secara perlahan.<br><br><b>Faktor-faktor apa saja yang secara eksplisit maupun tersirat disebutkan dalam Teks 5 sebagai penyebab penurunan jumlah penutur bahasa daerah? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Orang tua tidak lagi membiasakan penggunaan bahasa ibu dalam komunikasi keluarga di rumah.",
+      "Adanya larangan resmi dari pemerintah untuk menuturkan bahasa daerah di ruang publik.",
+      "Dominasi penggunaan bahasa nasional dan bahasa asing di media digital yang dikonsumsi generasi muda.",
+      "Anggapan bahwa bahasa daerah tidak lagi mendukung mobilitas sosial dan kepraktisan di era modern.",
+      "Anggaran revitalisasi bahasa dari pemerintah pusat dipangkas secara drastis."
+    ],
+    kunciJawaban: [0, 2, 3]
+  },
+  
+  {
+    id: 10,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 5: Ancaman Kepunahan Bahasa Daerah dan Upaya Revitalisasi</b><br><br>Bahasa-bahasa daerah di Indonesia menghadapi ancaman kepunahan yang semakin nyata. Lembaga bahasa mencatat bahwa puluhan bahasa daerah, terutama di wilayah Indonesia timur, berada dalam status terancam atau bahkan telah punah. Faktor utama yang melatarbelakangi fenomena ini adalah berkurangnya jumlah penutur aktif akibat pergeseran penggunaan bahasa harian di lingkungan keluarga. Banyak orang tua tidak lagi mengajarkan bahasa ibu kepada anak-anak mereka dan lebih memilih menggunakan bahasa Indonesia atau bahasa asing demi alasan kepraktisan dan mobilitas sosial.<br><br>Selain itu, arus globalisasi dan dominasi media digital berbahasa nasional/internasional turut mengikis ruang hidup bahasa daerah di kalangan generasi muda. Jika tidak ada tindakan revitalisasi yang terstruktur—seperti muatan lokal di sekolah, digitalisasi kamus dan cerita rakyat, serta pemanfaatan media sosial untuk konten berbahasa daerah—maka kekayaan kebahasaan dan warisan budaya bangsa ini dipastikan akan lenyap secara perlahan.<br><br><b>Berdasarkan Teks 5, langkah-langkah strategis manakah yang didukung oleh penulis untuk mencegah kepunahan bahasa daerah? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Mengintegrasikan pembelajaran bahasa daerah ke dalam kurikulum muatan lokal di sekolah-sekolah.",
+      "Melarang penggunaan bahasa asing dalam seluruh interaksi media sosial di Indonesia.",
+      "Melakukan dokumentasi dan digitalisasi kamus serta sastra lisan bahasa daerah.",
+      "Memanfaatkan platform media sosial untuk memproduksi konten-konten kreatif berbahasa daerah.",
+      "Mewajibkan seluruh ujian nasional disajikan dalam bahasa daerah masing-masing wilayah."
+    ],
+    kunciJawaban: [0, 2, 3]
+  },
 
     // ========================================
     // SOAL NOMOR 11 (PG) - Tingkat Kesulitan: Sedang
