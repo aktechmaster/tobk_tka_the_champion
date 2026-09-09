@@ -2,7 +2,6 @@
 // 🔐 FUNGSI LOGIN & VALIDASI PASSWORD
 // ==================================================
 function mulaiUjian(e) {
-    // WAJIB: Tahan reload bawaan HTML form
     if (e && e.preventDefault) {
         e.preventDefault();
     }
@@ -13,13 +12,11 @@ function mulaiUjian(e) {
     const nomor = document.getElementById('nomor')?.value.trim();
     const passwordInput = document.getElementById('password')?.value.trim();
 
-    // Validasi field kosong
     if (!nama || !kelas || !asal || !nomor || !passwordInput) {
         alert("⚠️ Harap isi semua kolom identitas!");
         return false;
     }
 
-    // Ambil password dari config.js
     const passwordBenar = typeof passwords !== 'undefined' ? passwords[kelas] : null;
 
     if (!passwordBenar) {
@@ -27,13 +24,14 @@ function mulaiUjian(e) {
         return false;
     }
 
-    // Cek kecocokan password
     if (passwordInput !== passwordBenar) {
         alert("❌ Token / Password Ujian Salah!");
-        return false; // Berhenti di sini, halaman TIDAK akan ter-refresh
+        return false;
     }
 
-    // Jika password benar, simpan data dan muat soal
+    // Reset status selesai jika ada
+    sessionStorage.removeItem('ujianSelesai');
+
     window.waktuMulaiUjian = Date.now();
     window.violationCount = 0;
 
@@ -63,13 +61,11 @@ function muatSoalDanMulai(kelas, isRestored) {
         });
     };
 
-    // Memuat 3 file soal secara berurutan
     Promise.all([
         loadScript(`soal_ind_${kelas}.js`),
         loadScript(`soal_ing_${kelas}.js`),
         loadScript(`soal_mtk_${kelas}.js`)
     ]).then(() => {
-        // Penggabungan otomatis
         window.daftarSoal = [
             ...(window.soalIND || []),
             ...(window.soalING || []),
@@ -82,12 +78,17 @@ function muatSoalDanMulai(kelas, isRestored) {
                 raguRagu = new Array(window.daftarSoal.length).fill(false);
             }
 
-            loginArea.style.display = 'none';
-            quizArea.style.display = 'block';
-            controls.style.display = 'flex';
-            questionNav.style.display = 'grid';
+            const loginArea = document.getElementById('loginArea');
+            const quizArea = document.getElementById('quizArea');
+            const controls = document.getElementById('controls');
+            const questionNav = document.getElementById('questionNav');
+
+            if (loginArea) loginArea.style.display = 'none';
+            if (quizArea) quizArea.style.display = 'block';
+            if (controls) controls.style.display = 'flex';
+            if (questionNav) questionNav.style.display = 'grid';
             
-            document.getElementById('timerBadge').classList.remove('hidden');
+            document.getElementById('timerBadge')?.classList.remove('hidden');
 
             renderInfoPeserta();
             renderQuestionNav();
@@ -108,6 +109,8 @@ function hitungSkor() {
     let indoBenar = 0, indoTotal = 0;
     let ingBenar = 0, ingTotal = 0;
     let mtkBenar = 0, mtkTotal = 0;
+
+    if (!window.daftarSoal) return { totalBenar: 0, totalSoalValid: 0 };
 
     window.daftarSoal.forEach((soal, idx) => {
         const kat = (soal.kategori || soal.subtes || '').toUpperCase();
@@ -139,34 +142,38 @@ function hitungSkor() {
 }
 
 // ==================================================
-// 🔄 RESTORE SESI UJIAN OTOMATIS SAAT DI-REFRESH
+// 🔄 INSIALISASI DAN RESTORE SESI
 // ==================================================
 document.addEventListener('DOMContentLoaded', function () {
-    // Ambil data menggunakan fungsi dari storage.js
+    const isSelesai = sessionStorage.getItem('ujianSelesai') === 'true';
     const dataSaved = typeof ambilDataDariStorage === 'function' 
         ? ambilDataDariStorage() 
         : JSON.parse(localStorage.getItem('cbt_tka_sd_data') || 'null');
 
-    if (dataSaved && dataSaved.kelas) {
-        // Restore jawaban & ragu-ragu dari dataUjian
-        if (Array.isArray(dataSaved.jawabanSiswa)) {
-            jawabanSiswa = dataSaved.jawabanSiswa;
-        }
-        if (Array.isArray(dataSaved.raguRagu)) {
-            raguRagu = dataSaved.raguRagu;
-        }
+    // JIKA UJIAN SUDAH SELESAI ATAU DATA KOSONG -> TAMPILKAN LOGIN LOGIN
+    if (isSelesai || !dataSaved || !dataSaved.kelas) {
+        if (typeof bersihkanDataUjian === 'function') bersihkanDataUjian();
+        
+        const loginArea = document.getElementById('loginArea');
+        const quizArea = document.getElementById('quizArea');
+        const timerBadge = document.getElementById('timerBadge');
 
-        // Restore variabel waktu & pelanggaran
-        if (dataSaved.waktuMulaiUjian) window.waktuMulaiUjian = dataSaved.waktuMulaiUjian;
-        if (dataSaved.violationCount) window.violationCount = dataSaved.violationCount;
-
-        // Restore nilai form input jika elemennya ada
-        if (document.getElementById('nama')) document.getElementById('nama').value = dataSaved.nama || '';
-        if (document.getElementById('kelas')) document.getElementById('kelas').value = dataSaved.kelas || '';
-        if (document.getElementById('asal')) document.getElementById('asal').value = dataSaved.asal || '';
-        if (document.getElementById('nomor')) document.getElementById('nomor').value = dataSaved.nomor || '';
-
-        // Masuk kembali ke ujian tanpa mereset jawaban
-        muatSoalDanMulai(dataSaved.kelas, true);
+        if (loginArea) loginArea.style.display = 'block';
+        if (quizArea) quizArea.style.display = 'none';
+        if (timerBadge) timerBadge.classList.add('hidden');
+        return;
     }
+
+    // JIKA MASIH DALAM SESI UJIAN AKTIF -> RESTORE
+    if (Array.isArray(dataSaved.jawabanSiswa)) jawabanSiswa = dataSaved.jawabanSiswa;
+    if (Array.isArray(dataSaved.raguRagu)) raguRagu = dataSaved.raguRagu;
+    if (dataSaved.waktuMulaiUjian) window.waktuMulaiUjian = dataSaved.waktuMulaiUjian;
+    if (dataSaved.violationCount) window.violationCount = dataSaved.violationCount;
+
+    if (document.getElementById('nama')) document.getElementById('nama').value = dataSaved.nama || '';
+    if (document.getElementById('kelas')) document.getElementById('kelas').value = dataSaved.kelas || '';
+    if (document.getElementById('asal')) document.getElementById('asal').value = dataSaved.asal || '';
+    if (document.getElementById('nomor')) document.getElementById('nomor').value = dataSaved.nomor || '';
+
+    muatSoalDanMulai(dataSaved.kelas, true);
 });
