@@ -1,5 +1,5 @@
 // ==================================================
-// 🚀 FUNGSI KIRIM DATA SPREADSHEET
+// 🚀 FUNGSI KIRIM DATA SPREADSHEET (JUJUR & ANTI-GAGAL)
 // ==================================================
 
 async function kirimKeSpreadsheet(h) {
@@ -72,36 +72,49 @@ async function kirimKeSpreadsheet(h) {
         jawaban: jawabanRapi
     };
 
+    // Cadangkan payload ke penyimpanan lokal perangkat sebelum dikirim
+    localStorage.setItem('cbt_tka_last_payload', JSON.stringify(payload));
+
     try {
         if (statusBox) {
-            statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menyimpan hasil ujian ke server...</span>`;
+            statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menghubungkan ke server... (Mohon jangan tutup halaman ini)</span>`;
         }
 
-        const res = await fetch(URL_GAS, {
+        // Pengiriman standar tanpa mode no-cors agar dapat membaca JSON balasan dari server
+        const response = await fetch(URL_GAS, {
             method: 'POST',
-            mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify(payload)
         });
 
-        // Verifikasi tipe response (mengecek jika ada kegagalan tersembunyi/opaque)
-        if (res.type === 'opaque') {
+        if (!response.ok) {
+            throw new Error(`Server menolak data (Kode HTTP: ${response.status})`);
+        }
+
+        const resData = await response.json();
+
+        // Validasi respon langsung dari Google Apps Script
+        if (resData.status === "ok") {
             if (statusBox) {
-                statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
+                statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian BERHASIL terkirim dan tersimpan resmi!</span>`;
             }
+            sessionStorage.setItem('ujianSelesai', 'true');
         } else {
-            throw new Error("Respon server tidak valid");
+            throw new Error(resData.pesan || "Terjadi kesalahan pada spreadsheet server.");
         }
 
     } catch (err) {
-        console.error("Error kirim data:", err);
+        console.error("Gagal mengirim data:", err);
         if (statusBox) {
             statusBox.innerHTML = `
-                <div style="color: #cc0000; font-weight: bold; margin-bottom: 8px;">
-                    ❌ Gagal menyimpan data (Akses ditolak / Error server).
+                <div style="color: #cc0000; font-weight: bold; margin-bottom: 6px;">
+                    ❌ JAWABAN BELUM TERKIRIM KE SERVER!
                 </div>
-                <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 6px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
-                    🔄 Coba Kirim Ulang Data
+                <div style="font-size: 12px; color: #444; margin-bottom: 10px;">
+                    Penyebab: Koneksi internet lambat atau server sedang memproses antrean peserta lain. Data Anda tetap aman di perangkat ini.
+                </div>
+                <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 8px 16px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold;">
+                    🔄 Coba Kirim Ulang Sekarang
                 </button>
             `;
         }
