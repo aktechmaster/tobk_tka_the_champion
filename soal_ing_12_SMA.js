@@ -1,191 +1,183 @@
 window.soalING = [
-    // ========================================
-    // SOAL NOMOR 31 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 31,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Sebuah kandung ayam dapat menampung 1.500 ekor ayam. Seorang peternak mempunyai 1.025 ekor ayam, setelah menambah sebanyak 98 ekor ayam baru. Untuk memaksimalkan kapasitas kandang ayam, maka peternak harus membeli ... ekor ayam lagi.",
-        gambar: null,
-        pilihan: [
-            "573",
-            "377",
-            "273",
-            "177"
-        ],
-        kunciJawaban: "C"
-    },
-
-    // ========================================
-    // SOAL NOMOR 32 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 32,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "120% - 3 + 2 x 0,75 + 2/3 = ...",
-        gambar: null,
-        pilihan: [
-            "11/30",
-            "49/60",
-            "31/30",
-            "98/60"
-        ],
-        kunciJawaban: "A"
-    },
-
-    // ========================================
-    // SOAL NOMOR 33 (PGK) - Tingkat Kesulitan: Sulit
-    // ========================================
-    {
-        id: 33,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "Pak Bayu akan membeli beras keperluan sebesar di toko \"Amanah\". Pak Bayu membeli dua uang seratus ribuan dan satu lembar uang lima puluh ribuan. Pak Bayu membeli 5 kg beras, 2 kg gula pasir, dan 2 liter minyak goreng.<br><br><b>Harga Barang Toko \"Amanah\"</b><br>Beras Rp 15.000,00/Kg<br>Gula pasir Rp 11.000,00/Kg<br>Minyak goreng Rp 12.000,00/Liter<br><br>Setiap pembelian Rp 100.000,00 dapat potongan harga Rp 10.000,00.<br><br>Pernyataan berikut yang benar adalah... (Pilih lebih dari satu jawaban benar)",
-        gambar: null,
-        pilihan: [
-            "Total pembelian beras Rp 75.000,00",
-            "Total pembelian minyak goreng Rp 25.000,00",
-            "Uang kembalian yang diterima Pak Bayu Rp 39.000,00",
-            "Uang yang harus dibayarkan untuk semua belanjaan Pak Bayu Rp 111.000,00"
-        ],
-        kunciJawaban: [0, 2]
-    },
-
-    // ========================================
-    // SOAL NOMOR 34 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 34,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "<img src=\"images_tka_6/34.png\" alt=\"Gambar Soal 34\" style=\"max-width:200px; display:block; margin:10px auto;\"><br><b>Pernyataan yang sesuai dengan gambar berwarna tersebut!</b><br><br>(1) Pecahan yang sesuai dengan gambar adalah 3/9.<br>(2) Pecahan senilai yang sesuai adalah 1/4.<br>(3) Pecahan senilai yang sesuai adalah 5/15.",
-        gambar: null,
-        pilihan: [
-            "(1)",
-            "(2)",
-            "(3)"
-        ],
-        kunciJawaban: ["B", "S", "B"]
-    },
-
-        // ========================================
-// SOAL NOMOR 35 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 35,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Dalam pembelajaran pecahan Bu Siska membagikan kartu pecahan kepada Abi, Fatih, Genta, Kesya, dan Ines. Ines mendapatkan kartu bertuliskan 22/6, Abi mendapatkan kartu 365%, Fatih mendapatkan kartu 3 11/16, sedangkan Genta 3,61 dan Kesya mendapatkan kartu 40/11. Kelima anak tersebut diminta berdiri di depan kelas.<br><br>Urutan nama anak dari yang terkecil berturut-turut adalah ...",
-    gambar: null,
-    pilihan: [
-        "A. Genta, Abi, Kesya, Fatih, dan Ines",
-        "B. Genta, Kesya, Abi, Ines, dan Fatih",
-        "C. Genta, Ines, Kesya, Abi, dan Fatih",
-        "D. Genta, Fatih, Kesya, Abi, dan Ines"
+    "id": 31,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Text 1</b><br>Artificial Intelligence (AI) has become increasingly common in education. Many schools now use AI-powered applications to provide personalized learning experiences. These applications can identify students' strengths and weaknesses, allowing teachers to give more targeted instruction. However, educators emphasize that AI should complement teachers rather than replace them.<hr><br>1. What is the main idea of the passage?",
+    "gambar": null,
+    "pilihan": [
+      "AI will completely replace teachers in the future.",
+      "AI applications make schools unnecessary.",
+      "AI can support personalized learning but should not replace teachers.",
+      "Teachers no longer need to assess students.",
+      "Students prefer AI to classroom learning."
     ],
-    kunciJawaban: "B"
-},
+    "kunciJawaban": "C"
+  },
+    
+  {
+    "id": 32,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text 2</b><br>Last weekend, my classmates and I participated in a beach clean-up campaign organized by our local community. We collected plastic bottles, food wrappers, and other waste along the shoreline. Although the weather was extremely hot, everyone remained enthusiastic because we realized that our small actions could make a significant difference.<hr><br>2. Why did the participants remain enthusiastic?",
+    "gambar": null,
+    "pilihan": [
+      "They wanted to win a competition.",
+      "They believed their efforts benefited the environment.",
+      "They expected financial rewards.",
+      "They planned to go swimming afterward.",
+      "They were completing a school examination."
+    ],
+    "kunciJawaban": "B"
+  },
+    
+  {
+    "id": 33,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text 3</b><br><b>How to Register for an Online Webinar</b><br>1. Visit the official registration website.<br>2. Fill in the registration form.<br>3. Verify your email address.<br>4. Complete the payment if required.<br>5. Download the confirmation ticket.<hr><br>3. Which step should be completed before downloading the confirmation ticket?",
+    "gambar": null,
+    "pilihan": [
+      "Visit the webinar venue.",
+      "Complete the payment if required.",
+      "Attend the webinar.",
+      "Print the certificate.",
+      "Create a social media account."
+    ],
+    "kunciJawaban": "B"
+  },
+    
+  {
+    "id": 34,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text 4</b><br>Lake Sentani, located in Papua, is surrounded by green hills and small islands. Besides its breathtaking scenery, the lake is well known for its rich biodiversity and unique cultural festivals held by the local communities. Every year, both domestic and international tourists visit the area to experience its natural beauty and traditional performances.<hr><br>4. What attracts visitors to Lake Sentani?",
+    "gambar": null,
+    "pilihan": [
+      "Modern shopping centers.",
+      "Historical castles.",
+      "Natural scenery and cultural festivals.",
+      "Ski resorts.",
+      "International business events."
+    ],
+    "kunciJawaban": "C"
+  },
 
-    // ========================================
-    // SOAL NOMOR 36 (PGK) - Tingkat Kesulitan: Sulit
-    // ========================================
-    {
-        id: 36,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "Paman mempunyai 3 lahan kebun. Pada musim panen, lahan kebun pertama menghasilkan 3/4 kuintal buah jeruk, lahan kebun kedua menghasilkan 2/5 kuintal buah apel, dan lahan kebun ketiga menghasilkan 3/10 kuintal buah mangga.<br><br>(1) Jumlah panen buah jeruk dan buah apel ada 1 1/10 kuintal<br>(2) Jumlah panen buah jeruk dan buah mangga ada 1 1/20 kuintal<br>(3) Selisih panen buah apel dan buah mangga ada 1/10 kuintal<br>(4) Selisih panen buah jeruk dan mangga ada 9/20 kuintal<br><br>Pernyataan yang benar adalah ...",
-        gambar: null,
-        pilihan: [
-            "(1), (2) dan (3)",
-            "(2), (3) dan (4)",
-            "(2) dan (3)",
-            "(1) dan (2)"
-        ],
-        kunciJawaban: [1, 2]
-    },
-
-    // ========================================
-    // SOAL NOMOR 37 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 37,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bu Wati membeli 6 botol minyak goreng. Setiap botol berisi 1/2 liter minyak goreng. Sisa minyak goreng di dalam wadah plastik berukuran 3/4 liter. Banyak wadah plastik yang dibutuhkan Bu Wati untuk menampung semua minyak goreng adalah ... buah",
-        gambar: null,
-        pilihan: [
-            "18",
-            "16",
-            "14",
-            "12"
-        ],
-        kunciJawaban: "D"
-    },
-
-    // ========================================
-    // SOAL NOMOR 38 (PGK) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 38,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "Jumlah kelereng Agus 2/3 kali jumlah kelereng Budi. Jika jumlah kelereng mereka 20 butir, maka ...<br><br>(1) Banyak kelereng Agus 8 butir<br>(2) Banyak kelereng Budi 10 butir<br>(3) Selisih kelereng mereka 4 butir<br>(4) Jika Budi membeli 3 butir kelereng lagi, maka jumlah kelereng sekarang ada 15 butir",
-        gambar: null,
-        pilihan: [
-            "Pernyataan (1) benar",
-            "Pernyataan (2) benar",
-            "Pernyataan (3) benar",
-            "Pernyataan (4) benar"
-        ],
-        kunciJawaban: [0, 2]
-    },
-
-    // ========================================
-    // SOAL NOMOR 39 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 39,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "Kakak akan menyambungkan beberapa pita. Sisa pita kebenaran sama rata. Jika pita yang tersambung 72 bungkus misal per instan, 60 bungkus sisa, dan 48 bungkus sisa. Pernyataan Benar atau Salah yang tepat adalah...<br><br>(1) Banyak pita sekadar 12<br>(2) Total item dalam setiap pita sama sisa 15<br>(3) Banyak mie instan sama setiap pita sekadar ada 5",
-        gambar: null,
-        pilihan: [
-            "(1)",
-            "(2)",
-            "(3)"
-        ],
-        kunciJawaban: ["B", "S", "B"]
-    },
-
-        // ========================================
-    // SOAL NOMOR 40 (PGK) - Tingkat Kesulitan: Sulit
-    // ========================================
-    {
-        id: 40,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "<b>Perhatikan!</b><br><br>Les renang \"JUARA\"<br>Tersedia:<br>• Paket 1: les setiap 2 hari sekali, dimulai 2 September 2025<br>• Paket 2: les setiap 3 hari sekali, dimulai 5 September 2025<br>• Paket 3: les setiap 5 hari sekali, dimulai 9 September 2025<br><br>Jani mengambil paket 1, Lila mengambil paket 2, dan Fira mengambil paket 3.<br><br>(1) Mereka akan les bersama pertama kali tanggal 20 September 2025.<br>(2) Mereka akan les bersama pertama kali tanggal 14 September 2025.<br>(3) Pada bulan September 2025, Fira akan les sebanyak 5 kali.<br>(4) Mereka akan les bersama setiap 20 hari sekali.<br><br>Pernyataan yang benar adalah ... (jawaban benar lebih dari satu)",
-        gambar: null,
-        pilihan: [
-            "(1), (2), dan (3)",
-            "(1), (2), dan (4)",
-            "(2) dan (3)",
-            "(2) dan (4)"
-        ],
-        kunciJawaban: [2]
-    },
+        {
+    "id": 35,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Text 5</b><br>Many scientists argue that planting more trees is one of the most effective ways to reduce climate change. Trees absorb carbon dioxide, improve air quality, and provide habitats for wildlife. Therefore, governments and citizens should work together to increase green spaces.<hr><br>5. What is the writer's purpose?",
+    "gambar": null,
+    "pilihan": [
+      "To entertain readers with a story.",
+      "To describe a famous forest.",
+      "To explain how trees reproduce.",
+      "To persuade readers to support tree planting.",
+      "To compare different kinds of forests."
+    ],
+    "kunciJawaban": "D"
+  },
+    
+  {
+    "id": 36,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Grammar in Context</b><hr><br>6. The manager ______ the report before the meeting started, so everyone ______ the discussion immediately.",
+    "gambar": null,
+    "pilihan": [
+      "finishes — begins",
+      "had finished — began",
+      "finished — has begun",
+      "has finished — began",
+      "was finishing — begin"
+    ],
+    "kunciJawaban": "B"
+  },
+    
+  {
+    "id": 37,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Vocabulary in Context</b><br>The government plans to implement a new policy to improve public transportation.<hr><br>7. The word implement is closest in meaning to...",
+    "gambar": null,
+    "pilihan": [
+      "reject",
+      "establish",
+      "postpone",
+      "criticize",
+      "remove"
+    ],
+    "kunciJawaban": "B"
+  },
+    
+  {
+    "id": 38,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Integrated Reading</b><br>Research indicates that students who review lesson materials regularly retain information longer than those who study only before examinations. Consistent review also reduces stress because students are better prepared for assessments.<hr><br>8. According to the passage, regular review helps students because it...",
+    "gambar": null,
+    "pilihan": [
+      "guarantees perfect scores.",
+      "eliminates all examination stress.",
+      "improves long-term retention of knowledge.",
+      "replaces classroom instruction.",
+      "shortens the school year."
+    ],
+    "kunciJawaban": "C"
+  },
+    
+  {
+    "id": 39,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Narrative Text</b><br>A woodcutter accidentally dropped his axe into a river. A mysterious spirit appeared and offered him a golden axe, but the woodcutter honestly admitted it was not his. Impressed by his honesty, the spirit returned the original axe and rewarded him with the golden one as well.<hr><br>9. What value is emphasized in the story?",
+    "gambar": null,
+    "pilihan": [
+      "Courage",
+      "Patience",
+      "Honesty",
+      "Creativity",
+      "Independence"
+    ],
+    "kunciJawaban": "C"
+  },
+    
+  {
+    "id": 40,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Integrated Simulation</b><br>A school intends to improve students' reading habits. The library extends its opening hours, teachers organize weekly book discussions, and students are encouraged to borrow at least one book each month.<hr><br>10. Which action best supports the school's program?",
+    "gambar": null,
+    "pilihan": [
+      "Spending less time reading books.",
+      "Borrowing books regularly and participating in discussions.",
+      "Watching television during library hours.",
+      "Avoiding library activities.",
+      "Using the library only before examinations."
+    ],
+    "kunciJawaban": "B"
+  },
 
     // ========================================
     // SOAL NOMOR 41 (BS) - Tingkat Kesulitan: Sedang
