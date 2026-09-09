@@ -324,3 +324,18 @@ function tampilkanHasil() {
 
     if (typeof kirimKeSpreadsheet === 'function') kirimKeSpreadsheet(h);
 }
+
+function kembaliKeAwal() {
+    // Bersihkan sesi ujian jika fungsi tersedia
+    if (typeof bersihkanDataUjian === 'function') {
+        bersihkanDataUjian();
+    }
+    
+    // Hapus status ujian selesai dari storage
+    sessionStorage.removeItem('ujianSelesai');
+    sessionStorage.removeItem('jawabanSiswa');
+    sessionStorage.removeItem('raguRagu');
+
+    // Reload halaman untuk kembali ke tampilan awal/login
+    window.location.href = window.location.pathname;
+}
