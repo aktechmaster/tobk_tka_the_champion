@@ -395,23 +395,23 @@ window.soalIND = [
     kunciJawaban: "E"
   },
 
-    // ========================================
-    // SOAL NOMOR 23 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 23,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "<b>Berdasarkan teks di atas mengenai pohon bakau, tentukan pernyataan Benar atau Salah!</b><br><br>(1) Akar tunjang pohon bakau berfungsi untuk menahan tanaman dari gelombang yang kuat di kawasan pantai.<br>(2) Pohon bakau memiliki peran penting dalam mencegah pengikisan tanah di sepanjang garis pantai.<br>(3) Buah bakau tidak dapat dijadikan bahan olahan makanan atau minuman karena rasanya yang terlalu asin.",
-        gambar: null,
-        pilihan: [
-            "(1)",
-            "(2)",
-            "(3)"
-        ],
-        kunciJawaban: ["B", "B", "S"]
-    },
+    id: 23,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Kutipan Puisi: DUA SAJAK DI BAWAH SATU NAMA</b><br><br>Di tengah ladang aku tinggal sendiri<br>bertahan menghadapi Matahari<br>dan Kau pun di sini. Pandanglah dua belah tanganku<br>berlumur darah saudaraku sendiri<br><br><b>Suasana hati yang muncul setelah membaca bait puisi tersebut adalah ...</b>",
+    gambar: null,
+    pilihan: [
+      "keriangan hati saat hukuman buangan sudah tiba di ladang yang luas",
+      "kemuraman saat siang hari tiba di tengah ladang pertempuran",
+      "keadaan gersang karena terik matahari dan pepohonan yang merintih",
+      "kepedihan dan kesunyian yang mendalam akibat rasa bersalah serta tersisih dari kehangatan",
+      "kebingungan hati menunggu pengampunan dari Sang Pencipta atas dosa membunuh"
+    ],
+    kunciJawaban: "D"
+  },
 
         // ========================================
     // SOAL NOMOR 24 (PG) - Tingkat Kesulitan: Mudah
