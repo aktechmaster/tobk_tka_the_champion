@@ -52,6 +52,7 @@ window.soalIND = [
     ],
     kunciJawaban: [1, 3]
   },
+  
   {
     id: 4,
     kategori: "BAHASA INDONESIA",
@@ -87,6 +88,7 @@ window.soalIND = [
     ],
     kunciJawaban: "B"
   },
+  
   {
     id: 6,
     kategori: "BAHASA INDONESIA",
@@ -105,43 +107,41 @@ window.soalIND = [
     kunciJawaban: "C"
   },
 
-    // ========================================
-    // SOAL NOMOR 7 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 7,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "<b>Perhatikan setiap pernyataan di bawah ini! Berdasarkan teks bacaan soal nomor 6, tentukan pernyataan Benar atau Salah!</b>",
-        gambar: null,
-        pilihan: [
-            "Burung hantu menjadi simbol kecerdasan dalam banyak cerita rakyat.",
-            "Burung hantu mengandalkan penglihatan dan pendengaran saat berburu.",
-            "Peran burung hantu di alam adalah mengendalikan populasi tikus.",
-            "Suara burung hantu yang menyeramkan disukai semua orang."
-        ],
-        kunciJawaban: ["B", "B", "B", "S"]
-    },
-
-    // ========================================
-    // SOAL NOMOR 8 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 8,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut dengan saksama!<br><br>Kemasan makanan memiliki berbagai bentuk dan warna yang menarik. Namun, tidak semua kemasan ramah lingkungan. Banyak kemasan plastik yang sulit terurai dan merugikan lingkungan. Oleh karena itu, pemilihan kemasan yang tepat dapat dilakukan dengan memilih kemasan ramah lingkungan, kita turut menjaga kebersihan alam dan mengurangi sampah plastik yang menumpuk di laut maupun di darat.<br><br>Beberapa produsen kini berinovasi dengan menggunakan bahan-bahan alami, seperti daun pisang, kertas daur ulang, atau plastik berbasis bahan tumbuhan. Langkah kecil ini bisa menjadi dampak besar jika dilakukan bersama-sama. Sebagai konsumen, kita juga dapat berperan aktif dengan lebih bijak memilih produk yang tidak hanya baik untuk kesehatan, tetapi juga menjaga lingkungan.<br><br>Pernyataan mana yang paling tepat menyimpulkan tujuan utama dari ajakan untuk memilih kemasan ramah lingkungan?",
-        gambar: null,
-        pilihan: [
-            "agar produsen mau mencoba inovasi menggunakan bahan-bahan alami",
-            "untuk membantu mengurangi pencemaran lingkungan yang disebabkan oleh sampah plastik",
-            "supaya kemasan makanan bisa memiliki bentuk dan warna yang lebih menarik",
-            "karena kemasan plastik biasa lebih murah dibandingkan kemasan alami"
-        ],
-        kunciJawaban: "B"
-    },
+    id: 7,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Teks 4: Perbankan Digital dan Literasi Finansial Generasi Z</b><br><br>Perkembangan perbankan digital dan aplikasi keuangan berbasis teknologi (fintech) di Indonesia berkembang sangat pesat dalam lima tahun terakhir. Data menunjukkan bahwa lebih dari 65% transaksi keuangan Generasi Z kini dilakukan secara nontunai melalui dompet digital dan aplikasi mobile banking. Kemudahan akses ini mendorong efisiensi transaksi harian, namun di sisi lain menyimpan potensi risiko finansial yang cukup serius.<br><br>Rendahnya literasi keuangan di kalangan remaja dan dewasa muda memicu timbulnya perilaku konsumtif berlebihan, seperti fenomena impulse buying dan jebakan layanan ‘PayLater’ atau pinjaman online ilegal. Tanpa perencanaan anggaran yang matang, kemudahan finansial digital justru dapat menjerumuskan generasi muda ke dalam krisis utang sejak usia dini. Oleh karena itu, edukasi literasi keuangan digital perlu diintegrasikan ke dalam kurikulum pendidikan menengah.<br><br><b>Tentukan apakah pernyataan-pernyataan berikut BENAR atau SALAH berdasarkan informasi dalam Teks 4!</b>",
+    gambar: null,
+    pernyataan: [
+      "Lebih dari separuh transaksi keuangan Generasi Z di Indonesia saat ini memanfaatkan teknologi digital nontunai.",
+      "Kemudahan teknologi digital secara otomatis menjamin bahwa Generasi Z memiliki kemampuan mengelola anggaran dengan bijak.",
+      "Layanan 'PayLater' dan pinjaman online dapat menjadi ancaman keuangan bagi pemuda yang memiliki literasi finansial rendah.",
+      "Penulis menyarankan agar edukasi literasi keuangan digital dimasukkan ke dalam kurikulum sekolah menengah.",
+      "Penulis tidak menyetujui adanya seminar literasi keuangan digital."
+    ],
+    kunciJawaban: ["B", "S", "B", "B", "S"]
+  },
+  
+  {
+    id: 8,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 4: Perbankan Digital dan Literasi Finansial Generasi Z</b><br><br>Perkembangan perbankan digital dan aplikasi keuangan berbasis teknologi (fintech) di Indonesia berkembang sangat pesat dalam lima tahun terakhir. Data menunjukkan bahwa lebih dari 65% transaksi keuangan Generasi Z kini dilakukan secara nontunai melalui dompet digital dan aplikasi mobile banking. Kemudahan akses ini mendorong efisiensi transaksi harian, namun di sisi lain menyimpan potensi risiko finansial yang cukup serius.<br><br>Rendahnya literasi keuangan di kalangan remaja dan dewasa muda memicu timbulnya perilaku konsumtif berlebihan, seperti fenomena impulse buying dan jebakan layanan ‘PayLater’ atau pinjaman online ilegal. Tanpa perencanaan anggaran yang matang, kemudahan finansial digital justru dapat menjerumuskan generasi muda ke dalam krisis utang sejak usia dini. Oleh karena itu, edukasi literasi keuangan digital perlu diintegrasikan ke dalam kurikulum pendidikan menengah.<br><br><b>Berdasarkan Teks 4, tentukan kebenaran analisis hubungan sebab-akibat berikut (BENAR / SALAH)!</b>",
+    gambar: null,
+    pernyataan: [
+      "Pesatnya perkembangan fintech memicu peningkatan efisiensi transaksi keuangan harian masyarakat.",
+      "Rendahnya literasi keuangan Generasi Z disebabkan oleh tingginya bunga simpanan di perbankan digital.",
+      "Perilaku impulse buying pada remaja dapat diperparah oleh kemudahan akses dompet digital dan layanan pinjaman cepat.",
+      "Krisis utang pada usia dini merupakan dampak langsung dari dihapuskannya mata pelajaran ekonomi di tingkat SMA.",
+      "Ketika anak memiliki uang yang banyak maka kepekaan terhadap literasi keuangan akan semakin meningkat."
+    ],
+    kunciJawaban: ["B", "S", "B", "S", "S"]
+  },
 
         // ========================================
     // SOAL NOMOR 9 (PG) - Tingkat Kesulitan: Sedang
