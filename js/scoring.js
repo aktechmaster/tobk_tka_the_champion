@@ -10,16 +10,35 @@ function hitungSkor() {
         totalPoin: 0, totalSoalValid: 0, totalBenar: 0
     };
 
-    if (!window.daftarSoal || !Array.isArray(window.jawabanSiswa)) return result;
+    if (!window.daftarSoal || !window.jawabanSiswa) return result;
 
     const mapHurufKeAngka = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4 };
     const mapAngkaKeHuruf = ['A', 'B', 'C', 'D', 'E'];
+
+    // Helper untuk normalisasi nilai Benar/Salah (True/False/Benar/Salah/1/0)
+    const isTrueValue = (val) => {
+        if (typeof val === 'boolean') return val;
+        if (typeof val === 'number') return val === 1;
+        if (typeof val === 'string') {
+            const clean = val.toUpperCase().trim();
+            return ['TRUE', 'BENAR', 'TEPAT', '1', 'YES', 'T'].includes(clean);
+        }
+        return false;
+    };
 
     window.daftarSoal.forEach((soal, idx) => {
         if (soal.tipe === 'INFO' || soal.id === 99) return;
 
         const sub = (soal.kategori || soal.subtes || '').toLowerCase();
-        const jwb = window.jawabanSiswa[idx];
+
+        // Ambil jawaban siswa (dukung akses via ID Soal maupun Indeks Array)
+        let jwb = undefined;
+        if (window.jawabanSiswa[soal.id] !== undefined) {
+            jwb = window.jawabanSiswa[soal.id];
+        } else if (window.jawabanSiswa[idx] !== undefined) {
+            jwb = window.jawabanSiswa[idx];
+        }
+
         const kunci = soal.kunciJawaban !== undefined ? soal.kunciJawaban : soal.kunci;
         let poinSoal = 0; // Rentang poin per soal: 0.0 - 1.0
 
@@ -36,6 +55,15 @@ function hitungSkor() {
                     if (typeof jwb === 'number') jwbNorm = mapAngkaKeHuruf[jwb] || jwb;
                     else if (typeof jwb === 'string' && !isNaN(jwb)) jwbNorm = mapAngkaKeHuruf[parseInt(jwb, 10)] || jwb;
                     else if (typeof jwb === 'string') jwbNorm = jwb.toUpperCase().trim();
+                } else if (typeof kunci === 'number') {
+                    kunciNorm = kunci;
+                    if (typeof jwb === 'string' && mapHurufKeAngka[jwb.toUpperCase().trim()] !== undefined) {
+                        jwbNorm = mapHurufKeAngka[jwb.toUpperCase().trim()];
+                    } else if (typeof jwb === 'string' && !isNaN(jwb)) {
+                        jwbNorm = parseInt(jwb, 10);
+                    } else {
+                        jwbNorm = Number(jwb);
+                    }
                 } else {
                     jwbNorm = String(jwb).trim();
                     kunciNorm = String(kunci).trim();
@@ -49,8 +77,8 @@ function hitungSkor() {
             // 2. PENSKORAN PGK (Pilihan Ganda Kompleks - Proporsional)
             else if (soal.tipe === 'PGK') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
-                    const kunciSet = kunci.map(k => (typeof k === 'string' && mapHurufKeAngka[k.toUpperCase()] !== undefined) ? mapHurufKeAngka[k.toUpperCase()] : parseInt(k, 10));
-                    const jwbSet = jwb.map(j => (typeof j === 'string' && mapHurufKeAngka[j.toUpperCase()] !== undefined) ? mapHurufKeAngka[j.toUpperCase()] : parseInt(j, 10));
+                    const kunciSet = kunci.map(k => (typeof k === 'string' && mapHurufKeAngka[k.toUpperCase().trim()] !== undefined) ? mapHurufKeAngka[k.toUpperCase().trim()] : parseInt(k, 10));
+                    const jwbSet = jwb.map(j => (typeof j === 'string' && mapHurufKeAngka[j.toUpperCase().trim()] !== undefined) ? mapHurufKeAngka[j.toUpperCase().trim()] : parseInt(j, 10));
 
                     const benarDipilih = jwbSet.filter(val => kunciSet.includes(val)).length;
                     const salahDipilih = jwbSet.filter(val => !kunciSet.includes(val)).length;
@@ -60,14 +88,19 @@ function hitungSkor() {
                 }
             } 
             
-            // 3. PENSKORAN BS (Benar / Salah - Proporsional)
+            // 3. PENSKORAN BS (Benar / Salah / True / False - Proporsional)
             else if (soal.tipe === 'BS') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
                     let barisBenar = 0;
                     kunci.forEach((kunciBaris, i) => {
                         const jwbBaris = jwb[i];
-                        if (jwbBaris !== undefined && String(jwbBaris).toUpperCase().trim() === String(kunciBaris).toUpperCase().trim()) {
-                            barisBenar++;
+                        if (jwbBaris !== undefined && jwbBaris !== null && jwbBaris !== "") {
+                            const boolJwb = isTrueValue(jwbBaris);
+                            const boolKunci = isTrueValue(kunciBaris);
+
+                            if (boolJwb === boolKunci) {
+                                barisBenar++;
+                            }
                         }
                     });
                     poinSoal = barisBenar / kunci.length;
@@ -83,10 +116,10 @@ function hitungSkor() {
         if (sub.includes('indo') || sub.includes('bahasa indonesia')) {
             result.indoTotalSoal++;
             result.indoPoin += poinSoal;
-        } else if (sub.includes('ing') || sub.includes('inggris')) {
+        } else if (sub.includes('ing') || sub.includes('inggris') || sub.includes('eng')) {
             result.ingTotalSoal++;
             result.ingPoin += poinSoal;
-        } else if (sub.includes('mtk') || sub.includes('matematika')) {
+        } else if (sub.includes('mtk') || sub.includes('matematika') || sub.includes('math')) {
             result.mtkTotalSoal++;
             result.mtkPoin += poinSoal;
         }
