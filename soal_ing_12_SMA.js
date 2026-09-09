@@ -7,7 +7,7 @@ window.soalING = [
         kategori: "MATEMATIKA",
         rentangNilai: "0-3",
         tipe: "PG",
-        soal: "Sebuah kandang ayam dapat menampung 1.500 ekor ayam. Seorang peternak mempunyai 1.025 ekor ayam, setelah menambah sebanyak 98 ekor ayam baru. Untuk memaksimalkan kapasitas kandang ayam, maka peternak harus membeli ... ekor ayam lagi.",
+        soal: "Sebuah kandung ayam dapat menampung 1.500 ekor ayam. Seorang peternak mempunyai 1.025 ekor ayam, setelah menambah sebanyak 98 ekor ayam baru. Untuk memaksimalkan kapasitas kandang ayam, maka peternak harus membeli ... ekor ayam lagi.",
         gambar: null,
         pilihan: [
             "573",
