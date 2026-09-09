@@ -331,40 +331,36 @@ function cobaKirimUlang() {
 }
 
 function kembaliKeAwal() {
-    // 1. Matikan event auto-save browser agar tidak menyimpan data saat keluar halaman
+    // 1. Matikan event auto-save browser agar tidak menyimpan data saat berpindah halaman
     window.onbeforeunload = null;
     window.onpagehide = null;
     if (typeof simpanDataKeStorage === 'function') {
         window.removeEventListener('beforeunload', simpanDataKeStorage);
     }
 
-    // 2. Kosongkan variabel array jawaban di memori browser
+    // 2. Kosongkan memori variabel jawaban
     if (typeof jawabanSiswa !== 'undefined') {
-        if (Array.isArray(jawabanSiswa)) {
-            jawabanSiswa.length = 0;
-        } else {
-            jawabanSiswa = {};
-        }
+        if (Array.isArray(jawabanSiswa)) jawabanSiswa.length = 0;
+        else jawabanSiswa = {};
     }
     if (typeof raguRagu !== 'undefined') {
-        if (Array.isArray(raguRagu)) {
-            raguRagu.length = 0;
-        } else {
-            raguRagu = {};
-        }
+        if (Array.isArray(raguRagu)) raguRagu.length = 0;
+        else raguRagu = {};
     }
 
-    // 3. Hapus total seluruh storage di browser
+    // 3. Hapus seluruh data simpanan ujian di browser
+    if (typeof bersihkanDataUjian === 'function') {
+        bersihkanDataUjian();
+    }
     try {
         localStorage.clear();
         sessionStorage.clear();
     } catch (e) {}
 
-    // 4. Jalankan fungsi pembersih data jika tersedia
-    if (typeof bersihkanDataUjian === 'function') {
-        bersihkanDataUjian();
-    }
-    
-    // 5. Paksa browser pindah total ke halaman awal tanpa memakai cache
+    // 4. Reset form login di DOM secara fisik
+    const formLogin = document.getElementById('formLogin');
+    if (formLogin) formLogin.reset();
+
+    // 5. Paksa browser melakukan redirect bersih ke halaman login tanpa membawa cache
     window.location.replace(window.location.origin + window.location.pathname);
 }
