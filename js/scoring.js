@@ -10,42 +10,68 @@ function hitungSkor() {
         totalPoin: 0, totalSoalValid: 0, totalBenar: 0
     };
 
-    if (!window.daftarSoal) return result;
+    if (!window.daftarSoal || !Array.isArray(window.jawabanSiswa)) return result;
+
+    const mapHurufKeAngka = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4 };
+    const mapAngkaKeHuruf = ['A', 'B', 'C', 'D', 'E'];
 
     window.daftarSoal.forEach((soal, idx) => {
         if (soal.tipe === 'INFO' || soal.id === 99) return;
 
         const sub = (soal.kategori || soal.subtes || '').toLowerCase();
-        const jwb = jawabanSiswa[idx];
-        const kunci = soal.kunciJawaban || soal.kunci;
+        const jwb = window.jawabanSiswa[idx];
+        const kunci = soal.kunciJawaban !== undefined ? soal.kunciJawaban : soal.kunci;
         let poinSoal = 0; // Rentang poin per soal: 0.0 - 1.0
 
-        // 1. PENSKORAN PG (Tunggal)
-        if (soal.tipe === 'PG') {
-            if (jwb === kunci) {
-                poinSoal = 1;
-            }
-        } 
-        // 2. PENSKORAN PGK (Pilihan Ganda Kompleks - Proporsional)
-        else if (soal.tipe === 'PGK') {
-            if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
-                const benarDipilih = jwb.filter(val => kunci.includes(val)).length;
-                const salahDipilih = jwb.filter(val => !kunci.includes(val)).length;
+        if (jwb !== undefined && jwb !== null && jwb !== "") {
+            
+            // 1. PENSKORAN PG (Tunggal)
+            if (soal.tipe === 'PG') {
+                let jwbNorm = jwb;
+                let kunciNorm = kunci;
 
-                const skorMentah = (benarDipilih - salahDipilih) / kunci.length;
-                poinSoal = Math.max(0, skorMentah); 
-            }
-        } 
-        // 3. PENSKORAN BS (Benar / Salah - Proporsional)
-        else if (soal.tipe === 'BS') {
-            if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
-                let barisBenar = 0;
-                kunci.forEach((kunciBaris, i) => {
-                    if (jwb[i] === kunciBaris) {
-                        barisBenar++;
-                    }
-                });
-                poinSoal = barisBenar / kunci.length;
+                // Konversi huruf ke indeks angka atau sebaliknya
+                if (typeof kunci === 'string' && isNaN(kunci)) {
+                    kunciNorm = kunci.toUpperCase().trim();
+                    if (typeof jwb === 'number') jwbNorm = mapAngkaKeHuruf[jwb] || jwb;
+                    else if (typeof jwb === 'string' && !isNaN(jwb)) jwbNorm = mapAngkaKeHuruf[parseInt(jwb, 10)] || jwb;
+                    else if (typeof jwb === 'string') jwbNorm = jwb.toUpperCase().trim();
+                } else {
+                    jwbNorm = String(jwb).trim();
+                    kunciNorm = String(kunci).trim();
+                }
+
+                if (jwbNorm === kunciNorm) {
+                    poinSoal = 1;
+                }
+            } 
+            
+            // 2. PENSKORAN PGK (Pilihan Ganda Kompleks - Proporsional)
+            else if (soal.tipe === 'PGK') {
+                if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
+                    const kunciSet = kunci.map(k => (typeof k === 'string' && mapHurufKeAngka[k.toUpperCase()] !== undefined) ? mapHurufKeAngka[k.toUpperCase()] : parseInt(k, 10));
+                    const jwbSet = jwb.map(j => (typeof j === 'string' && mapHurufKeAngka[j.toUpperCase()] !== undefined) ? mapHurufKeAngka[j.toUpperCase()] : parseInt(j, 10));
+
+                    const benarDipilih = jwbSet.filter(val => kunciSet.includes(val)).length;
+                    const salahDipilih = jwbSet.filter(val => !kunciSet.includes(val)).length;
+
+                    const skorMentah = (benarDipilih - salahDipilih) / kunciSet.length;
+                    poinSoal = Math.max(0, skorMentah); 
+                }
+            } 
+            
+            // 3. PENSKORAN BS (Benar / Salah - Proporsional)
+            else if (soal.tipe === 'BS') {
+                if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
+                    let barisBenar = 0;
+                    kunci.forEach((kunciBaris, i) => {
+                        const jwbBaris = jwb[i];
+                        if (jwbBaris !== undefined && String(jwbBaris).toUpperCase().trim() === String(kunciBaris).toUpperCase().trim()) {
+                            barisBenar++;
+                        }
+                    });
+                    poinSoal = barisBenar / kunci.length;
+                }
             }
         }
 
@@ -54,7 +80,7 @@ function hitungSkor() {
         if (poinSoal === 1) result.totalBenar++;
 
         // Pengelompokan Subtes
-        if (sub.includes('indo')) {
+        if (sub.includes('indo') || sub.includes('bahasa indonesia')) {
             result.indoTotalSoal++;
             result.indoPoin += poinSoal;
         } else if (sub.includes('ing') || sub.includes('inggris')) {
@@ -66,21 +92,15 @@ function hitungSkor() {
         }
     });
 
-    // Format tampilan jumlah poin per subtes (pembulatan 1 desimal untuk ringkasan)
+    // Format tampilan jumlah poin per subtes
     result.indoBenar = Math.round(result.indoPoin * 10) / 10;
     result.ingBenar  = Math.round(result.ingPoin * 10) / 10;
     result.mtkBenar  = Math.round(result.mtkPoin * 10) / 10;
 
-    // Konversi Skor Skala 20-100 Berdasarkan Total Poin Proporsional
-    if (result.indoTotalSoal > 0) {
-        result.indoSkor = Math.round(20 + (result.indoPoin / result.indoTotalSoal) * 80);
-    }
-    if (result.ingTotalSoal > 0) {
-        result.ingSkor = Math.round(20 + (result.ingPoin / result.ingTotalSoal) * 80);
-    }
-    if (result.mtkTotalSoal > 0) {
-        result.mtkSkor = Math.round(20 + (result.mtkPoin / result.mtkTotalSoal) * 80);
-    }
+    // Konversi Skor Skala 20-100
+    if (result.indoTotalSoal > 0) result.indoSkor = Math.round(20 + (result.indoPoin / result.indoTotalSoal) * 80);
+    if (result.ingTotalSoal > 0)  result.ingSkor  = Math.round(20 + (result.ingPoin / result.ingTotalSoal) * 80);
+    if (result.mtkTotalSoal > 0)  result.mtkSkor  = Math.round(20 + (result.mtkPoin / result.mtkTotalSoal) * 80);
 
     return result;
 }
