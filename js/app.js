@@ -1,3 +1,53 @@
+// ==================================================
+// 🔐 FUNGSI LOGIN & VALIDASI PASSWORD
+// ==================================================
+function mulaiUjian(e) {
+    // WAJIB: Tahan reload bawaan HTML form
+    if (e && e.preventDefault) {
+        e.preventDefault();
+    }
+
+    const nama = document.getElementById('nama')?.value.trim();
+    const kelas = document.getElementById('kelas')?.value;
+    const asal = document.getElementById('asal')?.value.trim();
+    const nomor = document.getElementById('nomor')?.value.trim();
+    const passwordInput = document.getElementById('password')?.value.trim();
+
+    // Validasi field kosong
+    if (!nama || !kelas || !asal || !nomor || !passwordInput) {
+        alert("⚠️ Harap isi semua kolom identitas!");
+        return false;
+    }
+
+    // Ambil password dari config.js
+    const passwordBenar = typeof passwords !== 'undefined' ? passwords[kelas] : null;
+
+    if (!passwordBenar) {
+        alert("⚠️ Password untuk kelas ini belum dikonfigurasi di config.js!");
+        return false;
+    }
+
+    // Cek kecocokan password
+    if (passwordInput !== passwordBenar) {
+        alert("❌ Token / Password Ujian Salah!");
+        return false; // Berhenti di sini, halaman TIDAK akan ter-refresh
+    }
+
+    // Jika password benar, simpan data dan muat soal
+    window.waktuMulaiUjian = Date.now();
+    window.violationCount = 0;
+
+    if (typeof simpanDataKeStorage === 'function') {
+        simpanDataKeStorage();
+    }
+
+    muatSoalDanMulai(kelas, false);
+    return false;
+}
+
+// ==================================================
+// 📚 FUNGSI MUAT SOAL (IND -> ING -> MTK)
+// ==================================================
 function muatSoalDanMulai(kelas, isRestored) {
     window.soalIND = [];
     window.soalING = [];
@@ -13,13 +63,13 @@ function muatSoalDanMulai(kelas, isRestored) {
         });
     };
 
-    // Memuat 3 file soal secara berurutan: IND -> ING -> MTK
+    // Memuat 3 file soal secara berurutan
     Promise.all([
         loadScript(`soal_ind_${kelas}.js`),
         loadScript(`soal_ing_${kelas}.js`),
         loadScript(`soal_mtk_${kelas}.js`)
     ]).then(() => {
-        // Penggabungan otomatis (Total 85 Soal)
+        // Penggabungan otomatis
         window.daftarSoal = [
             ...(window.soalIND || []),
             ...(window.soalING || []),
@@ -47,10 +97,13 @@ function muatSoalDanMulai(kelas, isRestored) {
             alert("❌ File soal kosong atau format salah.");
         }
     }).catch((errFile) => {
-        alert(`❌ Gagal memuat file soal: ${errFile}`);
+        alert(`❌ Gagal memuat file soal: ${errFile}. Pastikan file tersebut sudah ada di server/GitHub.`);
     });
 }
 
+// ==================================================
+// 📊 FUNGSI HITUNG SKOR
+// ==================================================
 function hitungSkor() {
     let indoBenar = 0, indoTotal = 0;
     let ingBenar = 0, ingTotal = 0;
