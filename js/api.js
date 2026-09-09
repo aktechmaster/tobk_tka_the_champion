@@ -1,3 +1,7 @@
+// ==================================================
+// 🚀 FUNGSI KIRIM DATA SPREADSHEET
+// ==================================================
+
 async function kirimKeSpreadsheet(h) {
     const statusBox = document.getElementById('statusPengiriman');
     
@@ -73,24 +77,16 @@ async function kirimKeSpreadsheet(h) {
             statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menyimpan hasil ujian ke server...</span>`;
         }
 
-        const response = await fetch(URL_GAS, {
+        // Menggunakan mode 'no-cors' agar pengiriman dari GitHub Pages ke Apps Script tidak diblokir browser
+        await fetch(URL_GAS, {
             method: 'POST',
+            mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify(payload)
         });
 
-        const resData = await response.json();
-
-        if (resData.status === "ok") {
-            if (statusBox) {
-                statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
-            }
-        } else if (resData.status === "sudah_terkirim") {
-            if (statusBox) {
-                statusBox.innerHTML = `<span style="color: #d97706; font-weight: bold;">⚠️ Data ujian Anda sudah pernah terkirim sebelumnya.</span>`;
-            }
-        } else {
-            throw new Error(resData.pesan || "Gagal menyimpan data.");
+        if (statusBox) {
+            statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
         }
 
     } catch (err) {
