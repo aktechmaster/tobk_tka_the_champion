@@ -331,14 +331,40 @@ function cobaKirimUlang() {
 }
 
 function kembaliKeAwal() {
-    // 1. Hapus total seluruh penyimpanan agar auto-login tidak terpicu
-    localStorage.clear();
-    sessionStorage.clear();
+    // 1. Matikan event auto-save browser agar tidak menyimpan data saat keluar halaman
+    window.onbeforeunload = null;
+    window.onpagehide = null;
+    if (typeof simpanDataKeStorage === 'function') {
+        window.removeEventListener('beforeunload', simpanDataKeStorage);
+    }
 
+    // 2. Kosongkan variabel array jawaban di memori browser
+    if (typeof jawabanSiswa !== 'undefined') {
+        if (Array.isArray(jawabanSiswa)) {
+            jawabanSiswa.length = 0;
+        } else {
+            jawabanSiswa = {};
+        }
+    }
+    if (typeof raguRagu !== 'undefined') {
+        if (Array.isArray(raguRagu)) {
+            raguRagu.length = 0;
+        } else {
+            raguRagu = {};
+        }
+    }
+
+    // 3. Hapus total seluruh storage di browser
+    try {
+        localStorage.clear();
+        sessionStorage.clear();
+    } catch (e) {}
+
+    // 4. Jalankan fungsi pembersih data jika tersedia
     if (typeof bersihkanDataUjian === 'function') {
         bersihkanDataUjian();
     }
     
-    // 2. Refresh ke halaman login awal
-    window.location.href = window.location.origin + window.location.pathname;
+    // 5. Paksa browser pindah total ke halaman awal tanpa memakai cache
+    window.location.replace(window.location.origin + window.location.pathname);
 }
