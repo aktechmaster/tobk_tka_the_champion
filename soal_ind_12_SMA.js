@@ -431,117 +431,111 @@ window.soalIND = [
     kunciJawaban: [0, 2, 4]
   },
 
-    // ========================================
-    // SOAL NOMOR 25 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 25,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<b>Apakah kamu setuju dengan sikap Rani dalam cerita tersebut?</b>",
-        gambar: null,
-        pilihan: [
-            "Setuju, karena Rani peduli terhadap makhluk hidup di sekitarnya",
-            "Tidak setuju, karena Rani terlalu banyak bermain di taman sekolah",
-            "Tidak setuju, karena kupu-kupu tidak perlu ditolong oleh manusia",
-            "Setuju, karena Rani ingin menjadi ketua kelompok piket taman"
-        ],
-        kunciJawaban: "A"
-    },
+    id: 25,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Teks Digital: Ulasan Pengunjung</b><br><b>Eksplorasi Budaya di Kuil Tajiri Kasho ★ 4.9 / 5 dari 124 ulasan</b><br><br><b>Rinawati Siska — ★★★★★</b><br>Kunjungan: Agustus 2024<br>Sebagai blogger perjalanan spesialis eksplorasi budaya lokal, menurut saya Kuil Tajiri Kasho adalah tempat terbaik untuk merasakan adat istiadat asli masyarakat Kota Tajiri. Sebagai kuil pelindung Kota Tajiri, tempat ini sudah menjadi bagian tak terpisahkan dari kehidupan sehari-hari penduduknya, menjadi pusat ibadah harian sekaligus warisan spiritual budaya setempat. Tanpa sentuhan komersial yang berlebihan untuk turis, kuil ini tetap mempertahankan suasana operasional harian yang murni khas kuil pinggiran kota Jepang. Hal ini memungkinkan para pelancong untuk benar-benar merasakan budaya lokal yang jujur dan apa adanya.<br><br><b>Sunny Al Habib — ★★★★★</b><br>Kunjungan: Juli 2024<br>Banyak panduan wisata yang melewatkan “harta karun” pinggiran kota yang tenang ini. Saya baru saja menyelesaikan survei suasana menyeluruh di Kuil Tajiri Kasho, dengan fokus pada keindahan perpaduan hutan yang masih jarang diketahui. Berbeda dengan artikel pertama yang membahas arsitektur, ulasan kali ini lebih menonjolkan suasana hutan dan sudut-sudut tersembunyi di area belakang kuil. Area kuil ini buka untuk umum setiap hari. Kamu hanya butuh sekitar 38 menit untuk jalan santai sambil berfoto-foto estetik. Pemandangan Unggulan yang Wajib Dilihat.<br><br><b>Alex Khun — ★★★★★</b><br>Kunjungan: Mei 2024<br>Bagi mahasiswa yang mencari relaksasi akhir pekan yang terjangkau, Kuil Tajiri Kasho adalah rekomendasi pribadi eksklusif saya. Tempat ini menghindari biaya tinggi dan keramaian di pusat kota Osaka. Dengan tiket masuk gratis, lingkungan yang tenang, dan pemandangan alam yang segar, ini adalah tempat healing akhir pekan yang sangat hemat biaya untuk perjalanan anggaran mahasiswa. Saya telah menyusun rencana perjalanan ramah mahasiswa lengkap yang berpusat di Kuil Tajiri Kasho, dengan anggaran keseluruhan yang rendah dan ritme yang santai, sangat cocok untuk perjalanan penghilang stres di akhir pekan.<br><br><b>Pearly Kwin — ★★★★★</b><br>Kunjungan: Desember 2023<br>Sebagian besar kuil populer di Jepang memiliki biaya komersial tinggi dan masalah keramaian, namun kuil lokal Tajiri ini tetap menjaga keaslian pemandangan budaya tanpa mark-up komersial sama sekali. Ini adalah tempat pembelajaran budaya tanpa biaya tambahan yang langka bagi mahasiswa jurusan seni dan budaya. Anda dapat menikmati arsitektur kuil kayu kuno dan budaya rakyat tanpa membayar biaya tambahan, mendapatkan pengalaman wisata budaya berkualitas tinggi dengan budget mahasiswa.<br><br><b>David Beck — ★★★★★</b><br>Kunjungan: Oktober 2023<br>Beda banget sama spot wisata komersial yang rame, kuil lokal di Kota Tajiri ini punya halaman yang rapi, pepohonan pinus yang asri, dan suasana yang syahdu banget. Nggak ada kerumunan berisik atau hawa komersial yang kental, jadi cocok banget buat ajak anak-anak jalan-jalan santai sambil belajar budaya tipis-tipis. Area kuilnya yang rata dan mulus juga ramah stroller dan anak-anak, bener-bener destinasi ‘hidden gem’ buat liburan keluarga di pinggiran Kansai.<br><br><hr><br><b>Teks Cetak: Eksplorasi Budaya dan Keaslian di Kuil Tajiri Kasho</b><br><br>Kuil Tajiri Kasho, yang terletak di kawasan pinggiran Kota Tajiri, Prefektur Osaka, menjadi salah satu destinasi wisata budaya yang menyuguhkan pengalaman autentik dan reflektif bagi para pengunjung. Berada di lingkungan yang tenang dengan pepohonan pinus yang asri, kuil ini menawarkan kehidupan spiritual masyarakat setempat yang masih memegang teguh nilai-nilai adat dan tradisi murni.<br><br>Dalam ulasan dari berbagai pengunjung, kesan yang muncul begitu kuat adalah ketenangan dan keaslian suasana budaya yang dirasakan selama berada di kuil tersebut. Rinawati Siska, salah satu pengunjung, menggambarkan pengalamannya merasakan “adat istiadat asli masyarakat Kota Tajiri” dan menyebut tempat ini sebagai pusat ibadah harian serta warisan spiritual yang murni tanpa sentuhan komersial berlebihan. Ia menyoroti bagaimana operasional harian kuil yang alami ini memungkinkan pelancong untuk benar-benar merasakan budaya lokal yang jujur dan apa adanya.<br><br>Hal serupa disampaikan oleh Sunny Al Habib, yang mengapresiasi keindahan perpaduan hutan dan sudut-sudut tersembunyi di area belakang kuil. Namun, ia juga memberikan catatan praktis bahwa pengunjung dapat menikmati jalan santai dan berfoto estetik dalam durasi sekitar 38 menit di lokasi yang sering terlewatkan oleh panduan wisata arus utama ini.<br><br>Salah satu daya tarik utama Kuil Tajiri Kasho terletak pada nilainya yang sangat ramah kantong. Sebagaimana diungkapkan oleh Alex Khun dan Pearly Kwin, tempat ini memberikan kesempatan luar biasa bagi mahasiswa untuk melakukan relaksasi dan pembelajaran budaya tanpa biaya tiket masuk sama sekali. Dalam ulasannya, Pearly Kwin menegaskan bahwa tempat ini bukan sekadar area wisata, melainkan wadah belajar arsitektur kayu kuno yang berkualitas tinggi tanpa mark-up komersial.<br><br>Meski mendapat respon positif dari kalangan pelancong budaya dan mahasiswa, perspektif unik juga dihadirkan oleh David Beck. Ia menyampaikan bahwa kekuatan nyata tempat ini ada pada aksesibilitasnya bagi keluarga. Menurutnya, area kuil yang memiliki jalur rata dan mulus sangat ramah stroller anak, menjadikannya pilihan ideal untuk liburan keluarga yang menginginkan suasana syahdu tanpa kerumunan berisik.<br><br>Secara keseluruhan, Kuil Tajiri Kasho tidak hanya menyajikan keindahan alam dan warisan arsitektur kuno, tetapi juga menyatukan berbagai sudut pandang pengunjungnya. Ulasan-ulasan tersebut menunjukkan bahwa kekuatan utama kuil ini bukan pada fasilitas wisata modern, melainkan pada kesederhanaan hidup dan keaslian tradisi yang penuh makna. Bagi pelancong yang mencari kedamaian dan kedalaman nilai, Kuil Tajiri Kasho adalah destinasi yang sangat layak untuk dijelajahi.<br><br><b>Mengapa Kuil Tajiri Kasho dijadikan rekomendasi utama untuk kalangan mahasiswa? (Pilihlah jawaban yang benar! Jawaban benar lebih dari satu)</b>",
+    gambar: null,
+    pilihan: [
+      "Menyediakan spot foto berteknologi tinggi untuk konten media sosial.",
+      "Tidak membebankan biaya masuk sehingga sesuai dengan anggaran mahasiswa.",
+      "Menyediakan fasilitas penginapan gratis untuk mahasiswa jurusan seni.",
+      "Suasana yang tenang membantu meredakan stres akibat rutinitas akademis.",
+      "Menyediakan kafe ramah kantong di dalam area tempat ibadah."
+    ],
+    kunciJawaban: [1, 3]
+  },
+  
+  {
+    id: 26,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks Digital: Ulasan Pengunjung</b><br><b>Eksplorasi Budaya di Kuil Tajiri Kasho ★ 4.9 / 5 dari 124 ulasan</b><br><br><b>Rinawati Siska — ★★★★★</b><br>Kunjungan: Agustus 2024<br>Sebagai blogger perjalanan spesialis eksplorasi budaya lokal, menurut saya Kuil Tajiri Kasho adalah tempat terbaik untuk merasakan adat istiadat asli masyarakat Kota Tajiri. Sebagai kuil pelindung Kota Tajiri, tempat ini sudah menjadi bagian tak terpisahkan dari kehidupan sehari-hari penduduknya, menjadi pusat ibadah harian sekaligus warisan spiritual budaya setempat. Tanpa sentuhan komersial yang berlebihan untuk turis, kuil ini tetap mempertahankan suasana operasional harian yang murni khas kuil pinggiran kota Jepang. Hal ini memungkinkan para pelancong untuk benar-benar merasakan budaya lokal yang jujur dan apa adanya.<br><br><b>Sunny Al Habib — ★★★★★</b><br>Kunjungan: Juli 2024<br>Banyak panduan wisata yang melewatkan “harta karun” pinggiran kota yang tenang ini. Saya baru saja menyelesaikan survei suasana menyeluruh di Kuil Tajiri Kasho, dengan fokus pada keindahan perpaduan hutan yang masih jarang diketahui. Berbeda dengan artikel pertama yang membahas arsitektur, ulasan kali ini lebih menonjolkan suasana hutan dan sudut-sudut tersembunyi di area belakang kuil. Area kuil ini buka untuk umum setiap hari. Kamu hanya butuh sekitar 38 menit untuk jalan santai sambil berfoto-foto estetik. Pemandangan Unggulan yang Wajib Dilihat.<br><br><b>Alex Khun — ★★★★★</b><br>Kunjungan: Mei 2024<br>Bagi mahasiswa yang mencari relaksasi akhir pekan yang terjangkau, Kuil Tajiri Kasho adalah rekomendasi pribadi eksklusif saya. Tempat ini menghindari biaya tinggi dan keramaian di pusat kota Osaka. Dengan tiket masuk gratis, lingkungan yang tenang, dan pemandangan alam yang segar, ini adalah tempat healing akhir pekan yang sangat hemat biaya untuk perjalanan anggaran mahasiswa. Saya telah menyusun rencana perjalanan ramah mahasiswa lengkap yang berpusat di Kuil Tajiri Kasho, dengan anggaran keseluruhan yang rendah dan ritme yang santai, sangat cocok untuk perjalanan penghilang stres di akhir pekan.<br><br><b>Pearly Kwin — ★★★★★</b><br>Kunjungan: Desember 2023<br>Sebagian besar kuil populer di Jepang memiliki biaya komersial tinggi dan masalah keramaian, namun kuil lokal Tajiri ini tetap menjaga keaslian pemandangan budaya tanpa mark-up komersial sama sekali. Ini adalah tempat pembelajaran budaya tanpa biaya tambahan yang langka bagi mahasiswa jurusan seni dan budaya. Anda dapat menikmati arsitektur kuil kayu kuno dan budaya rakyat tanpa membayar biaya tambahan, mendapatkan pengalaman wisata budaya berkualitas tinggi dengan budget mahasiswa.<br><br><b>David Beck — ★★★★★</b><br>Kunjungan: Oktober 2023<br>Beda banget sama spot wisata komersial yang rame, kuil lokal di Kota Tajiri ini punya halaman yang rapi, pepohonan pinus yang asri, dan suasana yang syahdu banget. Nggak ada kerumunan berisik atau hawa komersial yang kental, jadi cocok banget buat ajak anak-anak jalan-jalan santai sambil belajar budaya tipis-tipis. Area kuilnya yang rata dan mulus juga ramah stroller dan anak-anak, bener-bener destinasi ‘hidden gem’ buat liburan keluarga di pinggiran Kansai.<br><br><hr><br><b>Teks Cetak: Eksplorasi Budaya dan Keaslian di Kuil Tajiri Kasho</b><br><br>Kuil Tajiri Kasho, yang terletak di kawasan pinggiran Kota Tajiri, Prefektur Osaka, menjadi salah satu destinasi wisata budaya yang menyuguhkan pengalaman autentik dan reflektif bagi para pengunjung. Berada di lingkungan yang tenang dengan pepohonan pinus yang asri, kuil ini menawarkan kehidupan spiritual masyarakat setempat yang masih memegang teguh nilai-nilai adat dan tradisi murni.<br><br>Dalam ulasan dari berbagai pengunjung, kesan yang muncul begitu kuat adalah ketenangan dan keaslian suasana budaya yang dirasakan selama berada di kuil tersebut. Rinawati Siska, salah satu pengunjung, menggambarkan pengalamannya merasakan “adat istiadat asli masyarakat Kota Tajiri” dan menyebut tempat ini sebagai pusat ibadah harian serta warisan spiritual yang murni tanpa sentuhan komersial berlebihan. Ia menyoroti bagaimana operasional harian kuil yang alami ini memungkinkan pelancong untuk benar-benar merasakan budaya lokal yang jujur dan apa adanya.<br><br>Hal serupa disampaikan oleh Sunny Al Habib, yang mengapresiasi keindahan perpaduan hutan dan sudut-sudut tersembunyi di area belakang kuil. Namun, ia juga memberikan catatan praktis bahwa pengunjung dapat menikmati jalan santai dan berfoto estetik dalam durasi sekitar 38 menit di lokasi yang sering terlewatkan oleh panduan wisata arus utama ini.<br><br>Salah satu daya tarik utama Kuil Tajiri Kasho terletak pada nilainya yang sangat ramah kantong. Sebagaimana diungkapkan oleh Alex Khun dan Pearly Kwin, tempat ini memberikan kesempatan luar biasa bagi mahasiswa untuk melakukan relaksasi dan pembelajaran budaya tanpa biaya tiket masuk sama sekali. Dalam ulasannya, Pearly Kwin menegaskan bahwa tempat ini bukan sekadar area wisata, melainkan wadah belajar arsitektur kayu kuno yang berkualitas tinggi tanpa mark-up komersial.<br><br>Meski mendapat respon positif dari kalangan pelancong budaya dan mahasiswa, perspektif unik juga dihadirkan oleh David Beck. Ia menyampaikan bahwa kekuatan nyata tempat ini ada pada aksesibilitasnya bagi keluarga. Menurutnya, area kuil yang memiliki jalur rata dan mulus sangat ramah stroller anak, menjadikannya pilihan ideal untuk liburan keluarga yang menginginkan suasana syahdu tanpa kerumunan berisik.<br><br>Secara keseluruhan, Kuil Tajiri Kasho tidak hanya menyajikan keindahan alam dan warisan arsitektur kuno, tetapi juga menyatukan berbagai sudut pandang pengunjungnya. Ulasan-ulasan tersebut menunjukkan bahwa kekuatan utama kuil ini bukan pada fasilitas wisata modern, melainkan pada kesederhanaan hidup dan keaslian tradisi yang penuh makna. Bagi pelancong yang mencari kedamaian dan kedalaman nilai, Kuil Tajiri Kasho adalah destinasi yang sangat layak untuk dijelajahi.<br><br><b>Berdasarkan teks ulasan cetak dan ulasan digital, manakah ketepatan analisis penggunaan gaya bahasa atau citraan berikut? Tentukan Tepat atau Tidak Tepat untuk setiap kalimat berikut!</b>",
+    gambar: null,
+    pernyataan: [
+      "Ungkapan \"harta karun pinggiran kota\" menggunakan kiasan/metafora untuk menggambarkan nilai keindahan tempat yang tersembunyi dan berharga.",
+      "Frasa \"suasana yang syahdu banget\" dan \"pepohonan pinus yang asri\" memperkuat citraan penglihatan dan perasaan tenang pengunjung.",
+      "Kalimat \"kuil ini tetap menjaga keaslian pemandangan budaya\" menggunakan majas personifikasi untuk menghidupkan suasana.",
+      "Kalimat “Kuil Tajiri Kasho adalah rekomendasi eksklusif tempat ini menghindari biaya tinggi dan keramaian di pusat kota Osaka” menggunakan citraan pendengaran (auditori) untuk mempertegas suasana yang sepi dan tenang.",
+      "Frasa “murni tanpa sentuhan komersial berlebihan” menggunakan sineasid/sinekdoke untuk menggambarkan harga tiket masuk kuil yang sangat mahal."
+    ],
+    kunciJawaban: ["Tepat", "Tepat", "Tepat", "Tidak Tepat", "Tidak Tepat"]
+  },
 
-    // ========================================
-    // SOAL NOMOR 26 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 26,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut untuk menjawab soal nomor 26–27!<br><br>Pisang adalah salah satu buah yang banyak digemari masyarakat. Selain rasanya yang manis, pisang juga mengandung banyak nutrisi. Buah ini mengandung vitamin, serat, dan mineral yang baik untuk pencernaan. Pisang juga sering dijadikan sebagai bahan utama dalam berbagai olahan makanan, seperti kue dan smoothie.<br><br><b>Ringkasan dari paragraf tersebut adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "pisang dapat diolah menjadi kue dan smoothie karena rasanya manis dan digemari masyarakat",
-            "pisang disukai karena manis dan mengandung nutrisi yang baik untuk tubuh serta dapat diolah menjadi berbagai makanan",
-            "pisang mengandung banyak vitamin dan serat yang dapat melancarkan pencernaan dan menambah energi",
-            "pisang adalah buah yang lezat dan sering ditemukan di pasar tradisional maupun modern"
-        ],
-        kunciJawaban: "B"
-    },
-
-    // ========================================
-    // SOAL NOMOR 27 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 27,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "<b>Perhatikan pernyataan-pernyataan berikut! Berdasarkan informasi yang disampaikan dalam teks, tentukan Benar atau Salah!</b><br><br>(1) Pisang disukai banyak orang karena rasanya manis.<br>(2) Pisang mengandung vitamin, protein, dan lemak.<br>(3) Pisang memiliki kandungan yang berguna untuk pencernaan.<br>(4) Pisang hanya bisa dijadikan bahan utama untuk membuat kue.",
-        gambar: null,
-        pilihan: [
-            "(1)",
-            "(2)",
-            "(3)",
-            "(4)"
-        ],
-        kunciJawaban: ["B", "S", "B", "S"]
-    },
-
-    // ========================================
-    // SOAL NOMOR 28 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 28,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks fiksi berikut untuk menjawab soal nomor 28–29!<br><br>Setiap pagi sebelum bel masuk berbunyi, Nita selalu datang lebih awal ke sekolah. Ia tak langsung masuk ke kelas, melainkan menuju pojok baca di samping perpustakaan kecil sekolah. Di sana, ia merapikan buku-buku yang terserak di tempat, menyusun ulang sesuai kategori: cerita rakyat, ilmu pengetahuan, dan buku bergambar.<br><br>\"Kalau rapi begini, teman-teman jadi lebih semangat membaca,\" ujar Nita sambil tersenyum. Bukan hanya merapikan, Nita juga membuat kartu pinjam sederhana dari kertas bekas agar teman-temannya bisa meminjam buku dan mengembalikannya dengan tertib. Ia bahkan melukis poster warna-warni bertuliskan \"Ayo Membaca, Buku adalah Jendela Dunia!\" dan menempelkannya di papan pengumuman sekolah.<br><br>Pada saat hari Senin, kepala sekolah menyampaikan apresiasi khusus saat upacara. \"Terima kasih untuk Nita, yang telah membuat pojok baca menjadi tempat yang menyenangkan dan bermanfaat bagi kita semua,\" ucap beliau. Teman-teman bertepuk tangan. Nita tersipu malu, hatinya sangat senang. Ia tidak menyangka hal kecil yang dilakukannya ternyata memberi perubahan.<br><br><b>Objek yang Nita ciptakan khusus sebagai sarana untuk memastikan teman-temannya meminjam dan mengembalikan buku dengan tertib adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "Buku-buku",
-            "Poster warna-warni",
-            "Papan pengumuman",
-            "Kartu pinjam"
-        ],
-        kunciJawaban: "D"
-    },
-
-    // ========================================
-    // SOAL NOMOR 29 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 29,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<b>Berdasarkan teks di atas, pilihan fakta yang tersurat menjelaskan mengenai kegiatan Nita!</b>",
-        gambar: null,
-        pilihan: [
-            "Nita melukis poster untuk mendapatkan pujian dari kepala sekolah",
-            "Nita membuat kartu pinjam buku dari kertas bekas",
-            "Nita tidak pernah menyusun ulang buku-buku berdasarkan kategorinya",
-            "Teman-teman Nita marah karena harus meminjam buku menggunakan kartu"
-        ],
-        kunciJawaban: "B"
-    },
-
-    // ========================================
-    // SOAL NOMOR 30 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 30,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut dengan saksama!<br><br>Sinar matahari yang kita lihat terlihat berwarna putih. Padahal, sinar matahari terdiri dari banyak warna. Ketika sinar matahari masuk ke Bumi, ia bertemu dengan partikel-partikel kecil di udara, seperti debu dan uap air. Warna sinar matahari yang paling banyak dipantulkan oleh partikel-partikel ini adalah warna biru dan ungu. Karena mata kita lebih sensitif terhadap warna biru, maka langit terlihat berwarna biru cerah di siang hari.<br><br><b>Berdasarkan teks di atas, fakta utama yang tersurat menjelaskan mengenai sinar matahari adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "Sinar matahari yang terlihat putih sebenarnya terdiri dari banyak warna",
-            "Sinar matahari tidak mengandung warna ungu",
-            "Sinar matahari dapat memantulkan semua warna secara merata",
-            "Sinar matahari hanya terdiri dari dua warna utama"
-        ],
-        kunciJawaban: "A"
-    }
+    id: 27,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Teks Digital: Ulasan Pengunjung</b><br><b>Eksplorasi Budaya di Kuil Tajiri Kasho ★ 4.9 / 5 dari 124 ulasan</b><br><br><b>Rinawati Siska — ★★★★★</b><br>Kunjungan: Agustus 2024<br>Sebagai blogger perjalanan spesialis eksplorasi budaya lokal, menurut saya Kuil Tajiri Kasho adalah tempat terbaik untuk merasakan adat istiadat asli masyarakat Kota Tajiri. Sebagai kuil pelindung Kota Tajiri, tempat ini sudah menjadi bagian tak terpisahkan dari kehidupan sehari-hari penduduknya, menjadi pusat ibadah harian sekaligus warisan spiritual budaya setempat. Tanpa sentuhan komersial yang berlebihan untuk turis, kuil ini tetap mempertahankan suasana operasional harian yang murni khas kuil pinggiran kota Jepang. Hal ini memungkinkan para pelancong untuk benar-benar merasakan budaya lokal yang jujur dan apa adanya.<br><br><b>Sunny Al Habib — ★★★★★</b><br>Kunjungan: Juli 2024<br>Banyak panduan wisata yang melewatkan “harta karun” pinggiran kota yang tenang ini. Saya baru saja menyelesaikan survei suasana menyeluruh di Kuil Tajiri Kasho, dengan fokus pada keindahan perpaduan hutan yang masih jarang diketahui. Berbeda dengan artikel pertama yang membahas arsitektur, ulasan kali ini lebih menonjolkan suasana hutan dan sudut-sudut tersembunyi di area belakang kuil. Area kuil ini buka untuk umum setiap hari. Kamu hanya butuh sekitar 38 menit untuk jalan santai sambil berfoto-foto estetik. Pemandangan Unggulan yang Wajib Dilihat.<br><br><b>Alex Khun — ★★★★★</b><br>Kunjungan: Mei 2024<br>Bagi mahasiswa yang mencari relaksasi akhir pekan yang terjangkau, Kuil Tajiri Kasho adalah rekomendasi pribadi eksklusif saya. Tempat ini menghindari biaya tinggi dan keramaian di pusat kota Osaka. Dengan tiket masuk gratis, lingkungan yang tenang, dan pemandangan alam yang segar, ini adalah tempat healing akhir pekan yang sangat hemat biaya untuk perjalanan anggaran mahasiswa. Saya telah menyusun rencana perjalanan ramah mahasiswa lengkap yang berpusat di Kuil Tajiri Kasho, dengan anggaran keseluruhan yang rendah dan ritme yang santai, sangat cocok untuk perjalanan penghilang stres di akhir pekan.<br><br><b>Pearly Kwin — ★★★★★</b><br>Kunjungan: Desember 2023<br>Sebagian besar kuil populer di Jepang memiliki biaya komersial tinggi dan masalah keramaian, namun kuil lokal Tajiri ini tetap menjaga keaslian pemandangan budaya tanpa mark-up komersial sama sekali. Ini adalah tempat pembelajaran budaya tanpa biaya tambahan yang langka bagi mahasiswa jurusan seni dan budaya. Anda dapat menikmati arsitektur kuil kayu kuno dan budaya rakyat tanpa membayar biaya tambahan, mendapatkan pengalaman wisata budaya berkualitas tinggi dengan budget mahasiswa.<br><br><b>David Beck — ★★★★★</b><br>Kunjungan: Oktober 2023<br>Beda banget sama spot wisata komersial yang rame, kuil lokal di Kota Tajiri ini punya halaman yang rapi, pepohonan pinus yang asri, dan suasana yang syahdu banget. Nggak ada kerumunan berisik atau hawa komersial yang kental, jadi cocok banget buat ajak anak-anak jalan-jalan santai sambil belajar budaya tipis-tipis. Area kuilnya yang rata dan mulus juga ramah stroller dan anak-anak, bener-bener destinasi ‘hidden gem’ buat liburan keluarga di pinggiran Kansai.<br><br><hr><br><b>Teks Cetak: Eksplorasi Budaya dan Keaslian di Kuil Tajiri Kasho</b><br><br>Kuil Tajiri Kasho, yang terletak di kawasan pinggiran Kota Tajiri, Prefektur Osaka, menjadi salah satu destinasi wisata budaya yang menyuguhkan pengalaman autentik dan reflektif bagi para pengunjung. Berada di lingkungan yang tenang dengan pepohonan pinus yang asri, kuil ini menawarkan kehidupan spiritual masyarakat setempat yang masih memegang teguh nilai-nilai adat dan tradisi murni.<br><br>Dalam ulasan dari berbagai pengunjung, kesan yang muncul begitu kuat adalah ketenangan dan keaslian suasana budaya yang dirasakan selama berada di kuil tersebut. Rinawati Siska, salah satu pengunjung, menggambarkan pengalamannya merasakan “adat istiadat asli masyarakat Kota Tajiri” dan menyebut tempat ini sebagai pusat ibadah harian serta warisan spiritual yang murni tanpa sentuhan komersial berlebihan. Ia menyoroti bagaimana operasional harian kuil yang alami ini memungkinkan pelancong untuk benar-benar merasakan budaya lokal yang jujur dan apa adanya.<br><br>Hal serupa disampaikan oleh Sunny Al Habib, yang mengapresiasi keindahan perpaduan hutan dan sudut-sudut tersembunyi di area belakang kuil. Namun, ia juga memberikan catatan praktis bahwa pengunjung dapat menikmati jalan santai dan berfoto estetik dalam durasi sekitar 38 menit di lokasi yang sering terlewatkan oleh panduan wisata arus utama ini.<br><br>Salah satu daya tarik utama Kuil Tajiri Kasho terletak pada nilainya yang sangat ramah kantong. Sebagaimana diungkapkan oleh Alex Khun dan Pearly Kwin, tempat ini memberikan kesempatan luar biasa bagi mahasiswa untuk melakukan relaksasi dan pembelajaran budaya tanpa biaya tiket masuk sama sekali. Dalam ulasannya, Pearly Kwin menegaskan bahwa tempat ini bukan sekadar area wisata, melainkan wadah belajar arsitektur kayu kuno yang berkualitas tinggi tanpa mark-up komersial.<br><br>Meski mendapat respon positif dari kalangan pelancong budaya dan mahasiswa, perspektif unik juga dihadirkan oleh David Beck. Ia menyampaikan bahwa kekuatan nyata tempat ini ada pada aksesibilitasnya bagi keluarga. Menurutnya, area kuil yang memiliki jalur rata dan mulus sangat ramah stroller anak, menjadikannya pilihan ideal untuk liburan keluarga yang menginginkan suasana syahdu tanpa kerumunan berisik.<br><br>Secara keseluruhan, Kuil Tajiri Kasho tidak hanya menyajikan keindahan alam dan warisan arsitektur kuno, tetapi juga menyatukan berbagai sudut pandang pengunjungnya. Ulasan-ulasan tersebut menunjukkan bahwa kekuatan utama kuil ini bukan pada fasilitas wisata modern, melainkan pada kesederhanaan hidup dan keaslian tradisi yang penuh makna. Bagi pelancong yang mencari kedamaian dan kedalaman nilai, Kuil Tajiri Kasho adalah destinasi yang sangat layak untuk dijelajahi.<br><br><b>Berdasarkan kedua teks tersebut, apa keunggulan utama dari Teks Cetak dibandingkan dengan Teks Digital ulasan pengunjung?</b>",
+    gambar: null,
+    pilihan: [
+      "Teks cetak menyajikan statistik rating bintang secara lebih terperinci dan akurat.",
+      "Teks cetak menyertakan foto-foto dokumentasi kegiatan warga lokal secara langsung.",
+      "Teks cetak mampu merangkum berbagai sudut pandang pengunjung menjadi satu narasi yang utuh dan reflektif.",
+      "Teks cetak memberikan informasi rincian harga tiket masuk dan rute transportasi secara detail.",
+      "Teks cetak memuat komentar langsung dari pengelola dan tokoh adat Kota Tajiri."
+    ],
+    kunciJawaban: "C"
+  },
+  
+  {
+    id: 28,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Perhatikan kutipan berikut dari Teks Cetak:</b><br><br><i>“Meski mendapat respon positif dari kalangan pelancong budaya dan mahasiswa, perspektif unik juga dihadirkan oleh David Beck. Ia menyampaikan bahwa kekuatan nyata tempat ini ada pada aksesibilitasnya bagi keluarga...”</i><br><br><b>Fungsi kata “Meski” dan “juga” pada bagian tersebut adalah untuk menunjukkan hubungan ...</b>",
+    gambar: null,
+    pilihan: [
+      "Penambahan dan penegasan fakta baru",
+      "Pertentangan/pertimbangan dan penambahan sudut pandang",
+      "Perbandingan dan simpulan akhir",
+      "Pengandaian dan penjelasan urutan waktu",
+      "Sebab-akibat dan alasan utama"
+    ],
+    kunciJawaban: "B"
+  },
+  
+  {
+    id: 29,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Perhatikan kalimat-kalimat berikut:</b><br>(1) Bagi para peserta ujian diharapkan hadir tepat waktu di lokasi tes.<br>(2) Para siswa menyusun laporan hasil penelitian lapangan secara sistematis.<br>(3) Dalam rapat itu membicarakan mengenai rencana anggaran tahun depan.<br>(4) Penelitian ini bertujuan untuk meningkatkan kualitas pembelajaran Bahasa Indonesia.<br><br><b>Manakah kalimat efektif dan baku di atas? (Pilihlah jawaban yang benar! Jawaban benar lebih dari satu)</b>",
+    gambar: null,
+    pilihan: [
+      "Kalimat (1)",
+      "Kalimat (2)",
+      "Kalimat (3)",
+      "Kalimat (4)",
+      "Semua kalimat"
+    ],
+    kunciJawaban: [1, 3]
+  },
+  
+  {
+    id: 30,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Mudah",
+    bobot: 2,
+    soal: "<b>Kutipan Cerpen:</b><br><br>Mbah Harjo selalu menyisakan piring pertama nasi tumpeng untuk diberikan kepada tetangganya yang kurang mampu sebelum keluarga sendiri menyantapnya. \"Rezeki yang kita dapat hari ini ada hak orang lain di dalamnya. Berbagi tidak akan mengurangi apa yang kita miliki,\" tuturnya lembut kepada cucunya.<br><br><b>Nilai moral dan budaya yang dominan dalam kutipan tersebut adalah ...</b>",
+    gambar: null,
+    pilihan: [
+      "Kepedulian sosial dan kepatuhan pada nilai kepedulian sesama",
+      "Sikap hemat dalam mengelola makanan keluarga",
+      "Penghormatan terhadap adat tumpengan semata",
+      "Ketaatan pada kebiasaan leluhur tanpa alasan",
+      "Menjaga gengsi sosial di mata tetangga"
+    ],
+    kunciJawaban: "A"
+  }
 ];
