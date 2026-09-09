@@ -121,13 +121,13 @@ window.soalIND = [
         kategori: "BAHASA INDONESIA",
         rentangNilai: "0-3",
         tipe: "BS",
-        soal: "<b>Perhatikan setiap pernyataan di bawah ini! Berdasarkan teks bacaan soal nomor 6, tentukan pernyataan Benar atau Salah!</b><br><br>(1) Burung hantu menjadi simbol kecerdasan dalam banyak cerita rakyat.<br>(2) Burung hantu mengandalkan penglihatan dan pendengaran saat berburu.<br>(3) Peran burung hantu di alam adalah mengendalikan populasi tikus.<br>(4) Suara burung hantu yang menyeramkan disukai semua orang.",
+        soal: "<b>Perhatikan setiap pernyataan di bawah ini! Berdasarkan teks bacaan soal nomor 6, tentukan pernyataan Benar atau Salah!</b>",
         gambar: null,
         pilihan: [
-            "(1) Benar",
-            "(2) Benar",
-            "(3) Benar",
-            "(4) Benar"
+            "Burung hantu menjadi simbol kecerdasan dalam banyak cerita rakyat.",
+            "Burung hantu mengandalkan penglihatan dan pendengaran saat berburu.",
+            "Peran burung hantu di alam adalah mengendalikan populasi tikus.",
+            "Suara burung hantu yang menyeramkan disukai semua orang."
         ],
         kunciJawaban: ["B", "B", "B", "S"]
     },
