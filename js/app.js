@@ -137,3 +137,23 @@ function hitungSkor() {
         totalBenar, totalSoalValid
     };
 }
+
+// ==================================================
+// 🔄 RESTORE SESI UJIAN OTOMATIS SAAT DI-REFRESH
+// ==================================================
+document.addEventListener('DOMContentLoaded', function () {
+    // Cek apakah ada data peserta yang tersimpan di localStorage
+    const dataPeserta = JSON.parse(localStorage.getItem('dataPeserta') || localStorage.getItem('cbt_peserta') || 'null');
+
+    if (dataPeserta && dataPeserta.kelas) {
+        // Ambil riwayat jawaban dan ragu-ragu jika ada
+        const savedJawaban = JSON.parse(localStorage.getItem('jawabanSiswa') || 'null');
+        const savedRagu = JSON.parse(localStorage.getItem('raguRagu') || 'null');
+
+        if (savedJawaban) jawabanSiswa = savedJawaban;
+        if (savedRagu) raguRagu = savedRagu;
+
+        // Buka langsung area ujian tanpa login ulang (isRestored = true)
+        muatSoalDanMulai(dataPeserta.kelas, true);
+    }
+});
