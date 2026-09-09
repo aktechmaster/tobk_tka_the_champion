@@ -341,62 +341,59 @@ window.soalIND = [
     kunciJawaban: ["Logis", "Tidak Logis", "Logis", "Logis", "Tidak Logis"]
   },
 
-    // ========================================
-    // SOAL NOMOR 20 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 20,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut dengan saksama!<br><br>Pohon sangat penting bagi lingkungan kita. Pohon disebut sebagai paru-paru dunia karena fungsinya menghasilkan oksigen murni dan membersihkan udara kotor di bumi.<br><br><b>Makna ungkapan 'paru-paru dunia' dalam teks di atas adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "Pohon adalah sumber utama udara bersih bagi kehidupan di bumi",
-            "Bagian bumi yang terbuat dari organ tubuh manusia",
-            "Tempat di mana pohon bisa bernapas dengan baik",
-            "Udara yang sangat bersih seperti yang ada di paru-paru"
-        ],
-        kunciJawaban: "A"
-    },
-
-    // ========================================
-    // SOAL NOMOR 21 (PG) - Tingkat Kesulitan: Sulit
-    // ========================================
-    {
-        id: 21,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut untuk menjawab soal nomor 21–23!<br><br><b>Pohon Bakau</b><br><br>Pohon bakau adalah jenis tanaman yang sangat unik. Tanaman ini tumbuh subur di kawasan pantai bertemu muara atau muara sungai. Bakau memiliki ciri khas akar tunjang yang kokoh, berfungsi utama untuk menahan seluruh tanaman dari gelombang pasang yang kuat. Selain itu, daun bakau juga dapat menjadi tempat dan mampu bertahan dari air asin.<br><br>Manfaat bakau sangat besar untuk ekosistem. Secara ekologis, hutan bakau menjadi rumah yang aman bagi berbagai biota laut, seperti ikan kecil, udang, dan kepiting. Bakau juga berperan penting dalam melindungi garis pantai dari abrasi (pengikisan) akibat ombak. Daun dan ranting bakau yang gugur juga menjadi sumber makanan utama bagi berbagai biota laut.<br><br>Selain manfaat lingkungan, bakau juga memberikan manfaat bagi kehidupan manusia. Kayu bakau sering dipakai oleh masyarakat pesisir sebagai bahan bangunan yang kuat atau sebagai kayu bakar. Buah bakau (seperti jenis pidada) juga dapat diolah menjadi berbagai makanan dan minuman sehat, seperti sirup atau dodol. Menanam bakau adalah investasi jangka panjang untuk menjaga desa pesisir dari bencana alam.<br><br><b>Bagan di bawah ini menunjukkan pengelompokan manfaat Pohon Bakau berdasarkan isi teks. Pilih satu bagan yang tepat dan urut berdasarkan pengelompokan manfaat bakau yang dijelaskan dalam teks!</b>",
-        gambar: null,
-        pilihan: [
-            "Manfaat Pohon Bakau → Manfaat Bagi Manusia → Manfaat Ekologis → Fungsi Akar Tunjang",
-            "Manfaat Pohon Bakau → Fungsi Akar → Manfaat Ekologis → Manfaat Ekonomi",
-            "Manfaat Pohon Bakau → Manfaat Ekologis → Manfaat Fisik → Manfaat Sosial",
-            "Manfaat Pohon Bakau → Manfaat Fisik/Ciri Khas → Manfaat Lingkungan/Ekologis → Manfaat Ekonomi/Manusia"
-        ],
-        kunciJawaban: "D"
-    },
-
-    // ========================================
-    // SOAL NOMOR 22 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 22,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<b>Pernyataan mana di bawah ini yang seluruhnya merupakan informasi tersurat dalam teks di atas!</b>",
-        gambar: null,
-        pilihan: [
-            "bakau hanya tumbuh di muara sungai dan akarnya berfungsi untuk menahan lumpur",
-            "kayu bakau sering dipakai sebagai bahan bangunan yang kuat",
-            "daun bakau yang gugur menjadi makanan utama untuk udang dan kepiting saja",
-            "buah bakau hanya bisa diolah menjadi sirup dan tidak bisa dimakan langsung"
-        ],
-        kunciJawaban: "B"
-    },
+    id: 20,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 8: Manfaat Teknologi Digital Terhadap Motivasi Belajar Peserta Didik</b><br><br>Teknologi digital tumbuh semakin signifikan di abad 21 dan memotivasi siswa untuk belajar dan berinovasi. Pemanfaatan teknologi digital secara efektif mempercepat pencarian informasi, meningkatkan kecakapan hidup sebagai modal kerja, dan memudahkan guru dalam membuat RPP. Dalam rangka membangun kurikulum baru dan sistem online serta memajukan pendidikan menuju Indonesia Kreatif 2045, Kementerian Pendidikan dan Kebudayaan Republik Indonesia telah membuktikan bahwa teknologi digital harus diterapkan dalam bidang pendidikan saat ini. Untuk mencapai kesesuaian ide dengan kemampuan siswa dan keahlian pendidik dan tenaga kependidikan dilakukan penyesuaian.<br><br>Bagaimana Indonesia sebagai negara berkembang dapat memanfaatkan teknologi digital seperti internet melalui warnet dan handphone dengan berbagai fitur seperti blog, email, dan lain sebagainya. Semua aktivitas manusia dapat dipermudah dengan adanya teknologi digital, dan siapapun dapat mengakses berbagai macam informasi, termasuk informasi tentang pendidikan.<br><br>Secara harfiah, kata “teknologi” berasal dari frase Perancis “La Teknique”, yang mengacu pada ide yang dikembangkan dalam upaya memproses realisasi rasional. Di sini, pemahaman rasional adalah prosedur yang dapat diterapkan berulang kali atau sering. Teknologi merupakan adaptasi dari teknologi alami yang dibuat oleh manusia, yang kemudian ditransformasikan menjadi media sesuai dengan kebutuhan spesifiknya.<br><br>Teknologi digital adalah teknologi yang dikelola melalui sistem komputerisasi; sistem didasarkan pada bentuk informasi berupa nilai numerik 0 dan 1 yang menunjukkan tombol on dan off. Dalam hal menghubungkan ke media sebagai pembawa pesan, teknologi digital juga dapat disebut sebagai teknologi nirkabel karena menggunakan sinyal. Keuntungan menggunakan sinyal digital dibandingkan sinyal analog adalah dapat bergerak lebih cepat dari kecepatan cahaya.<br><br>Teknologi digital merupakan sarana penyampaian yang efektif dari perspektif komunikasi; komunikasi menjadi lebih dinamis tanpa dibatasi oleh waktu dan geografi. Komunikasi yang dilakukan melalui perantara internet adalah contoh yang baik tentang bagaimana teknologi digital telah meningkatkan interaksi sosial. Berbagai program online menawarkan obrolan video dan alat komunikasi dua arah lainnya. Namun pada hakikatnya, komunikasi berbasis teknologi digital menghasilkan penyampaian analog atau hasil yang diterima. Perlu disebutkan bahwa meskipun teknologi digital berfungsi sebagai saluran untuk mentransmisikan informasi tertulis dan visual melalui gelombang sinyal, hasil yang akhirnya diterima oleh penerima adalah analog karena dapat dirasakan oleh panca indera kita.<br><br><b>Berdasarkan keseluruhan teks di atas, manakah pernyataan-pernyataan berikut yang merupakan manfaat atau karakteristik nyata dari teknologi digital dalam konteks pendidikan dan komunikasi? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Teknologi digital membatasi ruang gerak dan waktu komunikasi pendidik sehingga interaksi sosial menjadi terbatas.",
+      "Pemanfaatan teknologi digital secara efektif dapat mempercepat pencarian informasi dan memudahkan guru dalam menyusun RPP.",
+      "Sinyal digital memiliki keunggulan dapat bergerak lebih cepat dari kecepatan cahaya dibandingkan sinyal analog.",
+      "Hasil akhir dari komunikasi berbasis teknologi digital yang diterima oleh panca indera manusia berupa nilai numerik murni 0 dan 1.",
+      "Teknologi digital memungkinkan komunikasi yang lebih dinamis tanpa dibatasi oleh sekat waktu dan geografi melalui perantara internet."
+    ],
+    kunciJawaban: [1, 2, 4]
+  },
+  
+  {
+    id: 21,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Kutipan Puisi: DUA SAJAK DI BAWAH SATU NAMA</b><br><br>darah tercecer di ladang itu. Siapa pula<br>binatang korban kali ini, saudara?<br>Lalu senyap pula. Berapa jaman telah menderita<br>semenjak Ia pun mengusir kita dari Sana<br>awan-awan kecil mengenalnya kembali, serunya:<br>telah terbantai Abel, darahnya merintih kepada Bapa<br>(aku pada pihakmu, saudara, pandang ke muka<br>masih tajam bau darah itu. Kita ke dunia)<br><br>kalau Kau pun bernama Kesunyian, baiklah<br>tengah hari kita bertemu kembali sehabis<br>kubunuh anak itu. Di tengah ladang aku tinggal sendiri<br>bertahan menghadapi Matahari<br>dan Kau pun di sini. Pandanglah dua belah tanganku<br>berlumur darah saudaraku sendiri<br>pohon-pohon masih tegak, mereka pasti mengerti<br>dendam manusia yang setia tetapi tersisih ke tepi<br>benar. Telah kubunuh Abel, kepada siapa<br>tertumpu sakit hati alam, dendam pertama kemanusiaan<br>awan-awan di langit kan tetap berarak, angin senantiasa<br>menggugurkan daunan<br>segala atas namamu: Kesunyian<br><br><b>Makna kiasan \"dendam pertama kemanusiaan\" memperjelas kondisi yang dialami aku lirik tentang ...</b>",
+    gambar: null,
+    pilihan: [
+      "Konflik dan tragedi kemanusiaan paling awal yang dipicu oleh rasa iri, cemburu, dan penolakan",
+      "Kebencian mendalam antarmanusia akibat perebutan wilayah kekuasaan dan sumber daya alam",
+      "Keinginan manusia untuk membalas dendam kepada penciptanya atas pengusiran dari surga",
+      "Penyesalan mendalam dari seseorang yang telah melakukan kejahatan secara tidak sengaja",
+      "Kemurkaan alam semesta terhadap perilaku manusia yang merusak kelestarian lingkungan"
+    ],
+    kunciJawaban: "A"
+  },
+  
+  {
+    id: 22,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Kutipan Puisi: DUA SAJAK DI BAWAH SATU NAMA</b><br><br>darah tercecer di ladang itu. Siapa pula<br>binatang korban kali ini, saudara?<br>Lalu senyap pula. Berapa jaman telah menderita<br>semenjak Ia pun mengusir kita dari Sana<br>awan-awan kecil mengenalnya kembali, serunya:<br>telah terbantai Abel, darahnya merintih kepada Bapa<br>(aku pada pihakmu, saudara, pandang ke muka<br>masih tajam bau darah itu. Kita ke dunia)<br><br>kalau Kau pun bernama Kesunyian, baiklah<br>tengah hari kita bertemu kembali sehabis<br>kubunuh anak itu. Di tengah ladang aku tinggal sendiri<br>bertahan menghadapi Matahari<br>dan Kau pun di sini. Pandanglah dua belah tanganku<br>berlumur darah saudaraku sendiri<br>pohon-pohon masih tegak, mereka pasti mengerti<br>dendam manusia yang setia tetapi tersisih ke tepi<br>benar. Telah kubunuh Abel, kepada siapa<br>tertumpu sakit hati alam, dendam pertama kemanusiaan<br>awan-awan di langit kan tetap berarak, angin senantiasa<br>menggugurkan daunan<br>segala atas namamu: Kesunyian<br><br><b>Makna citraan penglihatan \"awan-awan di langit kan tetap berarak, angin senantiasa menggugurkan daunan\" mengkonkretkan gagasan penyair tentang ...</b>",
+    gambar: null,
+    pilihan: [
+      "Pergantian hari dan musim yang membawa kedamaian bagi alam semesta",
+      "Batas akhir aktivitas manusia yang diwarnai penderitaan dan pencerahan",
+      "Suasana kedukaan di ujung waktu yang tidak dapat dihindari oleh makhluk hidup",
+      "Siap menghadapi perubahan waktu dan nasib yang terus bergulir di dunia",
+      "Kondisi keheningan dan keabadian alam yang tetap berjalan tak acuh terhadap tragedi manusia"
+    ],
+    kunciJawaban: "E"
+  },
 
     // ========================================
     // SOAL NOMOR 23 (BS) - Tingkat Kesulitan: Sedang
