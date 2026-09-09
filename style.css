@@ -331,3 +331,18 @@ body {
     30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
     40%, 60% { transform: translate3d(8px, 0, 0); }
 }
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+.footer {
+    text-align: center;
+    padding: 15px 0 5px 0;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.footer strong {
+    color: var(--primary-color);
+}
