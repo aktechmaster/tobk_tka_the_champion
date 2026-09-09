@@ -305,42 +305,41 @@ window.soalIND = [
     kunciJawaban: ["Sesuai", "Sesuai", "Tidak Sesuai", "Sesuai", "Tidak Sesuai"]
   },
 
-    // ========================================
-    // SOAL NOMOR 18 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 18,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<b>Makna dari kalimat \"Mata Bima langsung berbinar\" pada cerita tersebut adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "Bima terkejut karena sinar matahari menyilaukan matanya",
-            "Bima merasa tertarik dan senang dengan pembicaraan itu",
-            "mata Bima sakit dan perlu dibawa ke UKS",
-            "Bima memejamkan mata karena mengantuk"
-        ],
-        kunciJawaban: "B"
-    },
-
-    // ========================================
-    // SOAL NOMOR 19 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 19,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "<b>Berdasarkan cerita 'Sahabat untuk Bima' dan kaitannya dengan kehidupan sehari-hari di sekolah, tentukan pernyataan yang Sesuai atau Tidak Sesuai!</b><br><br>(1) Sikap Bima yang kembali mengurung diri setelah mendengar perkataan negatif sangat mungkin terjadi pada anak yang sedang merasa down.<br>(2) Peristiwa Raka yang mau berteman tanpa menilai hobi atau penampilan fisik adalah hal yang wajar jika ditujukan sebagai perkenalan yang tulus.<br>(3) Adanya kelompok anak yang bergosip dan mengejek teman yang berbeda adalah hal yang sayangnya sering terjadi di lingkungan sekolah dan dapat melukai perasaan.",
-        gambar: null,
-        pilihan: [
-            "(1) Sesuai",
-            "(2) Sesuai",
-            "(3) Sesuai"
-        ],
-        kunciJawaban: ["B", "B", "B"]
-    },
+    id: 18,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Teks 8: Manfaat Teknologi Digital Terhadap Motivasi Belajar Peserta Didik</b><br><br>Teknologi digital tumbuh semakin signifikan di abad 21 dan memotivasi siswa untuk belajar dan berinovasi. Pemanfaatan teknologi digital secara efektif mempercepat pencarian informasi, meningkatkan kecakapan hidup sebagai modal kerja, dan memudahkan guru dalam membuat RPP. Dalam rangka membangun kurikulum baru dan sistem online serta memajukan pendidikan menuju Indonesia Kreatif 2045, Kementerian Pendidikan dan Kebudayaan Republik Indonesia telah membuktikan bahwa teknologi digital harus diterapkan dalam bidang pendidikan saat ini. Untuk mencapai kesesuaian ide dengan kemampuan siswa dan keahlian pendidik dan tenaga kependidikan dilakukan penyesuaian.<br><br>Bagaimana Indonesia sebagai negara berkembang dapat memanfaatkan teknologi digital seperti internet melalui warnet dan handphone dengan berbagai fitur seperti blog, email, dan lain sebagainya. Semua aktivitas manusia dapat dipermudah dengan adanya teknologi digital, dan siapapun dapat mengakses berbagai macam informasi, termasuk informasi tentang pendidikan.<br><br>Secara harfiah, kata “teknologi” berasal dari frase Perancis “La Teknique”, yang mengacu pada ide yang dikembangkan dalam upaya memproses realisasi rasional. Di sini, pemahaman rasional adalah prosedur yang dapat diterapkan berulang kali atau sering. Teknologi merupakan adaptasi dari teknologi alami yang dibuat oleh manusia, yang kemudian ditransformasikan menjadi media sesuai dengan kebutuhan spesifiknya.<br><br>Teknologi digital adalah teknologi yang dikelola melalui sistem komputerisasi; sistem didasarkan pada bentuk informasi berupa nilai numerik 0 dan 1 yang menunjukkan tombol on dan off. Dalam hal menghubungkan ke media sebagai pembawa pesan, teknologi digital juga dapat disebut sebagai teknologi nirkabel karena menggunakan sinyal. Keuntungan menggunakan sinyal digital dibandingkan sinyal analog adalah dapat bergerak lebih cepat dari kecepatan cahaya.<br><br>Teknologi digital merupakan sarana penyampaian yang efektif dari perspektif komunikasi; komunikasi menjadi lebih dinamis tanpa dibatasi oleh waktu dan geografi. Komunikasi yang dilakukan melalui perantara internet adalah contoh yang baik tentang bagaimana teknologi digital telah meningkatkan interaksi sosial. Berbagai program online menawarkan obrolan video dan alat komunikasi dua arah lainnya. Namun pada hakikatnya, komunikasi berbasis teknologi digital menghasilkan penyampaian analog atau hasil yang diterima. Perlu disebutkan bahwa meskipun teknologi digital berfungsi sebagai saluran untuk mentransmisikan informasi tertulis dan visual melalui gelombang sinyal, hasil yang akhirnya diterima oleh penerima adalah analog karena dapat dirasakan oleh panca indera kita.<br><br><b>Hubungan koherensi antara paragraf ke-4 dan paragraf ke-5 pada teks di atas adalah ...</b>",
+    gambar: null,
+    pilihan: [
+      "Paragraf ke-4 menjelaskan dampak negatif sistem numerik, sedangkan paragraf ke-5 memberikan solusi atas kendala geografi.",
+      "Paragraf ke-4 mendefinisikan mekanisme teknis/sistem operasi teknologi digital, sedangkan paragraf ke-5 menjelaskan efektivitas penerapannya dalam interaksi komunikasi.",
+      "Paragraf ke-4 memaparkan alasan pentingnya RPP bagi guru, sedangkan paragraf ke-5 memperinci penggunaan internet di warnet.",
+      "Paragraf ke-4 akibat dari maraknya penggunaan gadget, sedangkan paragraf ke-5 merupakan sebab tingginya motivasi belajar siswa.",
+      "Paragraf ke-4 menyajikan contoh-contoh aplikasi video chat, sedangkan paragraf ke-5 memberikan dasar filosofis istilah La Teknique."
+    ],
+    kunciJawaban: "B"
+  },
+  
+  {
+    id: 19,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 8: Manfaat Teknologi Digital Terhadap Motivasi Belajar Peserta Didik</b><br><br>Teknologi digital tumbuh semakin signifikan di abad 21 dan memotivasi siswa untuk belajar dan berinovasi. Pemanfaatan teknologi digital secara efektif mempercepat pencarian informasi, meningkatkan kecakapan hidup sebagai modal kerja, dan memudahkan guru dalam membuat RPP. Dalam rangka membangun kurikulum baru dan sistem online serta memajukan pendidikan menuju Indonesia Kreatif 2045, Kementerian Pendidikan dan Kebudayaan Republik Indonesia telah membuktikan bahwa teknologi digital harus diterapkan dalam bidang pendidikan saat ini. Untuk mencapai kesesuaian ide dengan kemampuan siswa dan keahlian pendidik dan tenaga kependidikan dilakukan penyesuaian.<br><br>Bagaimana Indonesia sebagai negara berkembang dapat memanfaatkan teknologi digital seperti internet melalui warnet dan handphone dengan berbagai fitur seperti blog, email, dan lain sebagainya. Semua aktivitas manusia dapat dipermudah dengan adanya teknologi digital, dan siapapun dapat mengakses berbagai macam informasi, termasuk informasi tentang pendidikan.<br><br>Secara harfiah, kata “teknologi” berasal dari frase Perancis “La Teknique”, yang mengacu pada ide yang dikembangkan dalam upaya memproses realisasi rasional. Di sini, pemahaman rasional adalah prosedur yang dapat diterapkan berulang kali atau sering. Teknologi merupakan adaptasi dari teknologi alami yang dibuat oleh manusia, yang kemudian ditransformasikan menjadi media sesuai dengan kebutuhan spesifiknya.<br><br>Teknologi digital adalah teknologi yang dikelola melalui sistem komputerisasi; sistem didasarkan pada bentuk informasi berupa nilai numerik 0 dan 1 yang menunjukkan tombol on dan off. Dalam hal menghubungkan ke media sebagai pembawa pesan, teknologi digital juga dapat disebut sebagai teknologi nirkabel karena menggunakan sinyal. Keuntungan menggunakan sinyal digital dibandingkan sinyal analog adalah dapat bergerak lebih cepat dari kecepatan cahaya.<br><br>Teknologi digital merupakan sarana penyampaian yang efektif dari perspektif komunikasi; komunikasi menjadi lebih dinamis tanpa dibatasi oleh waktu dan geografi. Komunikasi yang dilakukan melalui perantara internet adalah contoh yang baik tentang bagaimana teknologi digital telah meningkatkan interaksi sosial. Berbagai program online menawarkan obrolan video dan alat komunikasi dua arah lainnya. Namun pada hakikatnya, komunikasi berbasis teknologi digital menghasilkan penyampaian analog atau hasil yang diterima. Perlu disebutkan bahwa meskipun teknologi digital berfungsi sebagai saluran untuk mentransmisikan informasi tertulis dan visual melalui gelombang sinyal, hasil yang akhirnya diterima oleh penerima adalah analog karena dapat dirasakan oleh panca indera kita.<br><br><b>Berdasarkan teks di atas, manakah argumen yang logis dari pernyataan-pernyataan berikut? Tentukan Logis atau Tidak Logis untuk setiap argumen berikut!</b>",
+    gambar: null,
+    pernyataan: [
+      "Penyesuaian kurikulum dan kemampuan tenaga kependidikan mutlak diperlukan karena penerapan teknologi digital dalam pendidikan harus sejalan dengan potensi siswa dan keahlian guru.",
+      "Penggunaan teknologi digital secara otomatis pasti langsung menghilangkan seluruh kendala pendidikan di Indonesia tanpa memerlukan infrastruktur pendukung atau pelatihan pendidik.",
+      "Meskipun data ditransmisikan secara digital melalui gelombang sinyal, hasil akhir yang diterima manusia tetap bersifat analog karena indera manusia meresapi informasi melalui visual dan auditori.",
+      "Keunggulan sinyal digital yang bergerak lebih cepat dari kecepatan cahaya membuat komunikasi jarak jauh dapat berlangsung secara dinamis tanpa dibatasi waktu dan geografi.",
+      "Penggunaan internet di negara berkembang otomatis menghentikan kebutuhan masyarakat akan media komunikasi berbasis analog secara keseluruhan."
+    ],
+    kunciJawaban: ["Logis", "Tidak Logis", "Logis", "Logis", "Tidak Logis"]
+  },
 
     // ========================================
     // SOAL NOMOR 20 (PG) - Tingkat Kesulitan: Sedang
