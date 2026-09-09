@@ -173,7 +173,6 @@ function tampilkanHasil() {
     if (timerInterval) clearInterval(timerInterval);
 
     const h = hitungSkor();
-    const adaIPA = h.ipaTotalSoal > 0;
     
     quizArea.innerHTML = `
         <div class="result-box">
@@ -182,37 +181,38 @@ function tampilkanHasil() {
             </div>
 
             <div style="display: flex; justify-content: space-between; margin-bottom: 20px; text-align: center; flex-wrap: wrap; gap: 10px;">
-                <div style="flex: 1; min-width: 120px; border-right: 1px solid #e2e8f0; padding: 0 5px;">
+                <!-- B. Indonesia -->
+                <div style="flex: 1; min-width: 110px; border-right: 1px solid #e2e8f0; padding: 0 5px;">
                     <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">B. Indonesia</div>
-                    <div style="font-size: 26px; font-weight: 900; color: #0056b3; margin: 5px 0;">
-                        ${h.indoSkor} <span style="font-size: 12px; color: #94a3b8;">/ ${h.indoMaks}</span>
+                    <div style="font-size: 24px; font-weight: 900; color: #0056b3; margin: 5px 0;">
+                        ${h.indoSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.indoMaks}</span>
                     </div>
                     <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
                         ✅ ${h.indoBenar}/${h.indoTotalSoal} Soal
                     </div>
                 </div>
                 
-                <div style="flex: 1; min-width: 120px; border-right: ${adaIPA ? '1px solid #e2e8f0' : 'none'}; padding: 0 5px;">
+                <!-- B. Inggris -->
+                <div style="flex: 1; min-width: 110px; border-right: 1px solid #e2e8f0; padding: 0 5px;">
+                    <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">B. Inggris</div>
+                    <div style="font-size: 24px; font-weight: 900; color: #059669; margin: 5px 0;">
+                        ${h.ingSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.ingMaks}</span>
+                    </div>
+                    <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
+                        ✅ ${h.ingBenar}/${h.ingTotalSoal} Soal
+                    </div>
+                </div>
+
+                <!-- Matematika -->
+                <div style="flex: 1; min-width: 110px; padding: 0 5px;">
                     <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">Matematika</div>
-                    <div style="font-size: 26px; font-weight: 900; color: #d97706; margin: 5px 0;">
-                        ${h.mtkSkor} <span style="font-size: 12px; color: #94a3b8;">/ ${h.mtkMaks}</span>
+                    <div style="font-size: 24px; font-weight: 900; color: #d97706; margin: 5px 0;">
+                        ${h.mtkSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.mtkMaks}</span>
                     </div>
                     <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
                         ✅ ${h.mtkBenar}/${h.mtkTotalSoal} Soal
                     </div>
                 </div>
-
-                ${adaIPA ? `
-                <div style="flex: 1; min-width: 120px; padding: 0 5px;">
-                    <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">IPA</div>
-                    <div style="font-size: 26px; font-weight: 900; color: #059669; margin: 5px 0;">
-                        ${h.ipaSkor} <span style="font-size: 12px; color: #94a3b8;">/ ${h.ipaMaks}</span>
-                    </div>
-                    <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                        ✅ ${h.ipaBenar}/${h.ipaTotalSoal} Soal
-                    </div>
-                </div>
-                ` : ''}
             </div>
 
             <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
