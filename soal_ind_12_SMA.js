@@ -35,81 +35,75 @@ window.soalIND = [
     kunciJawaban: [0, 2, 4]
   },
 
-    // ========================================
-    // SOAL NOMOR 3 (PG) - Tingkat Kesulitan: Mudah
-    // ========================================
     {
-        id: 3,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-2",
-        tipe: "PG",
-        soal: "<b>Berdasarkan teks bacaan pada soal nomor 2, kemudahan utama apa yang didapatkan peserta didik dengan adanya perpustakaan digital?</b>",
-        gambar: null,
-        pilihan: [
-            "dapat menambah koleksi buku fisik di rumah",
-            "dapat belajar kapan saja dan di mana saja",
-            "selalu mendapat dukungan dari pemerintah",
-            "bisa menggunakan fasilitas teknologi yang mahal"
-        ],
-        kunciJawaban: "B"
-    },
+    id: 3,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 2: Polemik Kecerdasan Buatan dan Otentisitas Karya Seni</b><br><br>Penggunaan Kecerdasan Buatan (AI) Generatif dalam penciptaan karya sastra dan seni rupa menimbulkan polemik hangat di kalangan akademisi dan praktisi budaya. Sebagian pihak menilai bahwa algoritma AI mampu mempercepat proses kreatif dan mendemokratisasi seni, sehingga siapa pun kini dapat menghasilkan karya estetis tanpa harus menguasai teknik teknis yang rumit. Namun, pandangan ini terkesan menyederhanakan hakikat seni itu sendiri.<br><br>Seni bukan sekadar produk visual atau susunan kata yang indah, melainkan manifestasi dari pengalaman batin, emosi, kontemplasi, dan konteks sosio-historis penciptanya. Algoritma AI bekerja berdasarkan statistik dan rekapitulasi data masa lalu (pattern recognition), bukan atas dasar kesadaran atau rasa empati. Ketika karya seni diproduksi secara massal oleh mesin tanpa kedalaman jiwa, nilai keunikan dan otentisitas seni terancam terdegradasi menjadi sekadar komoditas konsumsi yang hampa makna.<br><br><b>Manakah di antara pernyataan berikut yang merupakan bentuk evaluasi kritis yang tepat terhadap argumen penulis dalam Teks 2? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Penulis sangat objektif karena mengabaikan sama sekali dampak negatif AI terhadap hak cipta para seniman.",
+      "Penulis berhasil menunjukkan perbedaan mendasar antara hasil olahan data mesin dan kedalaman emosional manusia dalam berseni.",
+      "Penulis cenderung emosional dan tidak menyajikan data empiris tentang jumlah seniman yang dirugikan oleh keberadaan AI.",
+      "Penulis memberikan sudut pandang filosofis yang kuat mengenai pentingnya otentisitas dan pengalaman batin dalam proses berseni.",
+      "Penulis menolak sepenuhnya keberadaan AI tanpa mengakui sedikit pun potensi positif AI sebagai alat bantu kreatif."
+    ],
+    kunciJawaban: [1, 3]
+  },
+  {
+    id: 4,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sangat Sulit",
+    bobot: 5,
+    soal: "<b>Teks 2: Polemik Kecerdasan Buatan dan Otentisitas Karya Seni</b><br><br>Penggunaan Kecerdasan Buatan (AI) Generatif dalam penciptaan karya sastra dan seni rupa menimbulkan polemik hangat di kalangan akademisi dan praktisi budaya. Sebagian pihak menilai bahwa algoritma AI mampu mempercepat proses kreatif dan mendemokratisasi seni, sehingga siapa pun kini dapat menghasilkan karya estetis tanpa harus menguasai teknik teknis yang rumit. Namun, pandangan ini terkesan menyederhanakan hakikat seni itu sendiri.<br><br>Seni bukan sekadar produk visual atau susunan kata yang indah, melainkan manifestasi dari pengalaman batin, emosi, kontemplasi, dan konteks sosio-historis penciptanya. Algoritma AI bekerja berdasarkan statistik dan rekapitulasi data masa lalu (pattern recognition), bukan atas dasar kesadaran atau rasa empati. Ketika karya seni diproduksi secara massal oleh mesin tanpa kedalaman jiwa, nilai keunikan dan otentisitas seni terancam terdegradasi menjadi sekadar komoditas konsumsi yang hampa makna.<br><br><b>Berdasarkan analisis apresiasi bahasa dan struktur retorika Teks 2, manakah keunggulan gaya penyampaian penulis yang mendukung daya bujuk (persuasi) artikel tersebut? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Menggunakan diksi yang lugas dan bernas seperti 'mendemokratisasi seni', 'manifestasi', dan 'kontemplasi' untuk mempertegas gagasan.",
+      "Menyajikan kontras yang tajam antara sifat algoritma mesin (kaku/data) dengan hakikat manusia (rasa/empati).",
+      "Memakai kalimat-kalimat sindiran yang bersifat sarkastik untuk menjatuhkan para pengembang teknologi AI.",
+      "Menata alur argumentasi secara runtut dari pemaparan fenomena, klaim pihak lawan, hingga counterargument yang kokoh.",
+      "Menggunakan bahasa figuratif bertema alam yang puitis untuk menyentuh perasaan pembaca secara emosional."
+    ],
+    kunciJawaban: [0, 1, 3]
+  },
 
-    // ========================================
-    // SOAL NOMOR 4 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 4,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Cermati teks bacaan berikut untuk menjawab soal nomor 4 dan 5!<br><br><b>Hewan Pemakan Daun, Apa Itu?</b><br><br>Hewan bisa dibagi menjadi tiga kelompok berdasarkan makanan mereka. Karnivora, hewan pemakan daging. Contoh hewan karnivora adalah singa. Selanjutnya herbivora, yaitu hewan pemakan tumbuhan. Sapi adalah contoh hewan herbivora. Terakhir, hewan omnivora, yaitu hewan pemakan daging dan tumbuhan, seperti beruang.<br><br>Dari kelompok herbivora, ada hewan yang hanya makan daun saja. Mereka disebut folivora. Hewan folivora hanya makan daun untuk hidup. Namun, daun itu susah untuk dicerna, apalagi kalau sudah tua. Kadang-kadang daun juga mengandung zat yang bisa berbahaya.<br><br>Agar bisa mencerna daun, tubuh hewan folivora punya cara khusus. Mereka punya usus yang panjang agar makanan bisa diproses lebih lama. Tubuh hewan folivora bekerja lebih lambat, jadi tidak terlalu banyak bergerak. Di dalam perut hewan folivora juga ada bakteri baik yang membantu mencerna daun. Beberapa hewan folivora lebih suka daun muda karena lebih lembut dan mudah dimakan.<br><br>Ada beberapa contoh hewan folivora yang hidup di alam. Misalnya, panda yang makan daun bambu. Ada juga koala yang makan daun eukaliptus. Mereka tinggal di hutan dan sangat bergantung pada daun untuk makan. Karena itu, hutan tempat mereka tinggal harus dijaga supaya mereka bisa terus hidup.<br><br><b>Urutan informasi yang sesuai dengan teks adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "Tiga Kelompok Utama Hewan → Pengertian Hewan Folivora → Cara Hewan Folivora Mencerna Daun → Contoh Hewan Folivora",
-            "Tiga Kelompok Utama Hewan → Contoh Hewan Folivora → Pengertian Hewan Folivora → Cara Hewan Folivora Mencerna Daun",
-            "Tiga Kelompok Utama Hewan → Pengertian Hewan Folivora → Contoh Hewan Folivora → Cara Hewan Folivora Mencerna Daun",
-            "Tiga Kelompok Utama Hewan → Cara Hewan Folivora Mencerna Daun → Pengertian Hewan Folivora → Contoh Hewan Folivora"
-        ],
-        kunciJawaban: "A"
-    },
-
-    // ========================================
-    // SOAL NOMOR 5 (PGK) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 5,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "<b>Berdasarkan teks di atas, sebutkan adaptasi atau ciri khusus yang dimiliki tubuh hewan folivora agar dapat mencerna daun! (Pilih SEMUA jawaban yang benar)</b>",
-        gambar: null,
-        pilihan: [
-            "Mereka memiliki usus yang panjang agar makanan diproses lebih lama",
-            "Mereka hanya makan daun yang sudah tua karena lebih mudah dicerna",
-            "Tubuh mereka bekerja lebih lambat dan tidak terlalu banyak bergerak",
-            "Di dalam perut mereka terdapat bakteri baik yang membantu proses pencernaan"
-        ],
-        kunciJawaban: [0, 2, 3]
-    },
-
-    // ========================================
-    // SOAL NOMOR 6 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 6,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Cermati teks bacaan berikut dengan saksama!<br><br>Burung hantu dikenal sebagai hewan malam yang pandai berburu. Ia memiliki penglihatan tajam dan pendengaran luar biasa. Burung ini mampu melihat mangsanya walau dalam kegelapan. Tak heran jika burung hantu menjadi simbol kecerdasan dalam banyak cerita. Selain itu, burung hantu juga sering muncul dalam cerita rakyat dan buku cerita sebagai makhluk yang bijaksana.<br><br>Namun, tidak semua orang menyukai burung hantu. Di beberapa daerah, burung ini dianggap membawa pertanda buruk karena suaranya yang terdengar menyeramkan pada malam hari. Meski demikian, burung hantu sebenarnya memiliki peran penting dalam menjaga keseimbangan alam, terutama dalam mengendalikan populasi tikus dan hewan kecil lainnya.<br><br><b>Ide pokok di paragraf pertama pada bacaan di atas adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "burung hantu melambangkan kecerdasan",
-            "burung hantu pandai berburu malam hari",
-            "ciri-ciri burung hantu sebagai pemburu malam",
-            "burung hantu memiliki budaya unik"
-        ],
-        kunciJawaban: "C"
-    },
+    id: 5,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Teks 3: Ancaman Intrusi Air Laut terhadap Ketahanan Pangan Pesisir</b><br><br>Krisis iklim global kian mengancam ketahanan pangan di wilayah pesisir Indonesia. Fenomena kenaikan permukaan air laut yang disertai intrusi air asin telah merusak ribuan hektar lahan pertanian produktif di sepanjang pantai utara Jawa. Air laut yang merembes ke lahan pertanian meningkatkan kadar salinitas tanah, sehingga tanaman padi tidak dapat tumbuh optimal dan mengalami kegagalan panen secara berulang.<br><br>Untuk mengatasi permasalahan ini, Kementerian Pertanian bersama para peneliti mulai mempopulerkan varietas padi toleran salinitas tingkah tinggi. Varietas unggul baru ini dirancang khusus agar mampu bertahan pada kondisi tanah bergaram tinggi tanpa menurunkan kualitas bulir beras yang dihasilkan. Selain itu, perbaikan sistem drainase dan pembuatan benteng vegetasi mangrove juga terus digalakkan guna menahan laju intrusi air laut ke wilayah daratan.<br><br><b>Gagasan utama yang tertuang pada paragraf pertama Teks 3 adalah ...</b>",
+    gambar: null,
+    pilihan: [
+      "Fenomena kenaikan permukaan air laut hanya terjadi di sepanjang pantai utara Jawa.",
+      "Krisis iklim memicu intrusi air laut yang merusak lahan pertanian pesisir dan mengancam ketahanan pangan.",
+      "Penyebab utama gagal panen di Indonesia adalah kurangnya sarana irigasi teknis di wilayah pesisir.",
+      "Lahan pertanian di wilayah pesisir kini seluruhnya telah dialihfungsikan menjadi tambak udang.",
+      "Pembudidayaan varietas padi lokal tidak lagi menguntungkan bagi para petani di kawasan utara Jawa."
+    ],
+    kunciJawaban: "B"
+  },
+  {
+    id: 6,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PG",
+    rentangNilai: "Mudah",
+    bobot: 2,
+    soal: "<b>Teks 3: Ancaman Intrusi Air Laut terhadap Ketahanan Pangan Pesisir</b><br><br>Krisis iklim global kian mengancam ketahanan pangan di wilayah pesisir Indonesia. Fenomena kenaikan permukaan air laut yang disertai intrusi air asin telah merusak ribuan hektar lahan pertanian produktif di sepanjang pantai utara Jawa. Air laut yang merembes ke lahan pertanian meningkatkan kadar salinitas tanah, sehingga tanaman padi tidak dapat tumbuh optimal dan mengalami kegagalan panen secara berulang.<br><br>Untuk mengatasi permasalahan ini, Kementerian Pertanian bersama para peneliti mulai mempopulerkan varietas padi toleran salinitas tingkah tinggi. Varietas unggul baru ini dirancang khusus agar mampu bertahan pada kondisi tanah bergaram tinggi tanpa menurunkan kualitas bulir beras yang dihasilkan. Selain itu, perbaikan sistem drainase dan pembuatan benteng vegetasi mangrove juga terus digalakkan guna menahan laju intrusi air laut ke wilayah daratan.<br><br><b>Berdasarkan Teks 3, solusi teknis utama yang ditawarkan oleh peneliti dan Kementerian Pertanian untuk mengatasi dampak salinitas tanah adalah ...</b>",
+    gambar: null,
+    pilihan: [
+      "Memindahkan seluruh kawasan pertanian dari pantai utara Jawa ke wilayah pegunungan.",
+      "Mengganti tanaman padi secara total dengan tanaman perkebunan keras seperti kelapa sawit.",
+      "Mengembangkan dan menanam varietas padi unggul yang tahan terhadap kadar salinitas tinggi.",
+      "Mengalirkan air tawar secara masif dari danau buatan menggunakan pompa industri berkapasitas besar.",
+      "Menutup seluruh akses pantai dengan dinding beton raksasa di sepanjang garis pantai Jawa."
+    ],
+    kunciJawaban: "C"
+  },
 
     // ========================================
     // SOAL NOMOR 7 (BS) - Tingkat Kesulitan: Sedang
