@@ -4,7 +4,7 @@ window.soalMTK = [
 // ========================================
 {
     id: 61,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan daftar benda-benda berikut. Benda-benda yang memiliki sifat konduktor yang baik adalah ....<br>(1) Plastik makan<br>(2) Plat besi<br>(3) Kertas asturo<br>(4) Cup gelas kopi<br>(5) Panci aluminium",
@@ -23,7 +23,7 @@ window.soalMTK = [
 // ========================================
 {
     id: 62,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perubahan wujud benda merupakan fenomena alam yang terjadi ketika suatu benda mengalami perubahan suhu. Dalam kehidupan sehari-hari, kita sering menemui berbagai perubahan wujud, seperti mencair, membeku, menguap, membeku, atau menyublim. Perubahan wujud ini disebabkan oleh penyerapan ataupun pelepasan energi panas.<br>Sandy memindahkan kamper di dalam lemari bajunya yang setelah satu minggu ukurannya berubah menjadi lebih kecil. Perubahan yang dialami oleh kamper milik Sandy sama dengan ....",
@@ -42,16 +42,16 @@ window.soalMTK = [
 // ========================================
 {
     id: 63,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Pada hari yang sangat panas, seorang pekerja bangunan melepaskan tutup botol kaca yang terbuat dari logam. Setelah beberapa saat menenpa, pekerja tersebut menyiram tutup botol itu dengan air hangat. Anehnya, setelah disiram air hangat, tutup botol logam tersebut menjadi lebih mudah dibuka.<br><br>Mengapa menyiram tutup botol logam dengan air hangat dapat membantu pekerja tersebut membuka tutup botol kaca?",
     gambar: null,
     pilihan: [
         "Air hangat melarutkan kotoran yang membuat tutup botol lengket pada botol kaca.",
-        "Botol kaca memuai lebih cepat daripada tutup botol logam saat terkena air hangat.",
+        "Botol kaca memuai lebih cepat darMATEMATIKAda tutup botol logam saat terkena air hangat.",
         "Air hangat memberikan tekanan tambahan pada tutup botol sehingga lebih mudah diputar.",
-        "Tutup botol logam memuai lebih cepat daripada botol kaca saat terkena air hangat, sehingga sedikit melonggar."
+        "Tutup botol logam memuai lebih cepat darMATEMATIKAda botol kaca saat terkena air hangat, sehingga sedikit melonggar."
     ],
     kunciJawaban: "D"
 },
@@ -80,7 +80,7 @@ window.soalMTK = [
 // ========================================
 {
     id: 65,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Bacalah teks informasi berikut!<br>Shabrina memiliki tiga buah paku. Paku A didekatkan dengan magnet kuat dan menempel. Kemudian, paku B didekatkan dengan paku A dan ikut menempel. Lalu, paku C didekatkan dekat paku B dan ikut menempel. Mengapa paku B dan C dapat menempel?",
@@ -99,13 +99,13 @@ window.soalMTK = [
 // ========================================
 {
     id: 66,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar berikut!<br><br>Nisa memasukkan pensil ke dalam segelas air putih. Fahri mengamati pensil tersebut dan melihst seolah-olah pensil seperti terputus. Hal ini merupakan bukti bahwa cahaya bersifat ....",
     gambar: "images_tka_6/66.png",
     pilihan: [
-        "dipantulkan",
+        "dMATEMATIKAntulkan",
         "dibiaskan",
         "merambat lurus",
         "diuraikan"
@@ -118,10 +118,10 @@ window.soalMTK = [
 // ========================================
 {
     id: 67,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "BS",
-    soal: "Reza saat ini sedang membuat rangkaian listrik sebagai bagian dari ujian praktik IPA. Berikut bagian rangkaian listrik yang dibuat oleh Reza.<br><br>Kondisi yang sesuai praktik Reza adalah:<br><br>I. S1 dan S2 ditutup, sedangkan S3 dibuka, L1 dan L2 menyala<br>II. S1 dan S3 dibuka, sedangkan S2 ditutup, L1 dan L2 menyala<br>III. S1 dan S2 dibuka, sedangkan S3 ditutup, L3 dan L4 menyala<br>IV. S1 dan S3 ditutup, sedangkan S2 dibuka, L3 dan L4 menyala",
+    soal: "Reza saat ini sedang membuat rangkaian listrik sebagai bagian dari ujian praktik MATEMATIKA. Berikut bagian rangkaian listrik yang dibuat oleh Reza.<br><br>Kondisi yang sesuai praktik Reza adalah:<br><br>I. S1 dan S2 ditutup, sedangkan S3 dibuka, L1 dan L2 menyala<br>II. S1 dan S3 dibuka, sedangkan S2 ditutup, L1 dan L2 menyala<br>III. S1 dan S2 dibuka, sedangkan S3 ditutup, L3 dan L4 menyala<br>IV. S1 dan S3 ditutup, sedangkan S2 dibuka, L3 dan L4 menyala",
     gambar: "images_tka_6/67.png",
     pilihan: [
         "Pernyataan I",
@@ -137,7 +137,7 @@ window.soalMTK = [
 // ========================================
 {
     id: 68,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Perhatikan gambar di samping ini!<br>Jika bulan berada pada posisi III maka akan terjadi gerhana ....",
@@ -156,7 +156,7 @@ window.soalMTK = [
 // ========================================
 {
     id: 69,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Mikail mengamati penampakan beberapa planet dan mendapatkan beberapa ciri-ciri planet sebagai berikut.<br><br>(1) Planet bersuhu paling panas<br>(2) Planet kembaran bumi<br>(3) Termasuk planet terestrial<br>(4) Planet luar<br><br>Ciri-ciri planet venus ditunjukkan oleh nomor ....",
@@ -175,7 +175,7 @@ window.soalMTK = [
 // ========================================
 {
     id: 70,
-    kategori: "IPA",
+    kategori: "MATEMATIKA",
     rentangNilai: "0-3",
     tipe: "PG",
     soal: "Kabupaten Sleman dan Gunungkidul merupakan kabupaten yang memiliki keindahan alam baik alam maupun pegunungan yang luar biasa. Kabupaten ini juga memiliki berbagai sumber daya alam yang menjadi komoditas dan kekhasan daerahnya. Berikut ini disajikan beberapa gambar mengenai sumber daya alam.<br><br>Salah satu sumber daya alam yang menjadi kekhasan dari Kabupaten Sleman dan Gunungkidul sebagai UMKM lokal ditunjukkan oleh nomor ....",
