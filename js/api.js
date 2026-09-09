@@ -1,7 +1,3 @@
-// ==================================================
-// 🚀 FUNGSI KIRIM DATA SPREADSHEET
-// ==================================================
-
 async function kirimKeSpreadsheet(h) {
     const statusBox = document.getElementById('statusPengiriman');
     
@@ -29,6 +25,7 @@ async function kirimKeSpreadsheet(h) {
             } else if (soal.tipe === 'PGK') {
                 if (Array.isArray(rawJwb)) {
                     const huruf = rawJwb
+                        .slice()
                         .sort((a, b) => a - b)
                         .map(num => String.fromCharCode(65 + num)); 
                     jawabanRapi[nomorSoal] = huruf.join(", ");
@@ -50,21 +47,21 @@ async function kirimKeSpreadsheet(h) {
     let akumulasiSkor = 0;
 
     if (h.indoTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.indoSkor; }
-    if (h.mtkTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.mtkSkor; }
-    if (h.ipaTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.ipaSkor; }
+    if (h.ingTotalSoal > 0)  { jumlahSubtes++; akumulasiSkor += h.ingSkor; }
+    if (h.mtkTotalSoal > 0)  { jumlahSubtes++; akumulasiSkor += h.mtkSkor; }
 
     const totalSkorRata = jumlahSubtes > 0 ? Math.round(akumulasiSkor / jumlahSubtes) : 0;
 
     const payload = {
         namaSheet: "Rekap_TKA_6_SD",
-        nama: document.getElementById('nama')?.value || (ambilDataDariStorage()?.nama) || "",
-        kelas: document.getElementById('kelas')?.value || (ambilDataDariStorage()?.kelas) || "",
-        asal: document.getElementById('asal')?.value || (ambilDataDariStorage()?.asal) || "",
-        nomor: document.getElementById('nomor')?.value || (ambilDataDariStorage()?.nomor) || "",
-        mapel: document.getElementById('mapel')?.value || (ambilDataDariStorage()?.mapel) || "",
-        skorIndo: h.indoSkor,
-        skorMtk: h.mtkSkor,
-        skorIpa: h.ipaSkor,
+        nama: document.getElementById('nama')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.nama : "") || "",
+        kelas: document.getElementById('kelas')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.kelas : "") || "",
+        asal: document.getElementById('asalSekolah')?.value || document.getElementById('asal')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.asal : "") || "",
+        nomor: document.getElementById('nomor')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.nomor : "") || "",
+        mapel: document.getElementById('mapel')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.mapel : "") || "TKA (Indo, Mtk, IPA)",
+        skorIndo: h.indoSkor || 0,
+        skorIng: h.ingSkor || 0,
+        skorMtk: h.mtkSkor || 0,
         totalSkor: totalSkorRata,
         pelanggaran: window.violationCount || 0,
         durasi: durasiFormatted,
@@ -103,7 +100,7 @@ async function kirimKeSpreadsheet(h) {
                 <div style="color: #cc0000; font-weight: bold; margin-bottom: 8px;">
                     ❌ Gagal terhubung ke server.
                 </div>
-                <button onclick="kirimKeSpreadsheet(hitungSkor())" style="padding: 6px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 6px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
                     🔄 Coba Kirim Ulang Data
                 </button>
             `;
