@@ -215,80 +215,77 @@ window.soalIND = [
     kunciJawaban: ["B", "S", "B", "S", "S"]
   },
 
-    // ========================================
-    // SOAL NOMOR 13 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 13,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "<b>Perhatikan pernyataan-pernyataan berikut berkaitan dengan cerita 'Doni dan Sampah Plastik'! Berdasarkan teks dan nilai kehidupan sehari-hari, tentukan pernyataan yang Sesuai atau Tidak Sesuai!</b><br><br>(1) Kebiasaan membuang sampah sembarangan dapat membuat tempat bermain kita menjadi rusak.<br>(2) Seseorang dapat berubah menjadi lebih baik setelah menyadari kesalahannya.<br>(3) Kita tidak perlu membuang bungkus permen ke tempat sampah karena ukurannya kecil.",
-        gambar: null,
-        pilihan: [
-            "(1) Sesuai",
-            "(2) Sesuai",
-            "(3) Sesuai"
-        ],
-        kunciJawaban: ["B", "B", "S"]
-    },
+    id: 13,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 7: Cuplikan Novel - Lentera di Bukit Kapur</b><br><br>Di balik bukit berkapur yang gersang, Sekolah Dasar Harapan Bangsa berdiri merana. Dinding papan kayu kelasnya sudah lapuk dimakan usia, dan atap sengnya kerap membocorkan gemericik air hujan saat badai menyapa. Namun, didalam ruangan yang bersahaja itu, Pak Halim berdiri tegap di depan papan tulis hitam. Suaranya bergema menembus keterbatasan, menyulut api semangat di mata belasan anak-anak pelosok.<br><br>“Anak-anakku,” ujar Pak Halim lembut seraya memegang kapur tulisnya yang kian memendek, “Kemiskinan dan keterpencilan ini mungkin bisa mengurung fisik kita, tetapi tidak akan pernah mampu memenjarakan impian kalian. Buku-buku ini adalah sayap-sayap invisible yang akan menerbangkan kalian melampaui puncak bukit ini.” Anak-anak itu mendengarkan tanpa berkedip; bagi mereka, Pak Halim bukan sekadar guru, melainkan lentera di tengah kegelapan malam.<br><br><b>Berdasarkan Teks 7, manakah penggunaan majas (gaya bahasa) beserta fungsinya yang tepat dalam membangun unsur estetika cerita? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Majas metafora 'lentera di tengah kegelapan malam' menggambarkan peran Pak Halim sebagai pemberi harapan dan penunjuk jalan bagi anak-anak.",
+      "Majas personifikasi 'gemericik air hujan saat badai menyapa' memberikan kesan hidup pada unsur alam di sekitar sekolah.",
+      "Majas hiperbola 'memenjarakan impian' digunakan untuk menggambarkan kondisi penjara fisik yang sebenarnya di desa tersebut.",
+      "Majas metafora 'sayap-sayap invisible' mengkiaskan ilmu pengetahuan dan buku sebagai alat untuk meraih cita-cita tinggi.",
+      "Majas ironi digunakan penulis untuk mengejek kondisi kemiskinan yang dialami oleh masyarakat pelosok."
+    ],
+    kunciJawaban: [0, 1, 3]
+  },
+  
+  {
+    id: 14,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 7: Cuplikan Novel - Lentera di Bukit Kapur</b><br><br>Di balik bukit berkapur yang gersang, Sekolah Dasar Harapan Bangsa berdiri merana. Dinding papan kayu kelasnya sudah lapuk dimakan usia, dan atap sengnya kerap membocorkan gemericik air hujan saat badai menyapa. Namun, didalam ruangan yang bersahaja itu, Pak Halim berdiri tegap di depan papan tulis hitam. Suaranya bergema menembus keterbatasan, menyulut api semangat di mata belasan anak-anak pelosok.<br><br>“Anak-anakku,” ujar Pak Halim lembut seraya memegang kapur tulisnya yang kian memendek, “Kemiskinan dan keterpencilan ini mungkin bisa mengurung fisik kita, tetapi tidak akan pernah mampu memenjarakan impian kalian. Buku-buku ini adalah sayap-sayap invisible yang akan menerbangkan kalian melampaui puncak bukit ini.” Anak-anak itu mendengarkan tanpa berkedip; bagi mereka, Pak Halim bukan sekadar guru, melainkan lentera di tengah kegelapan malam.<br><br><b>Nilai-nilai kehidupan manakah yang tersirat kuat melalui sikap dan tindakan tokoh Pak Halim dalam cuplikan cerita di atas? (Pilihlah SEMUA jawaban yang benar)</b>",
+    gambar: null,
+    pilihan: [
+      "Nilai pendidikan: Ketulusan dan kegigihan dalam mencerdaskan anak-anak di tengah keterbatasan fasilitas.",
+      "Nilai moral: Optimisme dan daya juang pantang menyerah dalam menghadapi kerasnya realitas hidup.",
+      "Nilai ekonomi: Dorongan untuk mencari keuntungan finansial sebanyak-banyaknya dari profesi guru.",
+      "Nilai kepedulian sosial: Pengabdian tulus bagi kemajuan masyarakat daerah terpencil.",
+      "Nilai budaya: Kewajiban untuk mempertahankan tradisi leluhur tanpa mempedulikan pendidikan modern."
+    ],
+    kunciJawaban: [0, 1, 3]
+  },
 
-    // ========================================
-    // SOAL NOMOR 14 (PGK) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 14,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "Bacalah teks berikut ini!<br><br>Suatu pagi yang cerah, Arif dan teman-temannya memutuskan untuk menjelajahi hutan tropis yang terletak tidak jauh dari desa mereka. Mereka sangat bersemangat karena ini adalah pengalaman pertama mereka menjelajah alam secara serius. Di dalam hutan, mereka melihat pepohonan yang rindang dan berbagi burung yang berkicau merdu.<br><br>Saat perjalanan berlanjut, mereka menemukan jalan yang terjal dan harus bekerja sama untuk melewatinya. Arif yang biasanya penakut, kali ini menunjukkan keberanian yang luar biasa. Ia membantu temannya yang hampir terjatuh.<br><br>Setelah lelah berjalan, mereka sampai di sebuah air terjun yang indah dan menyejukkan. Suasana di sana sangat tenang, jauh dari kebisingan kota. Mereka pun duduk bersantai dan menikmati bekal makanan yang telah mereka siapkan.<br><br>Petualangan itu memberikan banyak pelajaran, terutama tentang pentingnya kerja sama, keberanian, dan rasa syukur atas keindahan alam yang Tuhan ciptakan. Setelah mengalami petualangan di hutan, pemahaman atau sikap kelompok Arif berubah.<br><br><b>Pelajaran apa saja yang dapat disimpulkan dari perjalanan ini? (Pilih SEMUA jawaban yang benar)</b>",
-        gambar: null,
-        pilihan: [
-            "Menemukan cara terbaik untuk mendapatkan uang tambahan",
-            "Menyadari pentingnya rasa syukur atas keindahan alam",
-            "Mengetahui bahwa mereka harus saling bekerja sama",
-            "Memahami bahwa mereka harus memiliki keberanian"
-        ],
-        kunciJawaban: [1, 2, 3]
-    },
-
-    // ========================================
-    // SOAL NOMOR 15 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 15,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut ini!<br><br>Setiap pagi, Dita membantu ibunya menyiapkan dagangan di warung. Ia biasanya bangun pukul lima pagi dan mulai menyapu halaman, mengatur rak dagangan, serta membungkus gorengan. Meski sibuk, Dita tetap rajin belajar dan selalu mengerjakan tugas sekolah. Ia tidak pernah terlambat masuk kelas dan dikenal sebagai murid yang disiplin oleh guru-gurunya.<br><br>Ketekunan Dita menjadi contoh baik bagi teman-temannya. Ia membuktikan bahwa membantu orang tua bukanlah halangan untuk meraih prestasi. Justru, dari kegiatan tersebut Dita belajar tentang tanggung jawab dan kerja sama sesama keluarga.<br><br><b>Apa nilai pelajaran paling penting yang dapat kita simpulkan dari seluruh cerita tentang Dita?</b>",
-        gambar: null,
-        pilihan: [
-            "kegiatan berdagang di warung jauh lebih penting dibandingkan belajar di sekolah",
-            "murid yang sibuk membantu orang tua pasti akan selalu mendapat nilai yang bagus",
-            "bekerja keras dan tanggung jawab adalah kunci untuk meraih prestasi di sekolah",
-            "agar bisa disiplin, kita harus selalu bangun pukul lima pagi setiap hari"
-        ],
-        kunciJawaban: "C"
-    },
-
-        // ========================================
-    // SOAL NOMOR 16 (PGK) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 16,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "Bacalah teks berikut dengan saksama!<br><br>Pagi hari di Pelabuhan Lama terasa sunyi dan tenang. Kapal-kapal besar masih terikat kuat di dermaga. Hanya ada beberapa nelayan yang sibuk merapikan jaring. Bau amis air laut bercampur aroma kopi dari warung kecil di sudut.<br><br>Menjelang siang, suasana pelabuhan berubah drastis. Bunyi klakson truk dan teriakan para buruh mulai terdengar di mana-mana. Kapal-kapal besar membunyikan sirine tanda siap berlayar. Pelabuhan yang tadinya sepi, kini menjadi pusat kegiatan yang sangat sibuk dan riuh. Para pedagang bergerak cepat menawarkan minuman dan makanan kepada para pekerja.<br><br><b>Berdasarkan cerita di atas, bagaimana suasana Pelabuhan Lama berubah dari pagi hingga menjelang siang? (Pilih SEMUA jawaban yang benar)</b>",
-        gambar: null,
-        pilihan: [
-            "Pelabuhan berubah menjadi tempat yang lebih sunyi karena kapal sudah berlayar",
-            "Suasana berubah dari tenang menjadi sangat sibuk",
-            "Bau amis dan kopi hilang, berganti menjadi bau bensin dari truk",
-            "Pelabuhan berubah dari tempat yang sunyi menjadi riuh oleh suara"
-        ],
-        kunciJawaban: [1, 3]
-    },
+    id: 15,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Analisislah kebenaran kaidah ejaan, tanda baca, dan keefektifan kalimat pada pernyataan-pernyataan berikut berdasarkan PUEBI / EYD (BENAR / SALAH)!</b>",
+    gambar: null,
+    pernyataan: [
+      "Penggunaan tanda koma dalam kalimat 'Meskipun hujan deras, para siswa tetap semangat mengikuti upacara bendera.' sudah tepat karena anak kalimat mendahului induk kalimat.",
+      "Penulisan kata bercetak miring pada kalimat 'Pemerintah sedang merancang sistem perizinan secara online.' sudah sesuai kaidah baku.",
+      "Kalimat 'Dalam rapat itu membicarakan tentang masalah alokasi dana bantuan sosial.' merupakan kalimat efektif yang memiliki subjek yang jelas.",
+      "Kata 'diantara' pada kalimat 'Ia duduk diantara para tamu undangan' seharusnya ditulis terpisah menjadi 'di antara' karena menunjukkan penunjuk tempat.",
+      "Kata 'ke sana' pada kalimat 'Ayah meminta saya pergi ke sana untuk mengantarkan dokumen.' seharusnya ditulis tanpa spasi."
+    ],
+    kunciJawaban: ["B", "S", "S", "B", "S"]
+  },
+  
+  {
+    id: 16,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Evaluasilah kebenaran penggunaan kata bentukan dan keefektifan struktur kalimat berikut (BENAR / SALAH)!</b>",
+    gambar: null,
+    pernyataan: [
+      "Kata 'mengkritik' merupakan bentuk baku dari imbuhan me- + kritik, sedangkan 'mengubah' merupakan bentuk baku dari me- + ubah.",
+      "Kalimat 'Demi untuk memenangkan kompetisi tersebut, mereka berlatih setiap hari.' mengalami pemborosan kata (pleonasme) pada kata 'demi untuk'.",
+      "Penggunaan kata 'daripada' dalam kalimat 'Hasil panen tahun ini lebih baik daripada tahun lalu' adalah tepat untuk menyatakan perbandingan.",
+      "Penulisan gelar akademis 'Dr. Ahmad Hartono, S.Pd., M.Hum.' sudah memenuhi aturan penulisan tanda titik dan koma yang baku.",
+      "Penulisan 'negara' pada kalimat 'Konstitusi menegaskan bahwa negara Indonesia adalah negara hukum.' seharusnya ditulis dengan huruf depan huruf kapital."
+    ],
+    kunciJawaban: ["B", "B", "B", "B", "S"]
+  },
 
     // ========================================
     // SOAL NOMOR 17 (PG) - Tingkat Kesulitan: Mudah
