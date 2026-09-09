@@ -245,7 +245,7 @@ function tampilkanHasil() {
     };
 
     const totalPoinFormat = Math.round((h.totalPoin || h.totalBenar || 0) * 10) / 10;
-    const totalSalahFormat = Math.round((h.totalSoalValid - totalPoinFormat) * 10) / 10;
+    const totalSalahFormat = Math.round(((h.totalSoalValid || 0) - totalPoinFormat) * 10) / 10;
     
     const quizArea = document.getElementById('quizArea');
     if (quizArea) {
@@ -292,14 +292,14 @@ function tampilkanHasil() {
 
                 <hr style="margin: 20px 0; border: 1px solid #e2e8f0;">
 
-                <div class="result-details">
-                    <div class="result-item correct">
-                        <span class="result-val">${totalPoinFormat}</span> 
-                        <span>Total Poin Diperoleh</span>
+                <div class="result-details" style="display: flex; gap: 15px; margin-top: 15px;">
+                    <div class="result-item correct" style="flex: 1; background: #dcfce7; padding: 15px; border-radius: 8px; text-align: center;">
+                        <span class="result-val" style="font-size: 22px; font-weight: bold; color: #16a34a; display: block;">${totalPoinFormat}</span> 
+                        <span style="font-size: 13px; color: #15803d; font-weight: bold;">Total Jawaban Benar</span>
                     </div>
-                    <div class="result-item wrong">
-                        <span class="result-val">${totalSalahFormat}</span> 
-                        <span>Total Poin Hilang</span>
+                    <div class="result-item wrong" style="flex: 1; background: #fee2e2; padding: 15px; border-radius: 8px; text-align: center;">
+                        <span class="result-val" style="font-size: 22px; font-weight: bold; color: #dc2626; display: block;">${totalSalahFormat}</span> 
+                        <span style="font-size: 13px; color: #b91c1c; font-weight: bold;">Total Salah / Kosong</span>
                     </div>
                 </div>
                 
@@ -325,17 +325,20 @@ function tampilkanHasil() {
     if (typeof kirimKeSpreadsheet === 'function') kirimKeSpreadsheet(h);
 }
 
+function cobaKirimUlang() {
+    const h = typeof hitungSkor === 'function' ? hitungSkor() : {};
+    if (typeof kirimKeSpreadsheet === 'function') kirimKeSpreadsheet(h);
+}
+
 function kembaliKeAwal() {
-    // Bersihkan sesi ujian jika fungsi tersedia
+    // 1. Hapus total seluruh penyimpanan agar auto-login tidak terpicu
+    localStorage.clear();
+    sessionStorage.clear();
+
     if (typeof bersihkanDataUjian === 'function') {
         bersihkanDataUjian();
     }
     
-    // Hapus status ujian selesai dari storage
-    sessionStorage.removeItem('ujianSelesai');
-    sessionStorage.removeItem('jawabanSiswa');
-    sessionStorage.removeItem('raguRagu');
-
-    // Reload halaman untuk kembali ke tampilan awal/login
-    window.location.href = window.location.pathname;
+    // 2. Refresh ke halaman login awal
+    window.location.href = window.location.origin + window.location.pathname;
 }
