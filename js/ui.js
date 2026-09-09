@@ -209,6 +209,31 @@ function updateGridNavStatus() {
     });
 }
 
+function konfirmasiSelesai() {
+    let belumDijawab = 0;
+
+    if (window.daftarSoal && Array.isArray(jawabanSiswa)) {
+        window.daftarSoal.forEach((soal, idx) => {
+            if (soal.tipe === 'INFO') return;
+            const jwb = jawabanSiswa[idx];
+            const adaJawaban = Array.isArray(jwb) 
+                ? jwb.some(x => x !== undefined && x !== null && x !== '') 
+                : (jwb !== undefined && jwb !== null && jwb !== '');
+            
+            if (!adaJawaban) belumDijawab++;
+        });
+    }
+
+    let pesan = "Apakah kamu yakin ingin menyelesaikan ujian?";
+    if (belumDijawab > 0) {
+        pesan = `Masih ada ${belumDijawab} soal yang belum dijawab.\n\n` + pesan;
+    }
+
+    if (confirm(pesan)) {
+        tampilkanHasil();
+    }
+}
+
 function tampilkanHasil() {
     if (typeof timerInterval !== 'undefined' && timerInterval) clearInterval(timerInterval);
 
@@ -216,8 +241,11 @@ function tampilkanHasil() {
         indoSkor: 0, indoMaks: 0, indoBenar: 0, indoTotalSoal: 0, 
         ingSkor: 0, ingMaks: 0, ingBenar: 0, ingTotalSoal: 0, 
         mtkSkor: 0, mtkMaks: 0, mtkBenar: 0, mtkTotalSoal: 0, 
-        totalBenar: 0, totalSoalValid: 0 
+        totalBenar: 0, totalPoin: 0, totalSoalValid: 0 
     };
+
+    const totalPoinFormat = Math.round((h.totalPoin || h.totalBenar || 0) * 10) / 10;
+    const totalSalahFormat = Math.round((h.totalSoalValid - totalPoinFormat) * 10) / 10;
     
     const quizArea = document.getElementById('quizArea');
     if (quizArea) {
@@ -235,7 +263,7 @@ function tampilkanHasil() {
                             ${h.indoSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.indoMaks}</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.indoBenar}/${h.indoTotalSoal} Soal
+                            ✅ ${h.indoBenar}/${h.indoTotalSoal} Poin
                         </div>
                     </div>
                     
@@ -246,7 +274,7 @@ function tampilkanHasil() {
                             ${h.ingSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.ingMaks}</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.ingBenar}/${h.ingTotalSoal} Soal
+                            ✅ ${h.ingBenar}/${h.ingTotalSoal} Poin
                         </div>
                     </div>
 
@@ -257,7 +285,7 @@ function tampilkanHasil() {
                             ${h.mtkSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.mtkMaks}</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.mtkBenar}/${h.mtkTotalSoal} Soal
+                            ✅ ${h.mtkBenar}/${h.mtkTotalSoal} Poin
                         </div>
                     </div>
                 </div>
@@ -266,12 +294,12 @@ function tampilkanHasil() {
 
                 <div class="result-details">
                     <div class="result-item correct">
-                        <span class="result-val">${h.totalBenar}</span> 
-                        <span>Total Benar Keseluruhan</span>
+                        <span class="result-val">${totalPoinFormat}</span> 
+                        <span>Total Poin Diperoleh</span>
                     </div>
                     <div class="result-item wrong">
-                        <span class="result-val">${h.totalSoalValid - h.totalBenar}</span> 
-                        <span>Total Salah Keseluruhan</span>
+                        <span class="result-val">${totalSalahFormat}</span> 
+                        <span>Total Poin Hilang</span>
                     </div>
                 </div>
                 
