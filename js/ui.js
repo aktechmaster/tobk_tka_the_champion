@@ -22,13 +22,11 @@ function tampilkanSoal(index) {
     currentIndex = index;
     const soal = window.daftarSoal[index];
     
-    // Fallback pencocokan properti dari file soal
     const daftarOpsi = soal.opsi || soal.pilihan || [];
     const daftarPernyataan = soal.pernyataan || soal.pilihan || [];
     const teksPertanyaan = soal.pertanyaan || soal.soal || soal.teks || '';
     const namaSubtes = soal.subtes || soal.kategori || 'Umum';
 
-    // Elemen gambar (jika ada)
     const htmlGambar = soal.gambar 
         ? `<div style="text-align:center; margin: 10px 0;"><img src="${soal.gambar}" style="max-width:100%; max-height:280px; border-radius:8px; border:1px solid #cbd5e1;"></div>` 
         : '';
@@ -39,7 +37,7 @@ function tampilkanSoal(index) {
         htmlOpsi = '<div class="opsi-container">';
         daftarOpsi.forEach((opsi, idx) => {
             const hurufOpsi = String.fromCharCode(65 + idx);
-            const isChecked = jawabanSiswa[currentIndex] === hurufOpsi ? 'checked' : '';
+            const isChecked = (jawabanSiswa && jawabanSiswa[currentIndex] === hurufOpsi) ? 'checked' : '';
             htmlOpsi += `
                 <label class="opsi-item">
                     <input type="radio" name="jawaban_${currentIndex}" value="${hurufOpsi}" ${isChecked} onchange="simpanJawabanPG('${hurufOpsi}')">
@@ -49,7 +47,7 @@ function tampilkanSoal(index) {
         });
         htmlOpsi += '</div>';
     } else if (soal.tipe === 'PGK') {
-        const currentAnswers = Array.isArray(jawabanSiswa[currentIndex]) ? jawabanSiswa[currentIndex] : [];
+        const currentAnswers = (jawabanSiswa && Array.isArray(jawabanSiswa[currentIndex])) ? jawabanSiswa[currentIndex] : [];
         htmlOpsi = '<div class="opsi-container"><p style="font-size:13px; color:#64748b; margin-bottom:10px;"><i>* Pilihan Jawaban Kompleks (Bisa pilih lebih dari satu):</i></p>';
         daftarOpsi.forEach((opsi, idx) => {
             const isChecked = currentAnswers.includes(idx) ? 'checked' : '';
@@ -62,7 +60,7 @@ function tampilkanSoal(index) {
         });
         htmlOpsi += '</div>';
     } else if (soal.tipe === 'BS') {
-        const currentAnswers = Array.isArray(jawabanSiswa[currentIndex]) ? jawabanSiswa[currentIndex] : [];
+        const currentAnswers = (jawabanSiswa && Array.isArray(jawabanSiswa[currentIndex])) ? jawabanSiswa[currentIndex] : [];
         htmlOpsi = `
             <table class="tabel-bs" style="width:100%; border-collapse:collapse; margin-top:15px; border:1px solid #cbd5e1;">
                 <thead>
@@ -76,8 +74,8 @@ function tampilkanSoal(index) {
         `;
         daftarPernyataan.forEach((p, idx) => {
             const val = currentAnswers[idx] || '';
-            const isBenar = (val === 'B' || val === 'Benar') ? 'checked' : '';
-            const isSalah = (val === 'S' || val === 'Salah') ? 'checked' : '';
+            const isBenar = (val === 'B' || val === 'Benar' || val === 'True') ? 'checked' : '';
+            const isSalah = (val === 'S' || val === 'Salah' || val === 'False') ? 'checked' : '';
             
             htmlOpsi += `
                 <tr>
@@ -109,7 +107,7 @@ function tampilkanSoal(index) {
     }
 
     const raguBtn = document.getElementById('raguBtn');
-    if (raguBtn) {
+    if (raguBtn && typeof raguRagu !== 'undefined') {
         raguBtn.checked = raguRagu[currentIndex] || false;
     }
 
@@ -118,7 +116,10 @@ function tampilkanSoal(index) {
 }
 
 function simpanJawabanPG(val) {
-    jawabanSiswa[currentIndex] = val;
+    if (typeof jawabanSiswa !== 'undefined') {
+        jawabanSiswa[currentIndex] = val;
+        window.jawabanSiswa = jawabanSiswa;
+    }
     if (typeof simpanDataKeStorage === 'function') simpanDataKeStorage();
     updateGridNavStatus();
 }
@@ -126,23 +127,29 @@ function simpanJawabanPG(val) {
 function simpanJawabanPGK() {
     const checkboxes = document.querySelectorAll(`input[name="jawaban_pgk_${currentIndex}"]:checked`);
     const selected = Array.from(checkboxes).map(cb => parseInt(cb.value));
-    jawabanSiswa[currentIndex] = selected;
+    if (typeof jawabanSiswa !== 'undefined') {
+        jawabanSiswa[currentIndex] = selected;
+        window.jawabanSiswa = jawabanSiswa;
+    }
     if (typeof simpanDataKeStorage === 'function') simpanDataKeStorage();
     updateGridNavStatus();
 }
 
 function simpanJawabanBS(rowIdx, val) {
-    if (!Array.isArray(jawabanSiswa[currentIndex])) {
-        jawabanSiswa[currentIndex] = [];
+    if (typeof jawabanSiswa !== 'undefined') {
+        if (!Array.isArray(jawabanSiswa[currentIndex])) {
+            jawabanSiswa[currentIndex] = [];
+        }
+        jawabanSiswa[currentIndex][rowIdx] = val;
+        window.jawabanSiswa = jawabanSiswa;
     }
-    jawabanSiswa[currentIndex][rowIdx] = val;
     if (typeof simpanDataKeStorage === 'function') simpanDataKeStorage();
     updateGridNavStatus();
 }
 
 function toggleRaguRagu() {
     const raguBtn = document.getElementById('raguBtn');
-    if (raguBtn) {
+    if (raguBtn && typeof raguRagu !== 'undefined') {
         raguRagu[currentIndex] = raguBtn.checked;
         if (typeof simpanDataKeStorage === 'function') simpanDataKeStorage();
         updateGridNavStatus();
@@ -151,7 +158,7 @@ function toggleRaguRagu() {
 
 function renderQuestionNav() {
     const questionNav = document.getElementById('questionNav');
-    if (!questionNav) return;
+    if (!questionNav || !window.daftarSoal) return;
 
     questionNav.innerHTML = '';
     window.daftarSoal.forEach((soal, idx) => {
@@ -172,7 +179,7 @@ function updateNavButtons() {
 
     if (prevBtn) prevBtn.disabled = currentIndex === 0;
     
-    if (currentIndex === window.daftarSoal.length - 1) {
+    if (window.daftarSoal && currentIndex === window.daftarSoal.length - 1) {
         if (nextBtn) nextBtn.style.display = 'none';
         if (finishBtn) finishBtn.style.display = 'inline-block';
     } else {
@@ -192,7 +199,7 @@ function updateGridNavStatus() {
 
         if (idx === currentIndex) btn.classList.add('active');
 
-        const jwb = jawabanSiswa[idx];
+        const jwb = (typeof jawabanSiswa !== 'undefined') ? jawabanSiswa[idx] : undefined;
         let hasAnswer = false;
 
         if (Array.isArray(jwb)) {
@@ -201,7 +208,7 @@ function updateGridNavStatus() {
             hasAnswer = jwb !== undefined && jwb !== null && jwb !== '';
         }
 
-        if (raguRagu[idx]) {
+        if (typeof raguRagu !== 'undefined' && raguRagu[idx]) {
             btn.classList.add('flagged');
         } else if (hasAnswer) {
             btn.classList.add('answered');
@@ -212,7 +219,7 @@ function updateGridNavStatus() {
 function konfirmasiSelesai() {
     let belumDijawab = 0;
 
-    if (window.daftarSoal && Array.isArray(jawabanSiswa)) {
+    if (window.daftarSoal && typeof jawabanSiswa !== 'undefined') {
         window.daftarSoal.forEach((soal, idx) => {
             if (soal.tipe === 'INFO') return;
             const jwb = jawabanSiswa[idx];
@@ -236,6 +243,9 @@ function konfirmasiSelesai() {
 
 function tampilkanHasil() {
     if (typeof timerInterval !== 'undefined' && timerInterval) clearInterval(timerInterval);
+
+    // Sinkronkan data ke window sebelum hitung skor
+    if (typeof jawabanSiswa !== 'undefined') window.jawabanSiswa = jawabanSiswa;
 
     const h = typeof hitungSkor === 'function' ? hitungSkor() : { 
         indoSkor: 0, indoMaks: 0, indoBenar: 0, indoTotalSoal: 0, 
@@ -320,9 +330,9 @@ function tampilkanHasil() {
     if (timerBadge) timerBadge.classList.add('hidden');
     
     sessionStorage.setItem('ujianSelesai', 'true');
-    if (typeof bersihkanDataUjian === 'function') bersihkanDataUjian();
 
     if (typeof kirimKeSpreadsheet === 'function') kirimKeSpreadsheet(h);
+    if (typeof bersihkanDataUjian === 'function') bersihkanDataUjian();
 }
 
 function cobaKirimUlang() {
@@ -331,14 +341,12 @@ function cobaKirimUlang() {
 }
 
 function kembaliKeAwal() {
-    // 1. Matikan event auto-save browser agar tidak menyimpan data saat berpindah halaman
     window.onbeforeunload = null;
     window.onpagehide = null;
     if (typeof simpanDataKeStorage === 'function') {
         window.removeEventListener('beforeunload', simpanDataKeStorage);
     }
 
-    // 2. Kosongkan memori variabel jawaban
     if (typeof jawabanSiswa !== 'undefined') {
         if (Array.isArray(jawabanSiswa)) jawabanSiswa.length = 0;
         else jawabanSiswa = {};
@@ -348,7 +356,6 @@ function kembaliKeAwal() {
         else raguRagu = {};
     }
 
-    // 3. Hapus seluruh data simpanan ujian di browser
     if (typeof bersihkanDataUjian === 'function') {
         bersihkanDataUjian();
     }
@@ -357,10 +364,8 @@ function kembaliKeAwal() {
         sessionStorage.clear();
     } catch (e) {}
 
-    // 4. Reset form login di DOM secara fisik
     const formLogin = document.getElementById('formLogin');
     if (formLogin) formLogin.reset();
 
-    // 5. Paksa browser melakukan redirect bersih ke halaman login tanpa membawa cache
     window.location.replace(window.location.origin + window.location.pathname);
 }
