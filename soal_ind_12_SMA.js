@@ -1,41 +1,40 @@
 window.soalIND = [
-    // ========================================
-    // SOAL NOMOR 1 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 1,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah teks berikut dengan saksama!<br><br>Indonesia adalah negara kepulauan yang memiliki keanekaragaman hayati sangat tinggi. Salah satu bentuk kekayaan ini adalah terumbu karang. Terumbu karang merupakan ekosistem laut yang terdiri dari sekumpulan hewan karang yang menghasilkan kapur. Mereka menjadi rumah bagi berbagai jenis ikan dan organisme laut lainnya. Sayangnya, aktivitas manusia seperti penangkapan ikan dengan bahan peledak, penggunaan racun, dan pencemaran laut menyebabkan kerusakan terumbu karang yang cukup parah. Kerusakan ini tidak hanya mengancam kehidupan biota laut, tetapi juga mengganggu mata pencaharian nelayan yang bergantung pada hasil laut.<br><br>Untuk mengatasi masalah ini, berbagai upaya dilakukan oleh pemerintah dan masyarakat. Salah satu cara adalah melalui transplantasi karang, yaitu menanam kembali potongan karang sehat ke wilayah yang rusak. Selain itu, edukasi tentang pentingnya menjaga ekosistem laut terus disosialisasikan kepada masyarakat pesisir. Beberapa wilayah bahkan telah dijadikan kawasan konservasi laut agar terumbu karang dapat pulih secara alami. Jika semua pihak bekerja sama, kerusakan terumbu karang bisa diminimalkan dan ekosistem laut Indonesia bisa tetap lestari untuk generasi mendatang.<br><br><b>Makna istilah ekosistem dalam teks tersebut adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "tempat tinggal bagi ikan-ikan besar",
-            "lingkungan tempat makhluk hidup saling berinteraksi",
-            "kumpulan batu karang di dasar laut",
-            "kawasan laut yang luas dan dalam"
-        ],
-        kunciJawaban: "B"
-    },
-
-    // ========================================
-    // SOAL NOMOR 2 (PG) - Tingkat Kesulitan: Mudah
-    // ========================================
-    {
-        id: 2,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-2",
-        tipe: "PG",
-        soal: "Bacalah teks berikut dengan saksama!<br><br>Perpustakaan sekolah kini mulai bertransformasi menjadi pusat belajar digital. Tak hanya menyediakan buku fisik, perpustakaan digital menyediakan akses ke ribuan buku elektronik, jurnal, dan video pembelajaran. Transformasi ini memperluas cakrawala pengetahuan peserta didik secara signifikan. Dengan kemudahan akses dari gawai atau komputer, peserta didik dapat belajar kapan saja dan di mana saja, tanpa harus datang langsung ke perpustakaan.<br><br>Namun, perubahan ini juga membawa tantangan baru. Tidak semua sekolah memiliki fasilitas teknologi yang memadai atau jaringan internet yang stabil. Selain itu, peserta didik dan pendidik perlu memiliki keterampilan digital agar dapat memanfaatkan sumber daya ini secara maksimal. Oleh karena itu, dukungan dari pemerintah dan masyarakat sangat penting agar semua sekolah dapat merasakan manfaat dari perpustakaan digital. Dengan begitu, perpustakaan tidak hanya menjadi tempat menyimpan buku, tetapi juga sebagai pusat pengembangan literasi dan keterampilan abad ke-21.<br><br><b>Sinonim kata <i>transformasi</i> dalam teks tersebut adalah ...</b>",
-        gambar: null,
-        pilihan: [
-            "perubahan",
-            "penyesuaian",
-            "perdagangan",
-            "penambahan"
-        ],
-        kunciJawaban: "A"
-    },
+    const soalList = [
+  {
+    id: 1,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 1: Transisi Energi dan Tantangan Ketenagakerjaan</b><br><br>Transisi menuju energi bersih dan terbarukan di Indonesia tidak hanya berdampak pada pergeseran teknologi, tetapi juga membawa konsekuensi sosioekonomi yang kompleks. Di satu sisi, penghentian beroperasinya pembangkit listrik tenaga uap (PLTU) berbasis batu bara secara bertahap berpotensi memicu gelombang pemutusan hubungan kerja di daerah basis tambang. Di sisi lain, pembukaan investasi pada sektor energi surya, angin, dan geothermal menjanjikan penciptaan jutaan lapangan kerja baru yang membutuhkan kualifikasi keahlian berstandar tinggi.<br><br>Sayangnya, kesenjangan keterampilan (skills gap) antara tenaga kerja lokal dan tuntutan industri hijau masih menjadi kendala utama. Tanpa adanya intervensi berupa pelatihan ulang (reskilling) dan peningkatan keterampilan (upskilling) yang terencana, masyarakat di daerah penghasil energi fosil berisiko menjadi penonton dalam transformasi ekonomi hijau ini. Pemerintah dan pelaku industri dituntut bekerja sama merancang program transisi yang berkeadilan agar dampaknya tidak memperlebar jurang ketimpangan sosial.<br><br><b>Berdasarkan Teks 1, manakah implikasi tersirat yang paling logis mengenai kondisi ketenagakerjaan di Indonesia selama masa transisi energi terbarukan? Pilihlah jawaban yang benar. Jawaban benar lebih dari satu.</b>",
+    gambar: null,
+    pilihan: [
+      "Tenaga kerja di kawasan tambang batu bara terancam kehilangan mata pencaharian jika tidak diberikan pelatihan keahlian baru.",
+      "Pembukaan industri hijau secara otomatis menyelesaikan masalah pengangguran di daerah bekas tambang fosil.",
+      "Terdapat potensi ketimpangan ekonomi baru jika tenaga kerja lokal kalah bersaing dengan tenaga ahli dari luar daerah.",
+      "Industri energi terbarukan hanya membutuhkan tenaga kerja bersertifikasi internasional tanpa melibatkan masyarakat lokal.",
+      "Peran pemerintah sangat krusial dalam menyediakan jembatan pelatihan agar terjadi pemerataan kesempatan kerja."
+    ],
+    kunciJawaban: [0, 2, 4]
+  },
+    
+  {
+    id: 2,
+    kategori: "BAHASA INDONESIA",
+    tipe: "PGK",
+    rentangNilai: "Sangat Sulit",
+    bobot: 5,
+    soal: "<b>Teks 1: Transisi Energi dan Tantangan Ketenagakerjaan</b><br><br>Transisi menuju energi bersih dan terbarukan di Indonesia tidak hanya berdampak pada pergeseran teknologi, tetapi juga membawa konsekuensi sosioekonomi yang kompleks. Di satu sisi, penghentian beroperasinya pembangkit listrik tenaga uap (PLTU) berbasis batu bara secara bertahap berpotensi memicu gelombang pemutusan hubungan kerja di daerah basis tambang. Di sisi lain, pembukaan investasi pada sektor energi surya, angin, dan geothermal menjanjikan penciptaan jutaan lapangan kerja baru yang membutuhkan kualifikasi keahlian berstandar tinggi.<br><br>Sayangnya, kesenjangan keterampilan (skills gap) antara tenaga kerja lokal dan tuntutan industri hijau masih menjadi kendala utama. Tanpa adanya intervensi berupa pelatihan ulang (reskilling) dan peningkatan keterampilan (upskilling) yang terencana, masyarakat di daerah penghasil energi fosil berisiko menjadi penonton dalam transformasi ekonomi hijau ini. Pemerintah dan pelaku industri dituntut bekerja sama merancang program transisi yang berkeadilan agar dampaknya tidak memperlebar jurang ketimpangan sosial.<br><br><b>Implikasi tersirat apa saja yang dapat disimpulkan terkait hubungan antara kebijakan pemerintah dan kesiapan masyarakat lokal dalam menghadapi transformasi ekonomi hijau? Pilihlah jawaban yang benar. Jawaban benar lebih dari satu.</b>",
+    gambar: null,
+    pilihan: [
+      "Kebijakan menutup PLTU tanpa program retooling pekerja lokal dapat memicu krisis sosial-ekonomi di daerah tambang.",
+      "Kesenjangan keterampilan dapat diatasi secara mandiri oleh pekerja tanpa perlu campur tangan regulasi pemerintah.",
+      "Keberhasilan transisi energi terbarukan sangat bergantung pada sinergi antara dunia pendidikan, industri, dan regulasi pemerintah.",
+      "Sektor energi terbarukan sama sekali tidak memerlukan adaptasi kurikulum pendidikan kejuruan di daerah.",
+      "Mendorong investasi energi hijau tanpa menyiapkan SDM lokal akan membuat masyarakat daerah penghasil fosil semakin tertinggal."
+    ],
+    kunciJawaban: [0, 2, 4]
+  },
 
     // ========================================
     // SOAL NOMOR 3 (PG) - Tingkat Kesulitan: Mudah
