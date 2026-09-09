@@ -5,7 +5,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Sedang",
     "bobot": 3,
-    "soal": "<b>Text 1</b><br>Artificial Intelligence (AI) has become increasingly common in education. Many schools now use AI-powered applications to provide personalized learning experiences. These applications can identify students' strengths and weaknesses, allowing teachers to give more targeted instruction. However, educators emphasize that AI should complement teachers rather than replace them.<hr><br>1. What is the main idea of the passage?",
+    "soal": "<b>Text 1</b><br>Artificial Intelligence (AI) has become increasingly common in education. Many schools now use AI-powered applications to provide personalized learning experiences. These applications can identify students' strengths and weaknesses, allowing teachers to give more targeted instruction. However, educators emphasize that AI should complement teachers rather than replace them.<hr><br>What is the main idea of the passage?",
     "gambar": null,
     "pilihan": [
       "AI will completely replace teachers in the future.",
@@ -23,7 +23,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Text 2</b><br>Last weekend, my classmates and I participated in a beach clean-up campaign organized by our local community. We collected plastic bottles, food wrappers, and other waste along the shoreline. Although the weather was extremely hot, everyone remained enthusiastic because we realized that our small actions could make a significant difference.<hr><br>2. Why did the participants remain enthusiastic?",
+    "soal": "<b>Text 2</b><br>Last weekend, my classmates and I participated in a beach clean-up campaign organized by our local community. We collected plastic bottles, food wrappers, and other waste along the shoreline. Although the weather was extremely hot, everyone remained enthusiastic because we realized that our small actions could make a significant difference.<hr><br>Why did the participants remain enthusiastic?",
     "gambar": null,
     "pilihan": [
       "They wanted to win a competition.",
@@ -41,7 +41,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Text 3</b><br><b>How to Register for an Online Webinar</b><br>1. Visit the official registration website.<br>2. Fill in the registration form.<br>3. Verify your email address.<br>4. Complete the payment if required.<br>5. Download the confirmation ticket.<hr><br>3. Which step should be completed before downloading the confirmation ticket?",
+    "soal": "<b>Text 3</b><br><b>How to Register for an Online Webinar</b><br>1. Visit the official registration website.<br>2. Fill in the registration form.<br>3. Verify your email address.<br>4. Complete the payment if required.<br>5. Download the confirmation ticket.<hr><br>Which step should be completed before downloading the confirmation ticket?",
     "gambar": null,
     "pilihan": [
       "Visit the webinar venue.",
@@ -59,7 +59,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Text 4</b><br>Lake Sentani, located in Papua, is surrounded by green hills and small islands. Besides its breathtaking scenery, the lake is well known for its rich biodiversity and unique cultural festivals held by the local communities. Every year, both domestic and international tourists visit the area to experience its natural beauty and traditional performances.<hr><br>4. What attracts visitors to Lake Sentani?",
+    "soal": "<b>Text 4</b><br>Lake Sentani, located in Papua, is surrounded by green hills and small islands. Besides its breathtaking scenery, the lake is well known for its rich biodiversity and unique cultural festivals held by the local communities. Every year, both domestic and international tourists visit the area to experience its natural beauty and traditional performances.<hr><br>What attracts visitors to Lake Sentani?",
     "gambar": null,
     "pilihan": [
       "Modern shopping centers.",
@@ -77,7 +77,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Sedang",
     "bobot": 3,
-    "soal": "<b>Text 5</b><br>Many scientists argue that planting more trees is one of the most effective ways to reduce climate change. Trees absorb carbon dioxide, improve air quality, and provide habitats for wildlife. Therefore, governments and citizens should work together to increase green spaces.<hr><br>5. What is the writer's purpose?",
+    "soal": "<b>Text 5</b><br>Many scientists argue that planting more trees is one of the most effective ways to reduce climate change. Trees absorb carbon dioxide, improve air quality, and provide habitats for wildlife. Therefore, governments and citizens should work together to increase green spaces.<hr><br>What is the writer's purpose?",
     "gambar": null,
     "pilihan": [
       "To entertain readers with a story.",
@@ -95,7 +95,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Sedang",
     "bobot": 3,
-    "soal": "<b>Grammar in Context</b><hr><br>6. The manager ______ the report before the meeting started, so everyone ______ the discussion immediately.",
+    "soal": "<b>Grammar in Context</b><hr><br>The manager ______ the report before the meeting started, so everyone ______ the discussion immediately.",
     "gambar": null,
     "pilihan": [
       "finishes — begins",
@@ -113,7 +113,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Vocabulary in Context</b><br>The government plans to implement a new policy to improve public transportation.<hr><br>7. The word implement is closest in meaning to...",
+    "soal": "<b>Vocabulary in Context</b><br>The government plans to implement a new policy to improve public transportation.<hr><br>The word implement is closest in meaning to...",
     "gambar": null,
     "pilihan": [
       "reject",
@@ -131,7 +131,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Integrated Reading</b><br>Research indicates that students who review lesson materials regularly retain information longer than those who study only before examinations. Consistent review also reduces stress because students are better prepared for assessments.<hr><br>8. According to the passage, regular review helps students because it...",
+    "soal": "<b>Integrated Reading</b><br>Research indicates that students who review lesson materials regularly retain information longer than those who study only before examinations. Consistent review also reduces stress because students are better prepared for assessments.<hr><br>According to the passage, regular review helps students because it...",
     "gambar": null,
     "pilihan": [
       "guarantees perfect scores.",
@@ -149,7 +149,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Narrative Text</b><br>A woodcutter accidentally dropped his axe into a river. A mysterious spirit appeared and offered him a golden axe, but the woodcutter honestly admitted it was not his. Impressed by his honesty, the spirit returned the original axe and rewarded him with the golden one as well.<hr><br>9. What value is emphasized in the story?",
+    "soal": "<b>Narrative Text</b><br>A woodcutter accidentally dropped his axe into a river. A mysterious spirit appeared and offered him a golden axe, but the woodcutter honestly admitted it was not his. Impressed by his honesty, the spirit returned the original axe and rewarded him with the golden one as well.<hr><br>What value is emphasized in the story?",
     "gambar": null,
     "pilihan": [
       "Courage",
@@ -167,7 +167,7 @@ window.soalING = [
     "tipe": "PG",
     "rentangNilai": "Mudah",
     "bobot": 2,
-    "soal": "<b>Integrated Simulation</b><br>A school intends to improve students' reading habits. The library extends its opening hours, teachers organize weekly book discussions, and students are encouraged to borrow at least one book each month.<hr><br>10. Which action best supports the school's program?",
+    "soal": "<b>Integrated Simulation</b><br>A school intends to improve students' reading habits. The library extends its opening hours, teachers organize weekly book discussions, and students are encouraged to borrow at least one book each month.<hr><br>Which action best supports the school's program?",
     "gambar": null,
     "pilihan": [
       "Spending less time reading books.",
