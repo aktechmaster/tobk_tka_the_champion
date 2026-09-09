@@ -142,18 +142,31 @@ function hitungSkor() {
 // 🔄 RESTORE SESI UJIAN OTOMATIS SAAT DI-REFRESH
 // ==================================================
 document.addEventListener('DOMContentLoaded', function () {
-    // Cek apakah ada data peserta yang tersimpan di localStorage
-    const dataPeserta = JSON.parse(localStorage.getItem('dataPeserta') || localStorage.getItem('cbt_peserta') || 'null');
+    // Ambil data menggunakan fungsi dari storage.js
+    const dataSaved = typeof ambilDataDariStorage === 'function' 
+        ? ambilDataDariStorage() 
+        : JSON.parse(localStorage.getItem('cbt_tka_sd_data') || 'null');
 
-    if (dataPeserta && dataPeserta.kelas) {
-        // Ambil riwayat jawaban dan ragu-ragu jika ada
-        const savedJawaban = JSON.parse(localStorage.getItem('jawabanSiswa') || 'null');
-        const savedRagu = JSON.parse(localStorage.getItem('raguRagu') || 'null');
+    if (dataSaved && dataSaved.kelas) {
+        // Restore jawaban & ragu-ragu dari dataUjian
+        if (Array.isArray(dataSaved.jawabanSiswa)) {
+            jawabanSiswa = dataSaved.jawabanSiswa;
+        }
+        if (Array.isArray(dataSaved.raguRagu)) {
+            raguRagu = dataSaved.raguRagu;
+        }
 
-        if (savedJawaban) jawabanSiswa = savedJawaban;
-        if (savedRagu) raguRagu = savedRagu;
+        // Restore variabel waktu & pelanggaran
+        if (dataSaved.waktuMulaiUjian) window.waktuMulaiUjian = dataSaved.waktuMulaiUjian;
+        if (dataSaved.violationCount) window.violationCount = dataSaved.violationCount;
 
-        // Buka langsung area ujian tanpa login ulang (isRestored = true)
-        muatSoalDanMulai(dataPeserta.kelas, true);
+        // Restore nilai form input jika elemennya ada
+        if (document.getElementById('nama')) document.getElementById('nama').value = dataSaved.nama || '';
+        if (document.getElementById('kelas')) document.getElementById('kelas').value = dataSaved.kelas || '';
+        if (document.getElementById('asal')) document.getElementById('asal').value = dataSaved.asal || '';
+        if (document.getElementById('nomor')) document.getElementById('nomor').value = dataSaved.nomor || '';
+
+        // Masuk kembali ke ujian tanpa mereset jawaban
+        muatSoalDanMulai(dataSaved.kelas, true);
     }
 });
