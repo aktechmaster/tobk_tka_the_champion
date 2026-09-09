@@ -77,16 +77,20 @@ async function kirimKeSpreadsheet(h) {
             statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menyimpan hasil ujian ke server...</span>`;
         }
 
-        // Menggunakan mode 'no-cors' agar pengiriman dari GitHub Pages ke Apps Script tidak diblokir browser
-        await fetch(URL_GAS, {
+        const res = await fetch(URL_GAS, {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify(payload)
         });
 
-        if (statusBox) {
-            statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
+        // Verifikasi tipe response (mengecek jika ada kegagalan tersembunyi/opaque)
+        if (res.type === 'opaque') {
+            if (statusBox) {
+                statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian berhasil terkirim dan tersimpan!</span>`;
+            }
+        } else {
+            throw new Error("Respon server tidak valid");
         }
 
     } catch (err) {
@@ -94,7 +98,7 @@ async function kirimKeSpreadsheet(h) {
         if (statusBox) {
             statusBox.innerHTML = `
                 <div style="color: #cc0000; font-weight: bold; margin-bottom: 8px;">
-                    ❌ Gagal terhubung ke server.
+                    ❌ Gagal menyimpan data (Akses ditolak / Error server).
                 </div>
                 <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 6px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
                     🔄 Coba Kirim Ulang Data
