@@ -103,45 +103,6 @@ function muatSoalDanMulai(kelas, isRestored) {
 }
 
 // ==================================================
-// 📊 FUNGSI HITUNG SKOR
-// ==================================================
-function hitungSkor() {
-    let indoBenar = 0, indoTotal = 0;
-    let ingBenar = 0, ingTotal = 0;
-    let mtkBenar = 0, mtkTotal = 0;
-
-    if (!window.daftarSoal) return { totalBenar: 0, totalSoalValid: 0 };
-
-    window.daftarSoal.forEach((soal, idx) => {
-        const kat = (soal.kategori || soal.subtes || '').toUpperCase();
-        const jwb = jawabanSiswa[idx];
-        const kunci = soal.kunciJawaban || soal.kunci;
-        const isCorrect = jwb === kunci;
-
-        if (kat.includes('INDONESIA') || kat.includes('IND')) {
-            indoTotal++;
-            if (isCorrect) indoBenar++;
-        } else if (kat.includes('INGGRIS') || kat.includes('ING')) {
-            ingTotal++;
-            if (isCorrect) ingBenar++;
-        } else if (kat.includes('MATEMATIKA') || kat.includes('MTK')) {
-            mtkTotal++;
-            if (isCorrect) mtkBenar++;
-        }
-    });
-
-    const totalBenar = indoBenar + ingBenar + mtkBenar;
-    const totalSoalValid = window.daftarSoal.length;
-
-    return {
-        indoBenar, indoTotalSoal: indoTotal, indoSkor: indoBenar * 10, indoMaks: indoTotal * 10,
-        ingBenar, ingTotalSoal: ingTotal, ingSkor: ingBenar * 10, ingMaks: ingTotal * 10,
-        mtkBenar, mtkTotalSoal: mtkTotal, mtkSkor: mtkBenar * 10, mtkMaks: mtkTotal * 10,
-        totalBenar, totalSoalValid
-    };
-}
-
-// ==================================================
 // 🔄 INSIALISASI DAN RESTORE SESI
 // ==================================================
 document.addEventListener('DOMContentLoaded', function () {
