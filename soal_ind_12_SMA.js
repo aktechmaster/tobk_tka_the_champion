@@ -179,43 +179,41 @@ window.soalIND = [
     kunciJawaban: [0, 2, 3]
   },
 
-    // ========================================
-    // SOAL NOMOR 11 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 11,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<b>Pada akhir cerita, para binatang bersikap 'diam seribu bahasa'. Peristiwa yang paling tepat disimpulkan dari sikap semua binatang tersebut adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "mereka menolak usul dari Rino dan tidak mau berteman dengannya lagi",
-            "para binatang sedang menunggu perintah baru dari pimpinan hutan",
-            "mereka semua karena sudah seharian mencari makna di hutan",
-            "semua binatang kehabisan ide dan tidak tahu harus berbuat apa untuk menyelesaikan masalah"
-        ],
-        kunciJawaban: "D"
-    },
-
-        // ========================================
-    // SOAL NOMOR 12 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 12,
-        kategori: "BAHASA INDONESIA",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Bacalah cerita berikut dengan saksama!<br><br><b>Doni dan Sampah Plastik</b><br><br>Doni adalah anak yang suka jajan. Setiap selesai makan permen atau minum kotak, Doni selalu membuang bungkusnya begitu saja, seringkali di balik semak-semak. \"Ah, cuma satu bungkus, tidak ada yang lihat,\" pikir Doni sambil berlari ke taman.<br><br>Suatu sore, Doni asyik bermain bola di lapangan. Tiba-tiba, ia menendang bola terlalu keras dan bola itu masuk ke selokan di pinggir taman. Doni berusaha mengambilnya, tetapi ia terkejut. Selokan itu penuh dengan sampah plastik dan bungkus jajan. Airnya mampet dan kotor.<br><br>Doni akhirnya berhasil mengambil bolanya, tetapi ia sangat jijik melihat tangannya kotor. Doni baru sadar bahwa sampah kecil yang sering ia buang sudah menumpuk dan merusak lingkungan tempat ia bermain. Doni merasa malu. Sejak saat itu, Doni berjanji untuk selalu membuang sampah pada tempatnya, sekecil apa pun bungkusnya.<br><br><b>Amanat yang paling utama ingin disampaikan dalam cerita Doni dan Sampah Plastik adalah…</b>",
-        gambar: null,
-        pilihan: [
-            "membuang sampah sekecil apa pun di tempatnya adalah tanggung jawab kita agar lingkungan tetap bersih",
-            "kita harus bermain di lapangan yang tidak memiliki selokan air di pinggirnya",
-            "jangan pernah membeli jajan yang bungkusnya terbuat dari bahan plastik",
-            "lebih baik bermain sendiri agar bola tidak masuk ke dalam selokan yang kotor"
-        ],
-        kunciJawaban: "A"
-    },
+    id: 11,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sedang",
+    bobot: 3,
+    soal: "<b>Teks 6: Cerpen - Naungan di Ujung Alun-Alun</b><br><br>Pohon trembesi di ujung alun-alun desa itu telah berdiri melebihi usia siapa pun yang hidup di balai desa hari ini. Batangnya yang berlumut tebal dan rindang dedaunannya senantiasa menjadi tempat bernaung bagi Pak Karsa, seorang lelaki tua penjalin bambu. Setiap petang, setelah jemarinya yang keriput menyelesaikan anyaman keranjang, Pak Karsa duduk di bangku kayu lapuk bawah trembesi, memandang matahari tenggelam dengan tatapan yang sulit diterjemahkan.<br><br>Ketika para pemuda desa berkerumun membicarakan rencana pembangunan toko modern yang menuntut penebangan pohon tua itu, Pak Karsa hanya diam. Namun, matanya berkaca-kaca. Bukan sekadar pohon yang akan tumbang, melainkan memori tentang istrinya yang dulu sering menunggunya pulang di bawah naungan pohon itu puluhan tahun silam. Bagi Pak Karsa, merobohkan trembesi itu sama saja memusnahkan jejak terakhir kenangan hidupnya.<br><br><b>Berdasarkan Teks 6, tentukan kebenaran interpretasi karakter dan watak tokoh Pak Karsa (BENAR / SALAH)!</b>",
+    gambar: null,
+    pernyataan: [
+      "Pak Karsa adalah seorang pengrajin bambu yang tekun dan memiliki keterikatan emosional mendalam dengan kenangan masa lalunya.",
+      "Pak Karsa bertindak sangat agresif dan memimpin demonstrasi warga untuk menolak pembangunan toko modern.",
+      "Sikap diam Pak Karsa saat mendengar rencana penebangan pohon mencerminkan kesedihan dan kepasrahan batin yang mendalam.",
+      "Pak Karsa mendukung penebangan pohon trembesi demi kemajuan ekonomi anak-anak muda di desanya.",
+      "Pak Karsa tidak keberatan untuk menghapus semua kenangan hidupnya."
+    ],
+    kunciJawaban: ["B", "S", "B", "S", "S"]
+  },
+  
+  {
+    id: 12,
+    kategori: "BAHASA INDONESIA",
+    tipe: "BS",
+    rentangNilai: "Sulit",
+    bobot: 4,
+    soal: "<b>Teks 6: Cerpen - Naungan di Ujung Alun-Alun</b><br><br>Pohon trembesi di ujung alun-alun desa itu telah berdiri melebihi usia siapa pun yang hidup di balai desa hari ini. Batangnya yang berlumut tebal dan rindang dedaunannya senantiasa menjadi tempat bernaung bagi Pak Karsa, seorang lelaki tua penjalin bambu. Setiap petang, setelah jemarinya yang keriput menyelesaikan anyaman keranjang, Pak Karsa duduk di bangku kayu lapuk bawah trembesi, memandang matahari tenggelam dengan tatapan yang sulit diterjemahkan.<br><br>Ketika para pemuda desa berkerumun membicarakan rencana pembangunan toko modern yang menuntut penebangan pohon tua itu, Pak Karsa hanya diam. Namun, matanya berkaca-kaca. Bukan sekadar pohon yang akan tumbang, melainkan memori tentang istrinya yang dulu sering menunggunya pulang di bawah naungan pohon itu puluhan tahun silam. Bagi Pak Karsa, merobohkan trembesi itu sama saja memusnahkan jejak terakhir kenangan hidupnya.<br><br><b>Tentukan kebenaran analisis latar dan simbolisme dalam cerita (BENAR / SALAH)!</b>",
+    gambar: null,
+    pernyataan: [
+      "Pohon trembesi tua dalam cerita berfungsi sebagai simbol ruang kenangan dan ikatan sejarah personal tokoh utama.",
+      "Latar tempat cerita berfokus pada kawasan perkotaan modern yang padat dengan industri pabrik.",
+      "Konflik utama dalam kutipan cerpen tersebut adalah pertentangan antara modernisasi dan pelestarian kenangan personal/ruang hidup.",
+      "Suasana yang terbangun dalam kutipan teks di atas cenderung riang dan penuh dengan humor kenakalan remaja.",
+      "Latar waktu cerita tidak dapat diidentifikasi tetapi terjadi ketika Pak Karsa berusia lanjut"
+    ],
+    kunciJawaban: ["B", "S", "B", "S", "S"]
+  },
 
     // ========================================
     // SOAL NOMOR 13 (BS) - Tingkat Kesulitan: Sedang
