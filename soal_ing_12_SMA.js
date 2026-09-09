@@ -179,405 +179,398 @@ window.soalING = [
     "kunciJawaban": "B"
   },
 
-    // ========================================
-    // SOAL NOMOR 41 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 41,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "Berikut beberapa sifat bangun datar persegi panjang:<br><br>(1) Memiliki 4 sisi yang sama panjang.<br>(2) Mempunyai 2 pasang sisi yang sama panjang.<br>(3) Keempat sudutnya sama besar (90°).",
-        gambar: null,
-        pilihan: [
-            "(1)",
-            "(2)",
-            "(3)"
-        ],
-        kunciJawaban: ["S", "B", "B"]
-    },
-
-            // ========================================
-    // SOAL NOMOR 42 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 42,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Tiko akan membentuk mainan dadu dari karton seperti gambar di atas. Jumlah mata dadu yang saling berhadapan jumlahnya sama yaitu 7. Pola jaring-jaring mainan dari bahan Tiko yang tepat adalah ...",
-        gambar: "images_tka_6/42.png",
-        pilihan: [
-            "<img src=\"images_tka_6/42a.png\" alt=\"A\" style=\"max-width:90px;\">",
-            "<img src=\"images_tka_6/42b.png\" alt=\"B\" style=\"max-width:90px;\">",
-            "<img src=\"images_tka_6/42c.png\" alt=\"C\" style=\"max-width:90px;\">",
-            "<img src=\"images_tka_6/42d.png\" alt=\"D\" style=\"max-width:90px;\">"
-        ],
-        kunciJawaban: "C"
-    },
+    "id": 41,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Text</b><br>Many universities have introduced hybrid learning systems, allowing students to attend classes either in person or online. This approach provides flexibility, especially for students living far from campus. Nevertheless, universities still encourage face-to-face attendance during laboratory sessions because practical activities require direct supervision.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "Hybrid learning allows students to participate in classes through different modes.",
+      "Laboratory classes are recommended to be conducted entirely online.",
+      "One advantage of hybrid learning is greater flexibility for students."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
     
-    // ========================================
-    // SOAL NOMOR 43 (PGK) - Tingkat Kesulitan: Sedang
-    // ========================================
+  {
+    "id": 42,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br>One afternoon, a thirsty crow searched everywhere for water. Eventually, it found a pitcher containing only a small amount of water at the bottom. Unable to reach it with its beak, the crow dropped small stones into the pitcher until the water level rose high enough to drink.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "The crow solved its problem by thinking creatively.",
+      "The crow broke the pitcher to get the water.",
+      "The story illustrates the importance of intelligence and perseverance."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
+    
+  {
+    "id": 43,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br><b>How to Borrow a Book from the Library</b><br>1. Find the book you want.<br>2. Bring the book to the circulation desk.<br>3. Show your student ID card.<br>4. The librarian records the loan.<br>5. Return the book before the due date.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "Students must present an identification card when borrowing a book.",
+      "The final step is recording the loan.",
+      "The procedure reminds students to return books on time."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
+
+        {
+    "id": 44,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br>Bunaken National Park is one of Indonesia's most famous marine conservation areas. It is home to hundreds of coral species and thousands of marine animals. Because of its exceptional underwater ecosystem, the park has become a favorite destination for divers from around the world.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "Bunaken National Park is recognized for its underwater biodiversity.",
+      "The passage states that Bunaken is mainly visited for mountain climbing.",
+      "International divers frequently visit Bunaken."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
+    
+  {
+    "id": 45,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br>Many educators believe that teamwork should become an essential part of classroom learning. Through collaborative activities, students develop communication skills, learn to respect different opinions, and become more confident in solving problems together.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "The author supports the use of teamwork in education.",
+      "Teamwork is said to reduce students' communication skills.",
+      "Collaborative learning helps students solve problems together."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
+    
+  {
+    "id": 46,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Text</b><br>Electric vehicles are becoming increasingly popular because they produce lower emissions than conventional gasolinepowered cars. However, experts point out that the widespread adoption of electric vehicles also depends on the availability of charging stations and improvements in battery technology.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "Electric vehicles generally produce fewer emissions than conventional cars.",
+      "Battery technology has no influence on the development of electric vehicles.",
+      "Charging infrastructure is one factor affecting the use of electric vehicles."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
+    
+  {
+    "id": 47,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Text</b><br>Last year, our school's debate team participated in a provincial championship. Although we lost in the semifinal round, the judges praised our teamwork and critical thinking. Motivated by the feedback, we practiced more consistently and eventually won the national championship this year.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "The team became national champion in the same competition described at the beginning.",
+      "Feedback from the judges encouraged the team to improve.",
+      "The passage suggests that perseverance contributed to later success."
+    ],
+    "kunciJawaban": [
+      "False",
+      "True",
+      "True"
+    ]
+  },
+
     {
-        id: 43,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "Jika jarak rumah Andi ke sekolah 800 m dan jarak rumah Budi ke sekolah 1.200 m, maka ...<br><br>(1) Jarak rumah Andi dan Budi 2 km<br>(2) Jarak rumah Andi ke sekolah 8 km<br>(3) Jarak rumah Budi ke sekolah 12 km<br>(4) Selisih jarak rumah mereka ke sekolah 400 m<br><br>Pernyataan yang benar adalah ... (jawaban benar lebih dari satu)",
-        gambar: null,
-        pilihan: [
-            "(1) dan (2)",
-            "(2) dan (3)",
-            "(1) dan (4)",
-            "(3) dan (4)"
-        ],
-        kunciJawaban: [2]
-    },
+    "id": 48,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br><b>How to Join an Online Meeting</b><br>1. Open the meeting link.<br>2. Enter your name.<br>3. Check your microphone and camera.<br>4. Click Join Meeting.<br>5. Wait until the host admits you.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "Participants should check their devices before joining the meeting.",
+      "The first step is waiting for the host.",
+      "The participant enters their name before joining the meeting."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
+    
+  {
+    "id": 49,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br>Many nutritionists recommend eating a balanced diet that includes vegetables, fruits, whole grains, and adequate protein. While dietary supplements may be useful in certain situations, experts generally agree that they should not replace nutritious meals.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "The passage recommends replacing healthy meals with supplements.",
+      "A balanced diet includes several types of nutritious food.",
+      "Supplements may be beneficial under certain conditions."
+    ],
+    "kunciJawaban": [
+      "False",
+      "True",
+      "True"
+    ]
+  },
+    
+  {
+    "id": 50,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "BS",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Text</b><br>A recent survey revealed that students who participate in extracurricular activities often develop stronger leadership, communication, and time-management skills. Nevertheless, researchers emphasized that students should maintain a balance between academic responsibilities and extracurricular commitments to avoid excessive stress.<hr><br>Determine whether each statement is True or False.",
+    "gambar": null,
+    "pilihan": [],
+    "pernyataan": [
+      "The survey suggests that extracurricular activities may help develop leadership skills.",
+      "Researchers recommend spending all available time on extracurricular activities.",
+      "The passage emphasizes the importance of balancing academics and extracurricular involvement."
+    ],
+    "kunciJawaban": [
+      "True",
+      "False",
+      "True"
+    ]
+  },
 
-        // ========================================
-    // SOAL NOMOR 44 (PG) - Tingkat Kesulitan: Sulit
-    // ========================================
     {
-        id: 44,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Seorang pedagang dengan mobil pick up mengangkut berbagai macam barang, kedelai, beras, dan jagung. Berat kedelai 0,24 ton, beras 326 kg, dan jagung 3,08 kuintal. Di pasar pedagang tersebut menurunkan beras seberat 1/4 kuintal dan kedelai 125 kg. Sisa beratnya dibawa ke Gudang. Berat muatan yang dibawa ke gudang adalah ... kg",
-        gambar: null,
-        pilihan: [
-            "599",
-            "609",
-            "611",
-            "619"
-        ],
-        kunciJawaban: "B"
-    },
+    "id": 51,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Narrative Text</b><br>A poor merchant found a wallet filled with gold coins on his way home. Instead of keeping it, he announced his discovery throughout the town. The owner eventually claimed the wallet and, impressed by the merchant's honesty, rewarded him generously.<hr><br>Which statements are supported by the text?",
+    "gambar": null,
+    "pilihan": [
+      "The merchant kept the wallet for himself.",
+      "The merchant informed others about the lost wallet.",
+      "The owner appreciated the merchant's honesty.",
+      "The merchant received a reward.",
+      "The merchant stole the wallet from its owner."
+    ],
+    "pernyataan": [],
+    "kunciJawaban": [1, 2, 3]
+  },
+    
+  {
+    "id": 52,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Recount Text</b><br>Last Saturday, our school organized a blood donation campaign in collaboration with the local hospital. Hundreds of students, teachers, and parents volunteered to help with registration and event preparation. Although only adults could donate blood, students actively assisted throughout the event.<hr><br>Which statements are TRUE according to the text?",
+    "gambar": null,
+    "pilihan": [
+      "The campaign was held together with a hospital.",
+      "Students donated blood during the event.",
+      "Parents participated in the activity.",
+      "Students helped organize the event.",
+      "The campaign lasted for one month."
+    ],
+    "pernyataan": [],
+    "kunciJawaban": [0, 2, 3]
+  },
+    
+  {
+    "id": 53,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Procedure Text</b><br><b>How to Create a Strong Password</b><br>1. Use at least eight characters.<br>2. Combine uppercase and lowercase letters.<br>3. Include numbers and symbols.<br>4. Avoid using personal information.<br>5. Change your password regularly.<hr><br>Which statements are CORRECT?",
+    "gambar": null,
+    "pilihan": [
+      "Personal information should be included in the password.",
+      "A strong password should contain numbers.",
+      "Passwords should be updated regularly.",
+      "The text explains internet safety practices.",
+      "The procedure recommends using only lowercase letters."
+    ],
+    "pernyataan": [],
+    "kunciJawaban": [1, 2, 3]
+  },
+    
+  {
+    "id": 54,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Descriptive Text</b><br>Mount Bromo is one of Indonesia's most iconic volcanoes. Visitors are fascinated by its vast sea of sand, spectacular sunrise views, and unique volcanic landscape. The surrounding Tengger culture also attracts tourists interested in local traditions.<hr><br>Select all statements supported by the text.",
+    "gambar": null,
+    "pilihan": [
+      "Mount Bromo is famous for its sunrise scenery.",
+      "The passage focuses on Bromo's mining industry.",
+      "Cultural traditions are mentioned as one attraction.",
+      "The volcano is surrounded by a sea of sand.",
+      "The text explains how volcanoes are formed."
+    ],
+    "pernyataan": [],
+    "kunciJawaban": [0, 2, 3]
+  },
 
-    // ========================================
-    // SOAL NOMOR 45 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
     {
-        id: 45,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<img src=\"images_tka_6/45.png\" alt=\"Gambar Soal 45\" style=\"max-width:220px; display:block; margin:10px auto;\"><br>Besar sudut WZY pada gambar tersebut adalah ...",
-        gambar: null,
-        pilihan: [
-            "110°",
-            "120°",
-            "130°",
-            "140°"
-        ],
-        kunciJawaban: "A"
-    },
-
-    // ========================================
-    // SOAL NOMOR 46 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 46,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "<img src=\"images_tka_6/46.png\" alt=\"Gambar Soal 46\" style=\"max-width:260px; display:block; margin:10px auto;\"><br>Sebuah pigura foto dibuat Lina dari kertas karton. Pigura tersebut berbentuk seperti pada gambar. Bagian tengah untuk pemasangan foto. Bagian lain dilapisi kertas warna. Luas minimal kertas warna yang diperlukan adalah ...",
-        gambar: null,
-        pilihan: [
-            "225 cm²",
-            "375 cm²",
-            "400 cm²",
-            "450 cm²"
-        ],
-        kunciJawaban: "B"
-    },
-
-    // ========================================
-    // SOAL NOMOR 47 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 47,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Sebuah bak mandi berisi penuh air 80.000 cl. Jika 3/4 bagian sudah digunakan untuk mandi, maka sisa air di dalam bak mandi ... l",
-        gambar: null,
-        pilihan: [
-            "200",
-            "800",
-            "600",
-            "4.000"
-        ],
-        kunciJawaban: "B"
-    },
-
-    // ========================================
-    // SOAL NOMOR 48 (BS) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 48,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "BS",
-        soal: "Ibu membeli beras 5 kg, gula pasir 3.500 gram, dan telur 20 ons.<br><br>Tentukan Benar atau Salah pada setiap pernyataan berikut!",
-        gambar: null,
-        pilihan: [
-            "Beras yang dibeli ibu 5.000 gram",
-            "Jumlah beras dan gula pasir yang dibeli ibu 8500 hg",
-            "Jumlah berat semu belanjaan ibu 10,5 kg"
-        ],
-        kunciJawaban: ["B", "S", "B"]
-    },
-
-        // ========================================
-    // SOAL NOMOR 49 (PGK) - Tingkat Kesulitan: Sulit
-    // ========================================
-    {
-        id: 49,
-        kategori: "BAHASA INGGRIS",
-        rentangNilai: "0-3",
-        tipe: "PGK",
-        soal: "<img src=\"images_tka_6/49.png\" alt=\"Gambar Soal 49\" style=\"max-width:220px; display:block; margin:10px auto;\"><br>Bak tersebut berisi air seperempat bagian (π = 22/7). Dari gambar tersebut dapat disimpulkan pernyataan berikut:<br><br>(1) Ketinggian air dalam bak adalah 50 dm.<br>(2) Ketinggian air dalam bak adalah 12,5 dm.<br>(3) Volume air dalam bak penampungan tersebut adalah 7.700 dm³.<br>(4) Volume air dalam bak penampungan tersebut adalah 30.800 dm³.<br><br>Pernyataan yang benar ditunjukkan nomor ...",
-        gambar: null,
-        pilihan: [
-            "(1), (2), dan (3)",
-            "(1), (3), dan (4)",
-            "(2) dan (3)",
-            "(2), (3), dan (4)"
-        ],
-        kunciJawaban: [2]
-    },
-
-            // ========================================
-    // SOAL NOMOR 50 (PG) - Tingkat Kesulitan: Sedang
-    // ========================================
-    {
-        id: 50,
-        kategori: "NUMERASI",
-        rentangNilai: "0-3",
-        tipe: "PG",
-        soal: "Hasil penilaian harian BAHASA INGGRIS siswa kelas VI SD Merdeka sebagai berikut:<br><br>75, 83, 89, 80, 83, 85, 80, 83, 80, 89,<br>83, 85, 95, 83, 75, 89, 80, 89, 85, 83,<br>85, 83, 89, 83, 95, 75, 85, dan 83.<br><br>Tabel yang sesuai data tersebut adalah ...",
-        gambar: null,
-        pilihan: [
-            "A.<br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr><td style='padding: 4px;'>Nilai</td><td style='padding: 4px;'>75</td><td style='padding: 4px;'>80</td><td style='padding: 4px;'>83</td><td style='padding: 4px;'>85</td><td style='padding: 4px;'>89</td><td style='padding: 4px;'>95</td></tr><tr><td style='padding: 4px;'>Jumlah siswa</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>4</td><td style='padding: 4px;'>9</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>2</td></tr></table>",
-            "B.<br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr><td style='padding: 4px;'>Nilai</td><td style='padding: 4px;'>75</td><td style='padding: 4px;'>80</td><td style='padding: 4px;'>83</td><td style='padding: 4px;'>85</td><td style='padding: 4px;'>89</td><td style='padding: 4px;'>95</td></tr><tr><td style='padding: 4px;'>Jumlah siswa</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>4</td><td style='padding: 4px;'>8</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>2</td></tr></table>",
-            "C.<br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr><td style='padding: 4px;'>Nilai</td><td style='padding: 4px;'>75</td><td style='padding: 4px;'>80</td><td style='padding: 4px;'>83</td><td style='padding: 4px;'>85</td><td style='padding: 4px;'>89</td><td style='padding: 4px;'>95</td></tr><tr><td style='padding: 4px;'>Jumlah siswa</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>4</td><td style='padding: 4px;'>8</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>6</td><td style='padding: 4px;'>2</td></tr></table>",
-            "D.<br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr><td style='padding: 4px;'>Nilai</td><td style='padding: 4px;'>75</td><td style='padding: 4px;'>80</td><td style='padding: 4px;'>83</td><td style='padding: 4px;'>85</td><td style='padding: 4px;'>89</td><td style='padding: 4px;'>95</td></tr><tr><td style='padding: 4px;'>Jumlah siswa</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>3</td><td style='padding: 4px;'>9</td><td style='padding: 4px;'>6</td><td style='padding: 4px;'>5</td><td style='padding: 4px;'>2</td></tr></table>"
-        ],
-        kunciJawaban: "A"
-    },
-
-    // ========================================
-// PEMBATAS: PERGANTIAN BAGIAN SOAL
-// ========================================
-{
-    id: 99,
-    kategori: "-",
-    tipe: "INFO",
-    tingkatKesulitan: "-",
-    rentangNilai: "0 – 0",
-    soal: `
-    <div style="text-align:center; padding:30px 20px; background-color:#fff9c4; border:2px solid #fbc02d; border-radius:12px; color:#856404;">
-      <h2 style="margin:0 0 15px 0; font-size:22px; font-weight:900;">📢 PERHATIAN</h2>
-      <p style="font-size:17px; line-height:1.6; margin:0;">
-        Anda telah menyelesaikan bagian <strong>TKA BAHASA INGGRIS</strong>.<br><br>
-        Selanjutnya Anda akan mengerjakan soal bagian <strong>TKA ILMU PENGETAHUAN ALAM (BAHASA INGGRIS)</strong>.<br>
-        Silakan tekan tombol <strong>SELANJUTNYA</strong> di bawah ini untuk melanjutkan ujian.
-      </p>
-    </div>
-    `,
-    gambar: null,
-    pilihan: [],
-    kunciJawaban: ""
-},
-
-// ========================================
-// SOAL NOMOR 51 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 51,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Bakteri E-coli di usus besar membantu mengurangi sisa makanan. Sementara di situ bakteri mendapatkan tempat untuk hidup. Coba perhatikan gambar berikut!<br><br>Gambar yang memiliki kesamaan hubungan dengan bacaan di atas adalah ....",
-    gambar: "images_tka_6/51.png",
-    pilihan: [
-        "(a) dan (b)",
-        "(a) dan (d)",
-        "(b) dan (c)",
-        "(c) dan (d)"
+    "id": 55,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Analytical Exposition</b><br>Many educators believe financial literacy should be introduced at school because students need to understand budgeting, saving, and responsible spending from an early age. Such knowledge helps them make wiser financial decisions in adulthood.<hr><br>Which statements reflect the author's opinion?",
+    "gambar": null,
+    "pilihan": [
+      "Financial literacy should be taught in schools.",
+      "Budgeting is one important financial skill.",
+      "Students should avoid learning about money until adulthood.",
+      "Financial knowledge supports responsible decision-making.",
+      "Financial education is unnecessary."
     ],
-    kunciJawaban: "D"
-},
-
-// ========================================
-// SOAL NOMOR 52 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 52,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Hewan yang mampu menyesuaikan diri dengan lingkungan akan bertahan dari proses seleksi alam. Hewan mengalami perkembangan pada organ atau kebiasaan untuk fungsi tertentu, misalnya beberapa hewan berikut:<br>(1) Kalajengking<br>(2) Bunglon<br>(3) Cicak<br>(4) Udang<br>(5) Bulu babi laut<br>(6) Belalang<br><br>Hewan yang memiliki kesamaan dalam adaptasi ditunjukkan nomor ....",
-    gambar: "images_tka_6/52.png",
-    pilihan: [
-        "(1), (3) dan (4)",
-        "(2), (4), dan (6)",
-        "(3), (4), dan (5)",
-        "(3), (4), dan (5)"
+    "pernyataan": [],
+    "kunciJawaban": [0, 1, 3]
+  },
+  {
+    "id": 56,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sulit",
+    "bobot": 4,
+    "soal": "<b>Grammar in Context</b><hr><br>Choose ALL grammatically correct sentences.",
+    "gambar": null,
+    "pilihan": [
+      "Hardly had the meeting begun when the electricity went out.",
+      "Neither my brother nor my parents is attending the ceremony.",
+      "The equipment has been carefully inspected.",
+      "She suggested to go home earlier.",
+      "Every applicant must submit his or her application before Friday."
     ],
-    kunciJawaban: "A"
-},
-
-// ========================================
-// SOAL NOMOR 53 (PGK) - Tingkat Kesulitan: Sulit
-// ========================================
-{
-    id: 53,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PGK",
-    soal: "Di kota-kota besar kita bisa menemukan kedai kopi yang menggunakan wadah plastik yang estetik. Tidak hanya menghilangkan dahaga, berbagi jenis mer kopi menjadi sebutan standar hidup dan menunjukan kebersamaan masyarakat. Akan tetapi, kegiatain ini berdampak buruk karena memperbanyak jumlah sampah plastik yang sulit untuk terurai.<br><br>Oleh karena itu, kita perlu melakukan permasalahan dengan melakukan beberapa solusi. Upaya yang tepat untuk menjaga kelestarian lingkungan yang sesuai dengan ilustrasi tersebut adalah ....<br><br>Solusi<br>I. Menggunakan tumbler<br>II. Mendaulat ulang sampah plastik<br>III. Mengubur sampah plastik<br>IV. Mengolah sisa makanan menjadi pupuk<br>V. Membakar sampah plastik yang menumpuk",
-    gambar: "images_tka_6/53.png",
-    pilihan: [
-        "I dan II",
-        "II dan III",
-        "III dan IV",
-        "IV dan V"
+    "pernyataan": [],
+    "kunciJawaban": [0, 2, 4]
+  },
+  {
+    "id": 57,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Vocabulary in Context</b><br>The manager decided to revise the proposal after receiving feedback from the committee.<hr><br>Which words are closest in meaning to revise?",
+    "gambar": null,
+    "pilihan": [
+      "modify",
+      "edit",
+      "improve",
+      "reject",
+      "abandon"
     ],
-    kunciJawaban: [0]
-},
-
-// ========================================
-// SOAL NOMOR 54 (PGK) - Tingkat Kesulitan: Sulit
-// ========================================
-{
-    id: 54,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PGK",
-    soal: "Azka mengamati proses daur hidup hewan mulai dari telur hingga dewasa. Azka menemukan bahwa terdapat beberapa hewan yang mengalami perubahan yang sangat berbeda bentuk dari saat masih sampai dewasa, tetapi ada juga hewan yang setelah menetas menetas dewasa tidak terlihat perbedaannya. Proses perubahan bentuk ini disebut dengan metamorfosis.<br><br>Azka menemukan 4 gambar hewan sebagai berikut:<br>(I) Kupu-kupu<br>(II) Semut<br>(III) Kecoa<br>(IV) Belalang<br><br>Analisis yang tepat dari keempat hewan tersebut adalah .... (jawaban lebih dari satu)<br><br>(1) Kupu-kupu mengalami metamorfosis sempurna karena tidak mengalami fase kepompong dan memiliki bentuk berbeda antara menetas dewasa.<br>(2) Semut merupakan hewan dengan metamorfosis sempurna karena melalui 4 tahap yaitu telur, larva, pupa dan dewasa.<br>(3) Kecoa mengalami metamorfosis tidak sempurna karena tidak mengalami fase kepompong.<br>(4) Belalang tidak mengalami metamorfosis sempurna karena setelah menetas telur berubah menjadi mirip induk tetapi dan menjadi bertambah besar.",
-    gambar: "images_tka_6/54.png",
-    pilihan: [
-        "Pernyataan (1)",
-        "Pernyataan (2)",
-        "Pernyataan (3)",
-        "Pernyataan (4)"
+    "pernyataan": [],
+    "kunciJawaban": [0, 1, 2]
+  },
+  {
+    "id": 58,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Integrated Reading</b><br>Many companies now allow employees to work remotely. Research suggests that remote work can increase productivity and reduce commuting time. However, experts also note that successful remote work requires self-discipline, effective communication, and reliable internet access.<hr><br>Which conclusions can be drawn from the passage?",
+    "gambar": null,
+    "pilihan": [
+      "Remote work may improve productivity.",
+      "Reliable internet access supports remote work.",
+      "Self-discipline is unnecessary for remote workers.",
+      "Remote work reduces commuting time.",
+      "Every company has permanently closed its offices."
     ],
-    kunciJawaban: [1, 2, 3]
-},
-
-    // ========================================
-// SOAL NOMOR 55 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 55,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Setiap hewan memiliki bagian tubuh yang memiliki fungsi tertentu. Beberapa hewan yang memiliki keunikan disajikan dalam tabel berikut.<br><br>Pasangan yang benar antara bagian tubuh hewan dengan fungsinya ditunjukkan oleh ...",
-    gambar: "images_tka_6/55.png",
-    pilihan: [
-        "J-III dan L-IV",
-        "K-I dan L-II",
-        "L-IV dan K-III",
-        "N-I dan K-III"
+    "pernyataan": [],
+    "kunciJawaban": [0, 1, 3]
+  },
+  {
+    "id": 59,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "<b>Integrated Reading & Simulation</b><br>A university launches a \"Plastic-Free Campus\" campaign. Students are encouraged to bring reusable tumblers, separate recyclable waste, avoid plastic bags, and participate in monthly environmental workshops.<hr><br>Which actions support the university's campaign?",
+    "gambar": null,
+    "pilihan": [
+      "Bringing a reusable tumbler.",
+      "Using disposable plastic cups every day.",
+      "Separating recyclable waste.",
+      "Joining environmental workshops.",
+      "Throwing plastic waste into rivers."
     ],
-    kunciJawaban: "D"
-},
-
-// ========================================
-// SOAL NOMOR 56 (PG) - Tingkat Kesulitan: Sulit
-// ========================================
-{
-    id: 56,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan gambar berikut!<br><br>Berikut ini pernyataan yang tepat mengenai otot sesuai dengan gambar di atas adalah ....",
-    gambar: "images_tka_6/56.png",
-    pilihan: [
-        "Otot pada gambar A berkerja dengan kesadaran dan berbentuk silinder bercabang",
-        "Otot pada gambar B berkerja dengan kesadaran dan berbentuk silinder bercabang",
-        "Otot pada gambar C berkerja tanpa kesadaran dan berbentuk silinder tidak bercabang",
-        "Otot pada gambar C berkerja tanpa kesadaran dan berbentuk silinder bercabang"
+    "pernyataan": [],
+    "kunciJawaban": [0, 2, 3]
+  },
+  {
+    "id": 60,
+    "kategori": "BAHASA INGGRIS",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "<b>Integrated Reading</b><br>A recent educational study found that students who regularly receive constructive feedback tend to improve their academic performance more rapidly than those who receive only final examination scores. Researchers also concluded that motivation and consistent practice remain essential for continuous improvement.<hr><br>Which statements are supported by the passage?",
+    "gambar": null,
+    "pilihan": [
+      "Constructive feedback can contribute to better academic performance.",
+      "Final examination scores alone always improve student achievement.",
+      "Consistent practice is important for improvement.",
+      "Motivation influences learning outcomes.",
+      "Feedback completely replaces regular study."
     ],
-    kunciJawaban: "D"
-},
-
-// ========================================
-// SOAL NOMOR 57 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 57,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan gambar berikut!<br><br>Sesuai dengan gambar di atas, mekanisme yang ditunjukkan nomor 3-6-1-2 adalah ....",
-    gambar: "images_tka_6/57.png",
-    pilihan: [
-        "Darah bersih dipompa dari bilik kiri menuju seluruh tubuh lalu diaterima oleh serambi kanan dan menuju bilik kanan untuk dipompa ke paru-paru.",
-        "Darah bersih dipompa dari bilik kanan menuju seluruh tubuh lalu diaterima oleh serambi kanan dan menuju bilik kanan untuk dipompa ke seluruh tubuh kembali.",
-        "Darah kotor dipompa dari bilik kiri menuju seluruh tubuh lalu diaterima oleh serambi kanan dan menuju bilik kanan untuk dipompa ke paru-paru.",
-        "Darah bersih dipompa dari bilik kanan menuju seluruh tubuh lalu diaterima oleh serambi kiri dan menuju bilik kiri untuk dipompa ke paru-paru."
-    ],
-    kunciJawaban: "A"
-},
-
-// ========================================
-// SOAL NOMOR 58 (PG) - Tingkat Kesulitan: Mudah
-// ========================================
-{
-    id: 58,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Aini mengalami rasa sakit pada sistem pencernaan. Setelah dicek oleh dokter, ternyata pada sistem pencernaan Aini mengandung bakteri Helicobacter pylori. Gejala yang dialami Aini seperti nyeri pada bagian perut, perih, dan mual. Aini diperiksa dan oleh dokter untuk tidak mengindahkan makanan dan minuman yang dapat mengiritasi organ, seperti makanan pedas, asam, berlemak tinggi, bumbu masakan, dan berkafein seperi kopi. Penyakit yang dialami Aini menyerang organ ....",
-    gambar: null,
-    pilihan: [
-        "Usus besar",
-        "Usus halus",
-        "Lambung",
-        "Kerongkongan"
-    ],
-    kunciJawaban: "C"
-},
-
-    // ========================================
-// SOAL NOMOR 59 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 59,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan gambar berikut!<br><br>Cara perkembangbiakan tanaman dari gambar secara berurutan (a), (b), dan (c) adalah ....",
-    gambar: "images_tka_6/59.png",
-    pilihan: [
-        "Umbi akar, umbi lapis, dan akar tinggal",
-        "Umbi batang, umbi lapis, dan akar tinggal",
-        "Umbi akar, umbi lapis, dan stolon",
-        "Umbi batang, umbi lapis, dan stolon"
-    ],
-    kunciJawaban: "C"
-},
-
-// ========================================
-// SOAL NOMOR 60 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 60,
-    kategori: "BAHASA INGGRIS",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Bima merupakan seorang anak laki-laki tahun depan akan masuk sekolah menengah pertama. Bima mengalami berbagai perubahan dari bentuk fisik dan berkurangnya intensitas bermain serta mulai mendalami hobi tertentu. Bima menjelaskan perubahannya kepada ayahnya, Pak Bayu. Pak Bayu menjelaskan bahwa Bima mengalami pubertas. Berikut ini ciri-ciri pubertas primer yang dialami oleh Bima adalah ....",
-    gambar: null,
-    pilihan: [
-        "Mimpi basah",
-        "Tumbuh jakun",
-        "Suara menjadi berat",
-        "Dada menjadi lebih bidang"
-    ],
-    kunciJawaban: "A"
-}
+    "pernyataan": [],
+    "kunciJawaban": [0, 2, 3]
+  }
 ];
