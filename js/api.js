@@ -1,10 +1,9 @@
 // ==================================================
-// 🚀 FUNGSI KIRIM DATA SPREADSHEET (ANTI-GAGAL & AUTO-RETRY)
+// 🚀 FUNGSI KIRIM DATA SPREADSHEET (JUJUR & ANTI-GAGAL)
 // ==================================================
 
-async function kirimKeSpreadsheet(h, retryCount = 0) {
+async function kirimKeSpreadsheet(h) {
     const statusBox = document.getElementById('statusPengiriman');
-    const maxRetry = 3; // Batas coba ulang otomatis jika server sibuk
     
     const detikTerlewat = Math.floor((Date.now() - (window.waktuMulaiUjian || Date.now())) / 1000);
     const jam = Math.floor(detikTerlewat / 3600);
@@ -14,12 +13,10 @@ async function kirimKeSpreadsheet(h, retryCount = 0) {
 
     const jawabanRapi = {};
     if (window.daftarSoal && Array.isArray(window.daftarSoal)) {
-        let nomorGlobal = 1;
         window.daftarSoal.forEach((soal, idx) => {
             if (soal.tipe === 'INFO' || soal.id === 99) return;
 
-            // Gunakan nomor urut global (1 s.d. 85) agar tidak bentrok antar-subtes
-            const nomorSoal = nomorGlobal++;
+            const nomorSoal = soal.id;
             const rawJwb = jawabanSiswa[idx];
 
             if (rawJwb === undefined || rawJwb === null || rawJwb === '') {
@@ -53,9 +50,9 @@ async function kirimKeSpreadsheet(h, retryCount = 0) {
     let jumlahSubtes = 0;
     let akumulasiSkor = 0;
 
-    if (h.indoTotalBobot > 0 || h.indoTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.indoSkor; }
-    if (h.ingTotalBobot > 0  || h.ingTotalSoal > 0)  { jumlahSubtes++; akumulasiSkor += h.ingSkor; }
-    if (h.mtkTotalBobot > 0  || h.mtkTotalSoal > 0)  { jumlahSubtes++; akumulasiSkor += h.mtkSkor; }
+    if (h.indoTotalSoal > 0) { jumlahSubtes++; akumulasiSkor += h.indoSkor; }
+    if (h.ingTotalSoal > 0)  { jumlahSubtes++; akumulasiSkor += h.ingSkor; }
+    if (h.mtkTotalSoal > 0)  { jumlahSubtes++; akumulasiSkor += h.mtkSkor; }
 
     const totalSkorRata = jumlahSubtes > 0 ? Math.round(akumulasiSkor / jumlahSubtes) : 0;
 
@@ -65,7 +62,7 @@ async function kirimKeSpreadsheet(h, retryCount = 0) {
         kelas: document.getElementById('kelas')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.kelas : "") || "",
         asal: document.getElementById('asalSekolah')?.value || document.getElementById('asal')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.asal : "") || "",
         nomor: document.getElementById('nomor')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.nomor : "") || "",
-        mapel: document.getElementById('mapel')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.mapel : "") || "TKA (Indo, Ing, Mtk)",
+        mapel: document.getElementById('mapel')?.value || (typeof ambilDataDariStorage === 'function' ? ambilDataDariStorage()?.mapel : "") || "TKA (Indo, Mtk, IPA)",
         skorIndo: h.indoSkor || 0,
         skorIng: h.ingSkor || 0,
         skorMtk: h.mtkSkor || 0,
@@ -75,13 +72,15 @@ async function kirimKeSpreadsheet(h, retryCount = 0) {
         jawaban: jawabanRapi
     };
 
+    // Cadangkan payload ke penyimpanan lokal perangkat sebelum dikirim
     localStorage.setItem('cbt_tka_last_payload', JSON.stringify(payload));
 
     try {
         if (statusBox) {
-            statusBox.innerHTML = `⏳ <span style="color: #0056b3;">${retryCount > 0 ? `Antrean padat, mencoba ulang (${retryCount}/${maxRetry})...` : 'Menghubungkan ke server...'}</span>`;
+            statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menghubungkan ke server... (Mohon jangan tutup halaman ini)</span>`;
         }
 
+        // Pengiriman standar tanpa mode no-cors agar dapat membaca JSON balasan dari server
         const response = await fetch(URL_GAS, {
             method: 'POST',
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -94,6 +93,7 @@ async function kirimKeSpreadsheet(h, retryCount = 0) {
 
         const resData = await response.json();
 
+        // Validasi respon langsung dari Google Apps Script
         if (resData.status === "ok") {
             if (statusBox) {
                 statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian BERHASIL terkirim dan tersimpan resmi!</span>`;
@@ -104,28 +104,19 @@ async function kirimKeSpreadsheet(h, retryCount = 0) {
         }
 
     } catch (err) {
-        console.error(`Gagal mengirim data (Percobaan ${retryCount + 1}):`, err);
-
-        // Jika gagal karena antrean penuh, lakukan auto-retry hingga maxRetry
-        if (retryCount < maxRetry) {
-            const delay = Math.floor(Math.random() * 3000) + 2000; // Jeda acak 2-5 detik
-            setTimeout(() => {
-                kirimKeSpreadsheet(h, retryCount + 1);
-            }, delay);
-        } else {
-            if (statusBox) {
-                statusBox.innerHTML = `
-                    <div style="color: #cc0000; font-weight: bold; margin-bottom: 6px;">
-                        ❌ JAWABAN BELUM TERKIRIM KE SERVER!
-                    </div>
-                    <div style="font-size: 12px; color: #444; margin-bottom: 10px;">
-                        Penyebab: Server sedang memproses antrean peserta lain. Data Anda <b>AMAN</b> tersimpan di perangkat ini.
-                    </div>
-                    <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 8px 16px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold;">
-                        🔄 Coba Kirim Ulang Sekarang
-                    </button>
-                `;
-            }
+        console.error("Gagal mengirim data:", err);
+        if (statusBox) {
+            statusBox.innerHTML = `
+                <div style="color: #cc0000; font-weight: bold; margin-bottom: 6px;">
+                    ❌ JAWABAN BELUM TERKIRIM KE SERVER!
+                </div>
+                <div style="font-size: 12px; color: #444; margin-bottom: 10px;">
+                    Penyebab: Koneksi internet lambat atau server sedang memproses antrean peserta lain. Data Anda tetap aman di perangkat ini.
+                </div>
+                <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 8px 16px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold;">
+                    🔄 Coba Kirim Ulang Sekarang
+                </button>
+            `;
         }
     }
 }
