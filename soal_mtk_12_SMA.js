@@ -271,7 +271,6 @@ window.soalMTK = [
     "kunciJawaban": "C"
   },
 
-    [
   {
     "id": 75,
     "kategori": "MATEMATIKA",
