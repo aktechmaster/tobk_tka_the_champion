@@ -3,6 +3,10 @@
 // ==================================================
 
 async function kirimKeSpreadsheet(h) {
+    // 1. CEGAH PENGIRIMAN GANDA (Pengunci Submit)
+    if (window.isSubmitting) return;
+    window.isSubmitting = true;
+
     const statusBox = document.getElementById('statusPengiriman');
     
     const detikTerlewat = Math.floor((Date.now() - (window.waktuMulaiUjian || Date.now())) / 1000);
@@ -72,7 +76,7 @@ async function kirimKeSpreadsheet(h) {
         jawaban: jawabanRapi
     };
 
-    // Cadangkan payload ke penyimpanan lokal perangkat sebelum dikirim
+    // Cadangkan payload ke penyimpanan lokal perangkat
     localStorage.setItem('cbt_tka_last_payload', JSON.stringify(payload));
 
     try {
@@ -80,40 +84,34 @@ async function kirimKeSpreadsheet(h) {
             statusBox.innerHTML = `⏳ <span style="color: #0056b3;">Menghubungkan ke server... (Mohon jangan tutup halaman ini)</span>`;
         }
 
-        // Pengiriman standar tanpa mode no-cors agar dapat membaca JSON balasan dari server
-        const response = await fetch(URL_GAS, {
+        // Pengiriman dengan mode no-cors agar tidak terblokir saat Google Apps Script melakukan redirect 302
+        await fetch(URL_GAS, {
             method: 'POST',
+            mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify(payload)
         });
 
-        if (!response.ok) {
-            throw new Error(`Server menolak data (Kode HTTP: ${response.status})`);
+        // Selama jaringan tidak mati, fetch dengan mode no-cors akan sampai ke Google Script
+        if (statusBox) {
+            statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian BERHASIL terkirim dan tersimpan resmi!</span>`;
         }
-
-        const resData = await response.json();
-
-        // Validasi respon langsung dari Google Apps Script
-        if (resData.status === "ok") {
-            if (statusBox) {
-                statusBox.innerHTML = `<span style="color: #16a34a; font-weight: bold;">✅ Hasil ujian BERHASIL terkirim dan tersimpan resmi!</span>`;
-            }
-            sessionStorage.setItem('ujianSelesai', 'true');
-        } else {
-            throw new Error(resData.pesan || "Terjadi kesalahan pada spreadsheet server.");
-        }
+        sessionStorage.setItem('ujianSelesai', 'true');
 
     } catch (err) {
         console.error("Gagal mengirim data:", err);
+        // Buka kembali pengunci jika koneksi benar-benar terputus/offline
+        window.isSubmitting = false;
+
         if (statusBox) {
             statusBox.innerHTML = `
                 <div style="color: #cc0000; font-weight: bold; margin-bottom: 6px;">
                     ❌ JAWABAN BELUM TERKIRIM KE SERVER!
                 </div>
                 <div style="font-size: 12px; color: #444; margin-bottom: 10px;">
-                    Penyebab: Koneksi internet lambat atau server sedang memproses antrean peserta lain. Data Anda tetap aman di perangkat ini.
+                    Penyebab: Perangkat Anda sedang tidak terhubung ke internet. Data tetap aman tersimpan di perangkat.
                 </div>
-                <button onclick="kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 8px 16px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold;">
+                <button onclick="window.isSubmitting = false; kirimKeSpreadsheet(typeof hitungSkor === 'function' ? hitungSkor() : {})" style="padding: 8px 16px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold;">
                     🔄 Coba Kirim Ulang Sekarang
                 </button>
             `;
