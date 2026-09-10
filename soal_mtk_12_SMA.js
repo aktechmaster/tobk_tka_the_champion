@@ -173,6 +173,7 @@ window.soalMTK = [
     "pernyataan": null,
     "kunciJawaban": "A"
   },
+    
   {
     "id": 70,
     "kategori": "MATEMATIKA",
@@ -191,6 +192,7 @@ window.soalMTK = [
     "pernyataan": null,
     "kunciJawaban": "B"
   },
+    
   {
     "id": 71,
     "kategori": "MATEMATIKA",
@@ -209,6 +211,7 @@ window.soalMTK = [
     "pernyataan": null,
     "kunciJawaban": "C"
   },
+    
   {
     "id": 72,
     "kategori": "MATEMATIKA",
@@ -227,6 +230,7 @@ window.soalMTK = [
     "pernyataan": null,
     "kunciJawaban": "A"
   },
+    
   {
     "id": 73,
     "kategori": "MATEMATIKA",
@@ -247,6 +251,7 @@ window.soalMTK = [
       "Benar"
     ]
   },
+    
   {
     "id": 74,
     "kategori": "MATEMATIKA",
@@ -264,5 +269,83 @@ window.soalMTK = [
     ],
     "pernyataan": null,
     "kunciJawaban": "C"
+  },
+
+    [
+  {
+    "id": 75,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Segitiga ABC dan segitiga CAD sebangun.<br><br>Jika (<i>p</i>, <i>q</i>) merupakan koordinat titik D, nilai <i>p</i> + <i>q</i> adalah ....",
+    "gambar": "images/15.png",
+    "pilihan": [
+      "14",
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "D"
+  },
+        
+  {
+    "id": 76,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Pada balok ABCD.EFGH, <i>AB</i> = 9cm, <i>BC</i> = 4cm, dan <i>CG</i> = 6cm. Titik K adalah perpotongan diagonal bidang ADHE. Titik L terletak pada GH dengan <i>LH</i> = 2<i>GL</i>.<br><br>Jarak dari L ke K adalah .... cm",
+    "gambar": "images/16.png",
+    "pilihan": [
+      "9",
+      "8",
+      "7,5",
+      "7",
+      "6"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "D"
+  },
+        
+  {
+    "id": 77,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Pada trapesium siku-siku pada gambar di bawah, <i>AB</i> = 3cm dan <i>AD</i> < <i>BC</i>.<br><br>Apakah keliling trapesium tersebut lebih dari 25?<br><br>Putuskan apakah pernyataan (1) dan (2) berikut cukup untuk menjawab pertanyaan tersebut.<br>(1) Luas trapesium ABCD = 24 cm²<br>(2) <i>BC</i> = 10cm dan <i>CD</i> = 5cm",
+    "gambar": "images/17.png",
+    "pilihan": [
+      "Pernyataan (1) SAJA cukup untuk menjawab pertanyaan, tetapi pernyataan (2) SAJA tidak cukup.",
+      "Pernyataan (2) SAJA cukup untuk menjawab pertanyaan, tetapi pernyataan (1) SAJA tidak cukup.",
+      "DUA pernyataan BERSAMA SAMA cukup untuk menjawab pertanyaan, tetapi SATU pernyataan SAJA tidak cukup.",
+      "Pernyataan (1) SAJA cukup untuk menjawab pertanyaan dan pernyataan (2) SAJA cukup.",
+      "Pernyataan (1) dan pernyataan (2) tidak cukup untuk menjawab pertanyaan."
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "B"
+  },
+        
+  {
+    "id": 78,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Sebuah logo komunitas literasi berbentuk segitiga memiliki titik sudut A (1, 3), B (4, 2), dan C (5, 6). Logo tersebut terlebih dahulu dicerminkan terhadap sumbu-X, kemudian diputar terhadap titik O sejauh 90° berlawanan arah jarum jam. Koordinat bayangan akhir segitiga tersebut adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "A''(3, 1), B''(2, 4), C''(6, 5)",
+      "A''(-3, -1), B''(-2, -4), C''(-6, -5)",
+      "A''(3, -1), B''(2, -4), C''(6, -5)",
+      "A''(-3, 1), B''(-2, 4), C''(-6, 5)",
+      "A''(-1, 3), B''(-4, 2), C''(-5, 6)"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "A"
   }
+    
 ];
