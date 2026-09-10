@@ -75,81 +75,85 @@ window.soalMTK = [
     "kunciJawaban": [1, 2, 3, 4]
   },
 
-// ========================================
-// SOAL NOMOR 65 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
 {
-    id: 65,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Bacalah teks informasi berikut!<br>Shabrina memiliki tiga buah paku. Paku A didekatkan dengan magnet kuat dan menempel. Kemudian, paku B didekatkan dengan paku A dan ikut menempel. Lalu, paku C didekatkan dekat paku B dan ikut menempel. Mengapa paku B dan C dapat menempel?",
-    gambar: "images_tka_6/65.png",
-    pilihan: [
-        "Paku A memberikan lem kepada paku B dan C.",
-        "Paku A mengirimkan listrik kepada paku B dan C.",
-        "Paku A menginduksi sifat magnet kepada paku B dan C.",
-        "Semua paku tersebut sudah memiliki sifat magnet sejak awal."
+    "id": 65,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Dalam Festival Literasi, panitia menyiapkan dua jenis paket hadiah.<br><br>&bull; Paket A berisi 5 buku cerita dan 3 buku pengetahuan.<br>&bull; Paket B berisi 4 buku cerita dan 6 buku pengetahuan.<br><br>Persediaan buku cerita paling banyak 120 buah dan buku pengetahuan paling banyak 126 buah. Keuntungan setiap Paket A adalah Rp80.000,00, sedangkan setiap Paket B adalah Rp128.000,00.<br><br>Keuntungan maksimum yang dapat diperoleh adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "Rp2.560.000,00",
+      "Rp2.720.000,00",
+      "Rp2.800.000,00",
+      "Rp2.880.000,00",
+      "Rp3.040.000,00"
     ],
-    kunciJawaban: "C"
-},
-
-// ========================================
-// SOAL NOMOR 66 (PG) - Tingkat Kesulitan: Mudah
-// ========================================
-{
-    id: 66,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan gambar berikut!<br><br>Nisa memasukkan pensil ke dalam segelas air putih. Fahri mengamati pensil tersebut dan melihst seolah-olah pensil seperti terputus. Hal ini merupakan bukti bahwa cahaya bersifat ....",
-    gambar: "images_tka_6/66.png",
-    pilihan: [
-        "dMATEMATIKAntulkan",
-        "dibiaskan",
-        "merambat lurus",
-        "diuraikan"
+    "pernyataan": null,
+    "kunciJawaban": "D"
+  },
+    
+  {
+    "id": 66,
+    "kategori": "MATEMATIKA",
+    "tipe": "BS",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Sebuah perpustakaan memiliki 60 kursi baca. Setiap kursi VIP memerlukan 2 lampu baca, sedangkan kursi reguler memerlukan 1 lampu baca. Jumlah lampu baca yang tersedia adalah 84 buah. Biaya penggunaan kursi VIP sebesar Rp80.000,00 dan kursi reguler sebesar Rp50.000,00.<br><br>Perhatikan pernyataan-pernyataan berikut dan tentukan kebenarannya!",
+    "gambar": null,
+    "pilihan": null,
+    "pernyataan": [
+      "Jumlah kursi VIP yang digunakan sebanyak 24 kursi.",
+      "Jumlah kursi reguler lebih banyak daripada kursi VIP.",
+      "Pendapatan maksimum yang diperoleh sebesar Rp3.720.000,00."
     ],
-    kunciJawaban: "B"
-},
-
-    // ========================================
-// SOAL NOMOR 67 (BS) - Tingkat Kesulitan: Sulit
-// ========================================
-{
-    id: 67,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "BS",
-    soal: "Reza saat ini sedang membuat rangkaian listrik sebagai bagian dari ujian praktik MATEMATIKA. Berikut bagian rangkaian listrik yang dibuat oleh Reza.<br><br>Kondisi yang sesuai praktik Reza adalah:<br><br>I. S1 dan S2 ditutup, sedangkan S3 dibuka, L1 dan L2 menyala<br>II. S1 dan S3 dibuka, sedangkan S2 ditutup, L1 dan L2 menyala<br>III. S1 dan S2 dibuka, sedangkan S3 ditutup, L3 dan L4 menyala<br>IV. S1 dan S3 ditutup, sedangkan S2 dibuka, L3 dan L4 menyala",
-    gambar: "images_tka_6/67.png",
-    pilihan: [
-        "Pernyataan I",
-        "Pernyataan II",
-        "Pernyataan III",
-        "Pernyataan IV"
+    "kunciJawaban": [
+      "Benar",
+      "Benar",
+      "Benar"
+    ]
+  },
+    
+  {
+    "id": 67,
+    "kategori": "MATEMATIKA",
+    "tipe": "BS",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Dalam sebuah perpustakaan digital, banyak halaman yang dapat dibaca seorang anggota dinyatakan oleh fungsi<br><br><b><i>f(x)</i> = 2<i>x</i> - 3</b><br><br>dengan <i>x</i> menyatakan jumlah jam membaca. Sementara itu, tingkat pemahaman bacaan dinyatakan oleh<br><br><b><i>g(x)</i> = √(<i>x</i> + 1)</b><br><br>Perhatikan pernyataan-pernyataan berikut dan tentukan kebenarannya!",
+    "gambar": null,
+    "pilihan": null,
+    "pernyataan": [
+      "f(3) = g(8)",
+      "8 merupakan domain dari (f ∘ g)",
+      "3 merupakan range dari (g)"
     ],
-    kunciJawaban: ["B", "S", "B", "B"]
-},
-
-// ========================================
-// SOAL NOMOR 68 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 68,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan gambar di samping ini!<br>Jika bulan berada pada posisi III maka akan terjadi gerhana ....",
-    gambar: "images_tka_6/68.png",
-    pilihan: [
-        "Gerhana bulan total",
-        "Gerhana bulan sebagian",
-        "Gerhana matahari total",
-        "Gerhana matahari cincin"
+    "kunciJawaban": [
+      "Benar",
+      "Benar",
+      "Benar"
+    ]
+  },
+    
+  {
+    "id": 68,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "Seorang siswa memperoleh poin literasi setiap kali menyelesaikan ringkasan buku. Poin yang diperoleh dinyatakan oleh <b><i>P(x)</i> = 800<i>x</i> + 500</b> dengan <i>x</i> banyak ringkasan yang selesai. Banyak ringkasan yang berhasil diselesaikan setelah <i>t</i> hari mengikuti program adalah <b><i>x</i> = 4<i>t</i> + 1</b>.<br><br>Jika siswa mengikuti program selama 6 hari, maka poin yang diperoleh adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "19.700",
+      "20.100",
+      "20.500",
+      "21.300",
+      "22.100"
     ],
-    kunciJawaban: "C"
-},
+    "pernyataan": null,
+    "kunciJawaban": "C"
+  },
 
     // ========================================
 // SOAL NOMOR 69 (PG) - Tingkat Kesulitan: Sedang
