@@ -177,7 +177,14 @@ function updateNavButtons() {
     const nextBtn = document.getElementById('nextBtn');
     const finishBtn = document.getElementById('finishBtn');
 
-    if (prevBtn) prevBtn.disabled = currentIndex === 0;
+    if (prevBtn) {
+        prevBtn.disabled = currentIndex === 0;
+        prevBtn.onclick = () => tampilkanSoal(currentIndex - 1); // === DITAMBAHKAN ===
+    }
+
+    if (nextBtn) {
+        nextBtn.onclick = () => tampilkanSoal(currentIndex + 1); // === DITAMBAHKAN ===
+    }
     
     if (window.daftarSoal && currentIndex === window.daftarSoal.length - 1) {
         if (nextBtn) nextBtn.style.display = 'none';
