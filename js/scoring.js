@@ -36,12 +36,8 @@ function hitungSkor() {
         // Ambil bobot soal (Default = 1 jika tidak ditentukan di soal.js)
         const bobotSoal = Number(soal.bobot) > 0 ? Number(soal.bobot) : 1;
 
-        let jwb = undefined;
-        if (listJwb[soal.id] !== undefined) {
-            jwb = listJwb[soal.id];
-        } else if (listJwb[idx] !== undefined) {
-            jwb = listJwb[idx];
-        }
+        // KODE BARU (FIXED):
+        let jwb = listJwb[idx];
 
         const kunci = soal.kunciJawaban !== undefined ? soal.kunciJawaban : soal.kunci;
         let rasioSkor = 0; // Mengukur persentase kebenaran (0.0 sampai 1.0)
