@@ -1,79 +1,79 @@
 window.soalMTK = [
-    // ========================================
-// SOAL NOMOR 61 (PG) - Tingkat Kesulitan: Mudah
-// ========================================
-{
-    id: 61,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan daftar benda-benda berikut. Benda-benda yang memiliki sifat konduktor yang baik adalah ....<br>(1) Plastik makan<br>(2) Plat besi<br>(3) Kertas asturo<br>(4) Cup gelas kopi<br>(5) Panci aluminium",
-    gambar: null,
-    pilihan: [
-        "(1) dan (2)",
-        "(2) dan (5)",
-        "(3) dan (4)",
-        "(4) dan (5)"
+    {
+    "id": 61,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "Bentuk sederhana dari 3√75 - 2√27 + √48 adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "10√3",
+      "11√3",
+      "12√3",
+      "13√3",
+      "14√3"
     ],
-    kunciJawaban: "B"
-},
-
-// ========================================
-// SOAL NOMOR 62 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 62,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perubahan wujud benda merupakan fenomena alam yang terjadi ketika suatu benda mengalami perubahan suhu. Dalam kehidupan sehari-hari, kita sering menemui berbagai perubahan wujud, seperti mencair, membeku, menguap, membeku, atau menyublim. Perubahan wujud ini disebabkan oleh penyerapan ataupun pelepasan energi panas.<br>Sandy memindahkan kamper di dalam lemari bajunya yang setelah satu minggu ukurannya berubah menjadi lebih kecil. Perubahan yang dialami oleh kamper milik Sandy sama dengan ....",
-    gambar: null,
-    pilihan: [
-        "perubahan es batu menjadi air",
-        "perubahan pada air yang dimasukkan ke dalam kulkas",
-        "perubahan yang terjadi pada embun di pagi hari",
-        "perubahan pada es kering"
+    "pernyataan": null,
+    "kunciJawaban": "D"
+  },
+    
+  {
+    "id": 62,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "Jika <i>A</i> = <b>(20x<sup>-3</sup>y<sup>5</sup>z<sup>-2</sup>) / (5x<sup>-5</sup>y<sup>2</sup>z<sup>-4</sup>)</b> maka bentuk berpangkat positif dari <i>A</i> adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "4x²y³z²",
+      "4y³ / (x²z²)",
+      "4x²y³ / z²",
+      "4x²y²z²",
+      "4xy³z²"
     ],
-    kunciJawaban: "D"
-},
-
-    // ========================================
-// SOAL NOMOR 63 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 63,
-    kategori: "MATEMATIKA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Pada hari yang sangat panas, seorang pekerja bangunan melepaskan tutup botol kaca yang terbuat dari logam. Setelah beberapa saat menenpa, pekerja tersebut menyiram tutup botol itu dengan air hangat. Anehnya, setelah disiram air hangat, tutup botol logam tersebut menjadi lebih mudah dibuka.<br><br>Mengapa menyiram tutup botol logam dengan air hangat dapat membantu pekerja tersebut membuka tutup botol kaca?",
-    gambar: null,
-    pilihan: [
-        "Air hangat melarutkan kotoran yang membuat tutup botol lengket pada botol kaca.",
-        "Botol kaca memuai lebih cepat darMATEMATIKAda tutup botol logam saat terkena air hangat.",
-        "Air hangat memberikan tekanan tambahan pada tutup botol sehingga lebih mudah diputar.",
-        "Tutup botol logam memuai lebih cepat darMATEMATIKAda botol kaca saat terkena air hangat, sehingga sedikit melonggar."
+    "pernyataan": null,
+    "kunciJawaban": "A"
+  },
+    
+  {
+    "id": 63,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Dalam kegiatan donasi buku, jumlah buku yang dikumpulkan Alya adalah 30 buku lebih banyak daripada jumlah buku Bima ditambah dua kali jumlah buku Citra. Jumlah buku yang dikumpulkan Alya, Bima, dan Citra adalah 335 buku. Selisih jumlah buku Bima dan Citra adalah <b>15 buku</b>, dengan Bima mengumpulkan lebih banyak daripada Citra.<br><br>Jumlah buku yang dikumpulkan Alya adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "180 buku",
+      "190 buku",
+      "200 buku",
+      "210 buku",
+      "220 buku"
     ],
-    kunciJawaban: "D"
-},
-
-// ========================================
-// SOAL NOMOR 64 (PG) - Tingkat Kesulitan: Sedang
-// ========================================
-{
-    id: 64,
-    kategori: "BAHASA INDONESIA",
-    rentangNilai: "0-3",
-    tipe: "PG",
-    soal: "Perhatikan tabel kegiatan dan gaya berikut!<br><br><table border='1' style='border-collapse: collapse; text-align: center; width: 100%; margin-top: 4px;'><tr style='background-color:#f0f0f0;'><th style='padding: 6px;'>No</th><th style='padding: 6px;'>Kegiatan</th><th style='padding: 6px;'>Huruf</th><th style='padding: 6px;'>Gaya yang bekerja</th></tr><tr><td style='padding: 6px;'>1</td><td style='padding: 6px;'>Bermain sepeda</td><td style='padding: 6px;'>A</td><td style='padding: 6px;'>Gaya otot dan gaya gesek</td></tr><tr><td style='padding: 6px;'>2</td><td style='padding: 6px;'>Ujian Online dengan HP</td><td style='padding: 6px;'>B</td><td style='padding: 6px;'>Gaya listrik dan gaya otot</td></tr><tr><td style='padding: 6px;'>3</td><td style='padding: 6px;'>Bermain kelereng</td><td style='padding: 6px;'>C</td><td style='padding: 6px;'>Gaya gesek dan gaya magnet</td></tr><tr><td style='padding: 6px;'>4</td><td style='padding: 6px;'>Bermain layang-layang</td><td style='padding: 6px;'>D</td><td style='padding: 6px;'>Gaya gesek dan gaya listrik</td></tr></table><br>Pasangan yang sesuai antara nomor dan huruf adalah ....",
-    gambar: null,
-    pilihan: [
-        "1-B dan 3-A",
-        "2-C dan 3-D",
-        "1-B dan 4-A",
-        "2-C dan 3-A"
+    "pernyataan": null,
+    "kunciJawaban": "D"
+  },
+    
+  {
+    "id": 64,
+    "kategori": "MATEMATIKA",
+    "tipe": "PGK",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Sebuah perpustakaan digital menerapkan biaya langganan berdasarkan banyaknya e-book yang dipinjam. Biaya dihitung menggunakan rumus<br><br><b><i>f(x)</i> = 2.000<i>x</i> + 40.000</b><br><br>dengan:<br>&bull; <i>f(x)</i> = total biaya (rupiah)<br>&bull; <i>x</i> = banyak e-book yang dipinjam.<br><br>Pada bulan ini, Dinda membayar lebih dari Rp220.000,00, tetapi tidak lebih dari Rp260.000,00.<br><br>Banyak e-book yang mungkin dipinjam Dinda adalah .... (Jawaban benar lebih dari satu)",
+    "gambar": null,
+    "pilihan": [
+      "90 buku",
+      "95 buku",
+      "100 buku",
+      "105 buku",
+      "110 buku"
     ],
-    kunciJawaban: "D"
-},
+    "pernyataan": null,
+    "kunciJawaban": [1, 2, 3, 4]
+  },
 
 // ========================================
 // SOAL NOMOR 65 (PG) - Tingkat Kesulitan: Sedang
