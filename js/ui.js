@@ -248,9 +248,9 @@ function tampilkanHasil() {
     if (typeof jawabanSiswa !== 'undefined') window.jawabanSiswa = jawabanSiswa;
 
     const h = typeof hitungSkor === 'function' ? hitungSkor() : { 
-        indoSkor: 0, indoMaks: 100, indoBenar: 0, indoTotalSoal: 0, indoTotalBobot: 0,
-        ingSkor: 0, ingMaks: 100, ingBenar: 0, ingTotalSoal: 0, ingTotalBobot: 0,
-        mtkSkor: 0, mtkMaks: 100, mtkBenar: 0, mtkTotalSoal: 0, mtkTotalBobot: 0,
+        indoSkor: 0, indoMaks: 0, indoBenar: 0, indoTotalSoal: 0, 
+        ingSkor: 0, ingMaks: 0, ingBenar: 0, ingTotalSoal: 0, 
+        mtkSkor: 0, mtkMaks: 0, mtkBenar: 0, mtkTotalSoal: 0, 
         totalBenar: 0, totalPoin: 0, totalSoalValid: 0 
     };
 
@@ -273,7 +273,7 @@ function tampilkanHasil() {
                             ${h.indoSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.indoMaks}</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.indoBenar}/${h.indoTotalBobot || h.indoTotalSoal} Poin
+                            ✅ ${h.indoBenar}/${h.indoTotalSoal} Poin
                         </div>
                     </div>
                     
@@ -284,7 +284,7 @@ function tampilkanHasil() {
                             ${h.ingSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.ingMaks}</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.ingBenar}/${h.ingTotalBobot || h.ingTotalSoal} Poin
+                            ✅ ${h.ingBenar}/${h.ingTotalSoal} Poin
                         </div>
                     </div>
 
@@ -295,7 +295,7 @@ function tampilkanHasil() {
                             ${h.mtkSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.mtkMaks}</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.mtkBenar}/${h.mtkTotalBobot || h.mtkTotalSoal} Poin
+                            ✅ ${h.mtkBenar}/${h.mtkTotalSoal} Poin
                         </div>
                     </div>
                 </div>
@@ -305,11 +305,11 @@ function tampilkanHasil() {
                 <div class="result-details" style="display: flex; gap: 15px; margin-top: 15px;">
                     <div class="result-item correct" style="flex: 1; background: #dcfce7; padding: 15px; border-radius: 8px; text-align: center;">
                         <span class="result-val" style="font-size: 22px; font-weight: bold; color: #16a34a; display: block;">${totalPoinFormat}</span> 
-                        <span style="font-size: 13px; color: #15803d; font-weight: bold;">Total Poin Diraih</span>
+                        <span style="font-size: 13px; color: #15803d; font-weight: bold;">Total Jawaban Benar</span>
                     </div>
                     <div class="result-item wrong" style="flex: 1; background: #fee2e2; padding: 15px; border-radius: 8px; text-align: center;">
                         <span class="result-val" style="font-size: 22px; font-weight: bold; color: #dc2626; display: block;">${totalSalahFormat}</span> 
-                        <span style="font-size: 13px; color: #b91c1c; font-weight: bold;">Total Poin Hilang</span>
+                        <span style="font-size: 13px; color: #b91c1c; font-weight: bold;">Total Salah / Kosong</span>
                     </div>
                 </div>
                 
@@ -333,4 +333,39 @@ function tampilkanHasil() {
 
     if (typeof kirimKeSpreadsheet === 'function') kirimKeSpreadsheet(h);
     if (typeof bersihkanDataUjian === 'function') bersihkanDataUjian();
+}
+
+function cobaKirimUlang() {
+    const h = typeof hitungSkor === 'function' ? hitungSkor() : {};
+    if (typeof kirimKeSpreadsheet === 'function') kirimKeSpreadsheet(h);
+}
+
+function kembaliKeAwal() {
+    window.onbeforeunload = null;
+    window.onpagehide = null;
+    if (typeof simpanDataKeStorage === 'function') {
+        window.removeEventListener('beforeunload', simpanDataKeStorage);
+    }
+
+    if (typeof jawabanSiswa !== 'undefined') {
+        if (Array.isArray(jawabanSiswa)) jawabanSiswa.length = 0;
+        else jawabanSiswa = {};
+    }
+    if (typeof raguRagu !== 'undefined') {
+        if (Array.isArray(raguRagu)) raguRagu.length = 0;
+        else raguRagu = {};
+    }
+
+    if (typeof bersihkanDataUjian === 'function') {
+        bersihkanDataUjian();
+    }
+    try {
+        localStorage.clear();
+        sessionStorage.clear();
+    } catch (e) {}
+
+    const formLogin = document.getElementById('formLogin');
+    if (formLogin) formLogin.reset();
+
+    window.location.replace(window.location.origin + window.location.pathname);
 }
