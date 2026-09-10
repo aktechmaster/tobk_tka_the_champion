@@ -251,18 +251,18 @@ function konfirmasiSelesai() {
 function tampilkanHasil() {
     if (typeof timerInterval !== 'undefined' && timerInterval) clearInterval(timerInterval);
 
-    // Sinkronkan data ke window sebelum hitung skor
     if (typeof jawabanSiswa !== 'undefined') window.jawabanSiswa = jawabanSiswa;
 
     const h = typeof hitungSkor === 'function' ? hitungSkor() : { 
-        indoSkor: 0, indoMaks: 0, indoBenar: 0, indoTotalSoal: 0, 
-        ingSkor: 0, ingMaks: 0, ingBenar: 0, ingTotalSoal: 0, 
-        mtkSkor: 0, mtkMaks: 0, mtkBenar: 0, mtkTotalSoal: 0, 
-        totalBenar: 0, totalPoin: 0, totalSoalValid: 0 
+        indoSkor: 0, indoTotalSoal: 0, indoPoin: 0, indoTotalBobot: 0,
+        ingSkor: 0, ingTotalSoal: 0, ingPoin: 0, ingTotalBobot: 0,
+        mtkSkor: 0, mtkTotalSoal: 0, mtkPoin: 0, mtkTotalBobot: 0,
+        totalBenar: 0, totalSoalValid: 0 
     };
 
-    const totalPoinFormat = Math.round((h.totalPoin || h.totalBenar || 0) * 10) / 10;
-    const totalSalahFormat = Math.round(((h.totalSoalValid || 0) - totalPoinFormat) * 10) / 10;
+    // Hitung murni berdasarkan BUTIR SOAL
+    const totalSoalBenar = h.totalBenar || 0;
+    const totalSoalSalahKosong = (h.totalSoalValid || 0) - totalSoalBenar;
     
     const quizArea = document.getElementById('quizArea');
     if (quizArea) {
@@ -277,10 +277,10 @@ function tampilkanHasil() {
                     <div style="flex: 1; min-width: 110px; border-right: 1px solid #e2e8f0; padding: 0 5px;">
                         <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">B. Indonesia</div>
                         <div style="font-size: 24px; font-weight: 900; color: #0056b3; margin: 5px 0;">
-                            ${h.indoSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.indoMaks}</span>
+                            ${h.indoSkor} <span style="font-size: 11px; color: #94a3b8;">/ 100</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.indoBenar}/${h.indoTotalSoal} Poin
+                            ✅ ${Math.round(h.indoPoin * 10) / 10}/${h.indoTotalBobot} Poin
                         </div>
                     </div>
                     
@@ -288,10 +288,10 @@ function tampilkanHasil() {
                     <div style="flex: 1; min-width: 110px; border-right: 1px solid #e2e8f0; padding: 0 5px;">
                         <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">B. Inggris</div>
                         <div style="font-size: 24px; font-weight: 900; color: #059669; margin: 5px 0;">
-                            ${h.ingSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.ingMaks}</span>
+                            ${h.ingSkor} <span style="font-size: 11px; color: #94a3b8;">/ 100</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.ingBenar}/${h.ingTotalSoal} Poin
+                            ✅ ${Math.round(h.ingPoin * 10) / 10}/${h.ingTotalBobot} Poin
                         </div>
                     </div>
 
@@ -299,10 +299,10 @@ function tampilkanHasil() {
                     <div style="flex: 1; min-width: 110px; padding: 0 5px;">
                         <div style="font-size: 12px; font-weight: bold; color: #64748b; text-transform: uppercase;">Matematika</div>
                         <div style="font-size: 24px; font-weight: 900; color: #d97706; margin: 5px 0;">
-                            ${h.mtkSkor} <span style="font-size: 11px; color: #94a3b8;">/ ${h.mtkMaks}</span>
+                            ${h.mtkSkor} <span style="font-size: 11px; color: #94a3b8;">/ 100</span>
                         </div>
                         <div style="font-size: 11px; color: #16a34a; font-weight: bold;">
-                            ✅ ${h.mtkBenar}/${h.mtkTotalSoal} Poin
+                            ✅ ${Math.round(h.mtkPoin * 10) / 10}/${h.mtkTotalBobot} Poin
                         </div>
                     </div>
                 </div>
@@ -311,12 +311,12 @@ function tampilkanHasil() {
 
                 <div class="result-details" style="display: flex; gap: 15px; margin-top: 15px;">
                     <div class="result-item correct" style="flex: 1; background: #dcfce7; padding: 15px; border-radius: 8px; text-align: center;">
-                        <span class="result-val" style="font-size: 22px; font-weight: bold; color: #16a34a; display: block;">${totalPoinFormat}</span> 
-                        <span style="font-size: 13px; color: #15803d; font-weight: bold;">Total Jawaban Benar</span>
+                        <span class="result-val" style="font-size: 22px; font-weight: bold; color: #16a34a; display: block;">${totalSoalBenar} / ${h.totalSoalValid}</span> 
+                        <span style="font-size: 13px; color: #15803d; font-weight: bold;">Total Soal Benar Sempurna</span>
                     </div>
                     <div class="result-item wrong" style="flex: 1; background: #fee2e2; padding: 15px; border-radius: 8px; text-align: center;">
-                        <span class="result-val" style="font-size: 22px; font-weight: bold; color: #dc2626; display: block;">${totalSalahFormat}</span> 
-                        <span style="font-size: 13px; color: #b91c1c; font-weight: bold;">Total Salah / Kosong</span>
+                        <span class="result-val" style="font-size: 22px; font-weight: bold; color: #dc2626; display: block;">${totalSoalSalahKosong}</span> 
+                        <span style="font-size: 13px; color: #b91c1c; font-weight: bold;">Total Soal Salah / Kosong</span>
                     </div>
                 </div>
                 
