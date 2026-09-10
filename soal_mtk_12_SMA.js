@@ -246,7 +246,7 @@ window.soalMTK = [
       "Grafik membuka ke bawah."
     ],
     "kunciJawaban": [
-      "Benar",
+      "Salah",
       "Benar",
       "Benar"
     ]
@@ -268,7 +268,7 @@ window.soalMTK = [
       "Pernyataan (1) dan pernyataan (2) tidak cukup untuk menjawab pertanyaan."
     ],
     "pernyataan": null,
-    "kunciJawaban": "C"
+    "kunciJawaban": "D"
   },
 
   {
@@ -399,7 +399,7 @@ window.soalMTK = [
       "20"
     ],
     "pernyataan": null,
-    "kunciJawaban": "E"
+    "kunciJawaban": "C"
   },
   {
     "id": 82,
