@@ -1,16 +1,15 @@
 // ==================================================
-// 📊 SCORING ENGINE (PENSKORAN PARSIAL / PROPORSIONAL)
+// 📊 SCORING ENGINE (DENGAN DUKUNGAN BOBOT SOAL)
 // ==================================================
 
 function hitungSkor() {
     let result = {
-        indoPoin: 0, indoTotalSoal: 0, indoSkor: 0, indoMaks: 100, indoBenar: 0,
-        ingPoin: 0,  ingTotalSoal: 0,  ingSkor: 0,  ingMaks: 100,  ingBenar: 0,
-        mtkPoin: 0,  mtkTotalSoal: 0,  mtkSkor: 0,  mtkMaks: 100,  mtkBenar: 0,
+        indoPoin: 0, indoTotalSoal: 0, indoTotalBobot: 0, indoSkor: 0, indoMaks: 100, indoBenar: 0,
+        ingPoin: 0,  ingTotalSoal: 0,  ingTotalBobot: 0,  ingSkor: 0,  ingMaks: 100,  ingBenar: 0,
+        mtkPoin: 0,  mtkTotalSoal: 0,  mtkTotalBobot: 0,  mtkSkor: 0,  mtkMaks: 100,  mtkBenar: 0,
         totalPoin: 0, totalSoalValid: 0, totalBenar: 0
     };
 
-    // Ambil daftar soal & jawaban secara aman dari scope global mana pun
     const listSoal = window.daftarSoal || (typeof daftarSoal !== 'undefined' ? daftarSoal : []);
     const listJwb = window.jawabanSiswa || (typeof jawabanSiswa !== 'undefined' ? jawabanSiswa : []);
 
@@ -19,7 +18,6 @@ function hitungSkor() {
     const mapHurufKeAngka = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4 };
     const mapAngkaKeHuruf = ['A', 'B', 'C', 'D', 'E'];
 
-    // Normalisasi logika Benar/Salah (Mendukung B, S, True, False, Benar, Salah, 1, 0)
     const isTrueValue = (val) => {
         if (typeof val === 'boolean') return val;
         if (typeof val === 'number') return val === 1;
@@ -34,8 +32,10 @@ function hitungSkor() {
         if (soal.tipe === 'INFO' || soal.id === 99) return;
 
         const sub = (soal.kategori || soal.subtes || '').toLowerCase();
+        
+        // Ambil bobot soal (Default = 1 jika tidak ditentukan di soal.js)
+        const bobotSoal = Number(soal.bobot) > 0 ? Number(soal.bobot) : 1;
 
-        // Ambil jawaban siswa (dukung ID Soal & Indeks Array)
         let jwb = undefined;
         if (listJwb[soal.id] !== undefined) {
             jwb = listJwb[soal.id];
@@ -44,11 +44,11 @@ function hitungSkor() {
         }
 
         const kunci = soal.kunciJawaban !== undefined ? soal.kunciJawaban : soal.kunci;
-        let poinSoal = 0; 
+        let rasioSkor = 0; // Mengukur persentase kebenaran (0.0 sampai 1.0)
 
         if (jwb !== undefined && jwb !== null && jwb !== "") {
             
-            // 1. PENSKORAN PG (Tunggal)
+            // 1. PENSKORAN PG
             if (soal.tipe === 'PG') {
                 let jwbNorm = jwb;
                 let kunciNorm = kunci;
@@ -73,11 +73,11 @@ function hitungSkor() {
                 }
 
                 if (jwbNorm === kunciNorm) {
-                    poinSoal = 1;
+                    rasioSkor = 1;
                 }
             } 
             
-            // 2. PENSKORAN PGK (Pilihan Ganda Kompleks)
+            // 2. PENSKORAN PGK
             else if (soal.tipe === 'PGK') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
                     const kunciSet = kunci.map(k => (typeof k === 'string' && mapHurufKeAngka[k.toUpperCase().trim()] !== undefined) ? mapHurufKeAngka[k.toUpperCase().trim()] : parseInt(k, 10));
@@ -87,11 +87,11 @@ function hitungSkor() {
                     const salahDipilih = jwbSet.filter(val => !kunciSet.includes(val)).length;
 
                     const skorMentah = (benarDipilih - salahDipilih) / kunciSet.length;
-                    poinSoal = Math.max(0, skorMentah); 
+                    rasioSkor = Math.max(0, skorMentah); 
                 }
             } 
             
-            // 3. PENSKORAN BS (Benar / Salah)
+            // 3. PENSKORAN BS
             else if (soal.tipe === 'BS') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
                     let barisBenar = 0;
@@ -106,38 +106,45 @@ function hitungSkor() {
                             }
                         }
                     });
-                    poinSoal = barisBenar / kunci.length;
+                    rasioSkor = barisBenar / kunci.length;
                 }
             }
         }
 
-        result.totalPoin += poinSoal;
+        // Poin yang didapat = Rasio Kebenaran x Bobot Soal
+        const poinDiperoleh = rasioSkor * bobotSoal;
+
+        result.totalPoin += poinDiperoleh;
         result.totalSoalValid++;
 
-        if (poinSoal === 1) result.totalBenar++;
+        // Jika rasio kebenaran sempurna (100%), hitung sebagai soal benar
+        if (rasioSkor === 1) result.totalBenar++;
 
-        // Pengelompokan Subtes
+        // Akumulasi per subtes
         if (sub.includes('indo') || sub.includes('bahasa indonesia')) {
             result.indoTotalSoal++;
-            result.indoPoin += poinSoal;
+            result.indoTotalBobot += bobotSoal;
+            result.indoPoin += poinDiperoleh;
         } else if (sub.includes('ing') || sub.includes('inggris') || sub.includes('eng')) {
             result.ingTotalSoal++;
-            result.ingPoin += poinSoal;
+            result.ingTotalBobot += bobotSoal;
+            result.ingPoin += poinDiperoleh;
         } else if (sub.includes('mtk') || sub.includes('matematika') || sub.includes('math')) {
             result.mtkTotalSoal++;
-            result.mtkPoin += poinSoal;
+            result.mtkTotalBobot += bobotSoal;
+            result.mtkPoin += poinDiperoleh;
         }
     });
 
-    // Format tampilan jumlah poin per subtes
+    // Format tampilan poin
     result.indoBenar = Math.round(result.indoPoin * 10) / 10;
     result.ingBenar  = Math.round(result.ingPoin * 10) / 10;
     result.mtkBenar  = Math.round(result.mtkPoin * 10) / 10;
 
-    // Konversi Skor Skala 20-100 (Skor minimal 20 jika ada soal)
-    if (result.indoTotalSoal > 0) result.indoSkor = Math.round(20 + (result.indoPoin / result.indoTotalSoal) * 80);
-    if (result.ingTotalSoal > 0)  result.ingSkor  = Math.round(20 + (result.ingPoin / result.ingTotalSoal) * 80);
-    if (result.mtkTotalSoal > 0)  result.mtkSkor  = Math.round(20 + (result.mtkPoin / result.mtkTotalSoal) * 80);
+    // Konversi Skor Skala 20-100 Berdasarkan Total Bobot Maksimal Subtes
+    if (result.indoTotalBobot > 0) result.indoSkor = Math.round(20 + (result.indoPoin / result.indoTotalBobot) * 80);
+    if (result.ingTotalBobot > 0)  result.ingSkor  = Math.round(20 + (result.ingPoin / result.ingTotalBobot) * 80);
+    if (result.mtkTotalBobot > 0)  result.mtkSkor  = Math.round(20 + (result.mtkPoin / result.mtkTotalBobot) * 80);
 
     return result;
 }
