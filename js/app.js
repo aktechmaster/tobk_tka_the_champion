@@ -51,9 +51,14 @@ function muatSoalDanMulai(kelas, isRestored) {
     window.soalING = [];
     window.soalMTK = [];
 
-    const loadScript = (src) => {
+    // Fungsi muat script dinamis dengan pembersihan tag lama
+    const loadScript = (src, id) => {
         return new Promise((resolve, reject) => {
+            const oldScript = document.getElementById(id);
+            if (oldScript) oldScript.remove();
+
             const s = document.createElement('script');
+            s.id = id;
             s.src = src;
             s.onload = resolve;
             s.onerror = () => reject(src);
@@ -62,9 +67,9 @@ function muatSoalDanMulai(kelas, isRestored) {
     };
 
     Promise.all([
-        loadScript(`soal_ind_${kelas}.js`),
-        loadScript(`soal_ing_${kelas}.js`),
-        loadScript(`soal_mtk_${kelas}.js`)
+        loadScript(`soal_ind_${kelas}.js`, 'script-soal-ind'),
+        loadScript(`soal_ing_${kelas}.js`, 'script-soal-ing'),
+        loadScript(`soal_mtk_${kelas}.js`, 'script-soal-mtk')
     ]).then(() => {
         window.daftarSoal = [
             ...(window.soalIND || []),
@@ -103,15 +108,17 @@ function muatSoalDanMulai(kelas, isRestored) {
 }
 
 // ==================================================
-// 🔄 INSIALISASI DAN RESTORE SESI
+// 🔄 INISIALISASI DAN RESTORE SESI
 // ==================================================
 document.addEventListener('DOMContentLoaded', function () {
     const isSelesai = sessionStorage.getItem('ujianSelesai') === 'true';
+    
+    // Gunakan fungsi penyimpan resmi jika ada, atau fallback umum
     const dataSaved = typeof ambilDataDariStorage === 'function' 
         ? ambilDataDariStorage() 
-        : JSON.parse(localStorage.getItem('cbt_tka_sd_data') || 'null');
+        : JSON.parse(localStorage.getItem('cbt_tka_data') || 'null');
 
-    // JIKA UJIAN SUDAH SELESAI ATAU DATA KOSONG -> TAMPILKAN LOGIN LOGIN
+    // JIKA UJIAN SUDAH SELESAI ATAU DATA KOSONG -> TAMPILKAN FORM LOGIN
     if (isSelesai || !dataSaved || !dataSaved.kelas) {
         if (typeof bersihkanDataUjian === 'function') bersihkanDataUjian();
         
