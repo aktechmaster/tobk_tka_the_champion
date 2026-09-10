@@ -345,6 +345,135 @@ window.soalMTK = [
     ],
     "pernyataan": null,
     "kunciJawaban": "A"
+  }, 
+
+    {
+    "id": 79,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "Seorang peserta lomba membaca berdiri sehingga sudut elevasi pandangannya terhadap layar proyektor adalah sudut tumpul <i>x</i>. Diketahui cos <i>x</i> = -3/5. Nilai tan <i>x</i> adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "-4/3",
+      "-3/4",
+      "3/4",
+      "4/3",
+      "-5/4"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "A"
+  },
+  {
+    "id": 80,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Mudah",
+    "bobot": 2,
+    "soal": "Seorang pustakawan setinggi 1,6 meter berdiri sejauh 15 meter dari sebuah papan informasi digital di depan perpustakaan. Ia melihat bagian paling atas papan tersebut dengan sudut elevasi 45°. Tinggi papan informasi tersebut adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "15,6 meter",
+      "16 meter",
+      "16,6 meter",
+      "17 meter",
+      "17,6 meter"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "C"
+  },
+  {
+    "id": 81,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Jumlah buku yang dibaca enam peserta Klub Literasi selama satu bulan berturut-turut adalah <i>a</i>, <i>a</i> + 2, <i>a</i> + 4, 12, <i>b</i>, <i>b</i> + 2. Data tersebut telah diurutkan dari yang terkecil ke terbesar. Jika rata-rata banyak buku yang dibaca adalah 11 dan simpangan rata-ratanya terhadap rata-rata adalah 8/3, maka nilai <i>a</i> + <i>b</i> adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "E"
+  },
+  {
+    "id": 82,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Nilai tes literasi membaca 30 peserta memiliki rata-rata 74. Jika nilai tertinggi dan nilai terendah tidak disertakan, rata-ratanya menjadi 73. Diketahui nilai terendah adalah 76. Nilai tertinggi adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "95",
+      "98",
+      "100",
+      "102",
+      "104"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "C"
+  },
+  {
+    "id": 83,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Perhatikan tabel berikut!<br><br><table border=\"1\" style=\"border-collapse: collapse; text-align: center;\"><tr><th>Panjang (m)</th><th>Frekuensi</th></tr><tr><td>10–14</td><td>3</td></tr><tr><td>15–19</td><td>5</td></tr><tr><td>20–24</td><td>8</td></tr><tr><td>25–29</td><td>12</td></tr><tr><td>30–34</td><td>7</td></tr><tr><td>35–39</td><td>5</td></tr></table><br>Modus data tersebut adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "24,00",
+      "24,50",
+      "25,25",
+      "25,75",
+      "26,00"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "D"
+  },
+  {
+    "id": 84,
+    "kategori": "MATEMATIKA",
+    "tipe": "BS",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Dalam sebuah komunitas literasi terdapat 8 anggota perempuan dan 7 anggota laki-laki. Akan dipilih ketua, sekretaris, dan bendahara. Tentukan benar atau salah setiap pernyataan berikut!",
+    "gambar": null,
+    "pilihan": null,
+    "pernyataan": [
+      "Banyak cara memilih pengurus adalah 2.730.",
+      "Banyak cara memilih sehingga semua pengurus perempuan adalah 336.",
+      "Banyak cara memilih sehingga tepat dua laki-laki adalah 1.176."
+    ],
+    "kunciJawaban": [
+      "Benar",
+      "Benar",
+      "Salah"
+    ]
+  },
+  {
+    "id": 85,
+    "kategori": "MATEMATIKA",
+    "tipe": "PG",
+    "rentangNilai": "Sedang",
+    "bobot": 3,
+    "soal": "Sebuah perpustakaan sekolah akan memberikan hadiah kepada pengunjung yang beruntung. Di dalam sebuah kotak terdapat 12 kartu anggota, terdiri atas:<br><ul><li>5 kartu anggota baru,</li><li>4 kartu anggota aktif, dan</li><li>3 kartu anggota premium.</li></ul><br>Panitia mengambil dua kartu secara acak satu per satu tanpa pengembalian. Peluang terambil tepat satu kartu anggota premium pada dua pengambilan tersebut adalah ....",
+    "gambar": null,
+    "pilihan": [
+      "3/22",
+      "5/22",
+      "6/11",
+      "9/22",
+      "12/22"
+    ],
+    "pernyataan": null,
+    "kunciJawaban": "D"
   }
     
 ];
