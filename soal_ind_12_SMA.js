@@ -212,7 +212,7 @@ window.soalIND = [
       "Suasana yang terbangun dalam kutipan teks di atas cenderung riang dan penuh dengan humor kenakalan remaja.",
       "Latar waktu cerita tidak dapat diidentifikasi tetapi terjadi ketika Pak Karsa berusia lanjut"
     ],
-    kunciJawaban: ["B", "S", "B", "S", "S"]
+    kunciJawaban: ["B", "S", "B", "S", "B"]
   },
 
     {
@@ -464,7 +464,7 @@ window.soalIND = [
       "Kalimat “Kuil Tajiri Kasho adalah rekomendasi eksklusif tempat ini menghindari biaya tinggi dan keramaian di pusat kota Osaka” menggunakan citraan pendengaran (auditori) untuk mempertegas suasana yang sepi dan tenang.",
       "Frasa “murni tanpa sentuhan komersial berlebihan” menggunakan sineasid/sinekdoke untuk menggambarkan harga tiket masuk kuil yang sangat mahal."
     ],
-    kunciJawaban: ["Tepat", "Tepat", "Tepat", "Tidak Tepat", "Tidak Tepat"]
+    kunciJawaban: ["Tepat", "Tepat", "Tidak Tepat", "Tidak Tepat", "Tidak Tepat"]
   },
 
     {
