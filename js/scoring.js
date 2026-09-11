@@ -1,5 +1,5 @@
 // ==================================================
-// 📊 SCORING ENGINE (LENGKAP & SANGAT AKURAT)
+// 📊 SCORING ENGINE (LENGKAP + KODE DETEKTIF)
 // ==================================================
 
 function hitungSkor() {
@@ -122,6 +122,17 @@ function hitungSkor() {
 
         // Poin yang didapat = Rasio Kebenaran x Bobot Soal
         const poinDiperoleh = rasioSkor * bobotSoal;
+
+        // ==================================================
+        // 🔍 KODE DETEKTIF / DEBUGGING (CEK SOAL SALAH)
+        // ==================================================
+        if (rasioSkor < 1) {
+            console.warn(`❌ SOAL SALAH / PARSIAL -> ID: ${soal.id} | Mapel: ${soal.kategori || soal.subtes} | Tipe: ${soal.tipe}`);
+            console.log(`   └─ Kunci Jawaban :`, kunci);
+            console.log(`   └─ Jawaban Siswa :`, jwb);
+            console.log(`   └─ Rasio Kebenaran: ${rasioSkor * 100}%`);
+        }
+        // ==================================================
 
         result.totalPoin += poinDiperoleh;
         result.totalSoalValid++;
