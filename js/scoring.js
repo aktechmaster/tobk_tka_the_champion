@@ -1,5 +1,5 @@
 // ==================================================
-// 📊 SCORING ENGINE (DENGAN DUKUNGAN BOBOT SOAL)
+// 📊 SCORING ENGINE (LENGKAP & SANGAT AKURAT)
 // ==================================================
 
 function hitungSkor() {
@@ -18,12 +18,24 @@ function hitungSkor() {
     const mapHurufKeAngka = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4 };
     const mapAngkaKeHuruf = ['A', 'B', 'C', 'D', 'E'];
 
-    const isTrueValue = (val) => {
+    // Helper Nilai Positif (Benar / Tepat / Sesuai / Logis)
+    const isPositiveValue = (val) => {
         if (typeof val === 'boolean') return val;
         if (typeof val === 'number') return val === 1;
         if (typeof val === 'string') {
             const clean = val.toUpperCase().trim();
-            return ['TRUE', 'BENAR', 'TEPAT', '1', 'YES', 'T', 'B'].includes(clean);
+            return ['TRUE', 'BENAR', 'TEPAT', 'SESUAI', 'LOGIS', '1', 'YES', 'T', 'B'].includes(clean);
+        }
+        return false;
+    };
+
+    // Helper Nilai Negatif (Salah / Tidak Tepat / Tidak Sesuai / Tidak Logis)
+    const isNegativeValue = (val) => {
+        if (typeof val === 'boolean') return !val;
+        if (typeof val === 'number') return val === 0;
+        if (typeof val === 'string') {
+            const clean = val.toUpperCase().trim();
+            return ['FALSE', 'SALAH', 'TIDAK TEPAT', 'TIDAK SESUAI', 'TIDAK LOGIS', '0', 'NO', 'F', 'S'].includes(clean);
         }
         return false;
     };
@@ -36,9 +48,7 @@ function hitungSkor() {
         // Ambil bobot soal (Default = 1 jika tidak ditentukan di soal.js)
         const bobotSoal = Number(soal.bobot) > 0 ? Number(soal.bobot) : 1;
 
-        // KODE BARU (FIXED):
         let jwb = listJwb[idx];
-
         const kunci = soal.kunciJawaban !== undefined ? soal.kunciJawaban : soal.kunci;
         let rasioSkor = 0; // Mengukur persentase kebenaran (0.0 sampai 1.0)
 
@@ -87,17 +97,20 @@ function hitungSkor() {
                 }
             } 
             
-            // 3. PENSKORAN BS
+            // 3. PENSKORAN BS (FIXED & SAFE)
             else if (soal.tipe === 'BS') {
                 if (Array.isArray(jwb) && Array.isArray(kunci) && kunci.length > 0) {
                     let barisBenar = 0;
                     kunci.forEach((kunciBaris, i) => {
                         const jwbBaris = jwb[i];
                         if (jwbBaris !== undefined && jwbBaris !== null && jwbBaris !== "") {
-                            const boolJwb = isTrueValue(jwbBaris);
-                            const boolKunci = isTrueValue(kunciBaris);
+                            const jwbPos = isPositiveValue(jwbBaris);
+                            const jwbNeg = isNegativeValue(jwbBaris);
+                            const kunciPos = isPositiveValue(kunciBaris);
+                            const kunciNeg = isNegativeValue(kunciBaris);
 
-                            if (boolJwb === boolKunci) {
+                            // Cocok jika sama-sama positif ATAU sama-sama negatif
+                            if ((jwbPos && kunciPos) || (jwbNeg && kunciNeg)) {
                                 barisBenar++;
                             }
                         }
