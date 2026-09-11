@@ -14,7 +14,7 @@ let jawabanSiswa = [];
 let raguRagu = [];
 let currentIndex = 0;
 let timerInterval = null;
-let durasiUjianDetik = 7200; // 2 Jam (120 menit)
+let durasiUjianDetik = 13500; // 3 Jam 45 menit (225 menit)
 
 // Dynamic Global State
 window.daftarSoal = [];
